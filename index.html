@@ -925,7 +925,7 @@
         <div class="flex flex-col lg:flex-row gap-8 fade-up">
           <!-- フォーム -->
           <div class="w-full lg:w-2/3">
-            <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+            <form id="contact-form" action="https://formspree.io/f/mzdbovdg" method="POST" class="space-y-6">
               <!-- 名前・メール（横並び） -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -935,6 +935,8 @@
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
                     placeholder="田中太郎" />
                 </div>
@@ -945,6 +947,8 @@
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
                     placeholder="example@email.com" />
                 </div>
@@ -958,6 +962,8 @@
                 </label>
                 <input
                   type="text"
+                  name="subject"
+                  required
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
                   placeholder="" />
               </div>
@@ -968,6 +974,7 @@
                   <label class="block text-text-dark font-bold text-sm mb-2">予算の目安（任意）</label>
                   <input
                     type="text"
+                    name="budget"
                     class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
                     placeholder="" />
                 </div>
@@ -975,6 +982,7 @@
                   <label class="block text-text-dark font-bold text-sm mb-2">ご希望納期（任意）</label>
                   <input
                     type="text"
+                    name="deadline"
                     class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
                     placeholder="例：2025年3月末 / 未定" />
                 </div>
@@ -987,6 +995,8 @@
                   <span class="text-red-500">*</span>
                 </label>
                 <textarea
+                  name="message"
+                  required
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-32 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main resize-none"
                   placeholder="ご相談内容を詳しくお聞かせください..."></textarea>
               </div>
@@ -995,6 +1005,7 @@
               <div>
                 <label class="block text-text-dark font-bold text-sm mb-2">参考URL（任意・複数可）</label>
                 <textarea
+                  name="reference_urls"
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-24 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main resize-none"
                   placeholder="参考にしたいサイトのURLがあれば記載してください（改行区切り）"></textarea>
               </div>
@@ -1017,6 +1028,7 @@
                 <label class="block text-text-dark font-bold text-sm mb-2">連絡手段の希望（任意）</label>
                 <input
                   type="text"
+                  name="contact_method"
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
                   placeholder="" />
               </div>
