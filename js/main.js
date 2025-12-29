@@ -13,40 +13,44 @@ const mainHeader = document.getElementById('header');
 
 const runSplashSequence = () => {
     const progressBar = document.getElementById('splash-progress-bar');
-    const logoShine = document.getElementById('logo-shine');
 
     // ロゴアニメーション
     splashLogo.classList.add('animate-logo-in');
     
-    // ロゴシャイン効果
+    // ロゴパルス効果
     setTimeout(() => { 
         splashLogo.classList.add('animate-logo-pulse');
-        if (logoShine) {
-            logoShine.style.transition = 'transform 0.8s ease';
-            logoShine.style.transform = 'translateX(100%)';
-        }
-    }, 600);
+    }, 300);
 
-    // タイプライター完了後（0.8s delay + 1.8s = 2.6s）にプログレスバー開始
+    // ロゴを1秒見せてからプログレスバー開始（1.8秒で完了）
     setTimeout(() => {
         progressBar.style.width = '100%';
-    }, 2800);
+    }, 1500);
     
-    // プログレスバー完了後（2.8s + 2.2s = 5s）にカーテン
-    setTimeout(() => { splashCurtain.classList.add('animate-curtain-slide'); }, 5200);
+    // プログレスバー完了後にカーテンスライド（カーテンが完全に覆うまでロゴ表示）
+    setTimeout(() => { splashCurtain.classList.add('animate-curtain-slide'); }, 3500);
     setTimeout(() => {
         splashLogo.style.display = 'none';
         splashBg.style.display = 'none';
         splashCurtain.classList.add('animate-curtain-fade');
-    }, 5800);
+    }, 4500);
     setTimeout(() => {
         splashScreen.remove();
         mainHeader.classList.remove('opacity-0');
-    }, 6000);
+    }, 4900);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     runSplashSequence();
+
+    // 稼働状況の「今月」を動的に表示
+    const currentMonthEl = document.getElementById('current-month');
+    if (currentMonthEl) {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        currentMonthEl.textContent = `${year}年${month}月`;
+    }
 
     // ヒーロー写真スライドショー
     const slides = document.querySelectorAll('.hero-photo-slide');
