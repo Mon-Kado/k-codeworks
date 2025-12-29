@@ -1,463 +1,1178 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KADOMARU Codeworks | 医療・福祉専門のWeb制作</title>
-    <meta name="description" content="現役医療ソーシャルワーカー(MSW)による、医療広告ガイドライン準拠・現場理解に基づいたWeb制作。千葉県旭市・東総エリアを中心に、クリニック・介護施設の課題を解決します。">
-    
+    <meta
+      name="description"
+      content="現役医療ソーシャルワーカー(MSW)による、現場理解に基づいたWeb制作。クリニック・介護施設など医療・福祉分野に特化したサイト制作を行っています。" />
+
     <!-- OGP Settings -->
-    <meta property="og:title" content="KADOMARU Codeworks | 医療・福祉専門のWeb制作">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kadomaru-codeworks.com/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:description" content="現役MSWエンジニアが、貴院の「強み」を正しく翻訳します。医療広告ガイドライン準拠。月3社限定。">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="KADOMARU Codeworks | 医療・福祉専門のWeb制作" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kadomaru-codeworks.com/" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
+    <meta
+      property="og:description"
+      content="現役MSWエンジニアが、貴院の「強み」を正しく翻訳します。医療広告ガイドライン準拠。月3社限定。" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Google Fonts: Zen Maru Gothic -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Custom Config -->
     <script src="js/tailwind.config.js"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- Splash Screen -->
     <div id="splash-screen">
-        <div class="splash-bg" id="splash-bg"></div>
-        <div class="splash-logo" id="splash-logo">
-            <div class="w-16 h-16 bg-white text-navy-main rounded-full flex items-center justify-center font-bold text-3xl shadow-lg pb-1">K</div>
-            <div class="text-center text-white">
-                <span class="font-bold text-3xl tracking-tight block">KADOMARU</span>
-                <span class="font-normal opacity-90 text-sm tracking-widest block -mt-1">Codeworks</span>
-            </div>
+      <div class="splash-bg" id="splash-bg">
+        <!-- グラデーションメッシュ -->
+        <div class="splash-mesh">
+          <div class="splash-mesh-blob"></div>
+          <div class="splash-mesh-blob"></div>
+          <div class="splash-mesh-blob"></div>
         </div>
-        <div class="splash-curtain" id="splash-curtain"></div>
+      </div>
+      <div class="splash-logo" id="splash-logo">
+        <div class="splash-logo-glow"></div>
+        <div
+          class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden">
+          <span class="text-navy-main font-black text-3xl relative z-10">K</span>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
+            id="logo-shine"
+            style="transform: translateX(-100%)"></div>
+        </div>
+        <div class="splash-typewriter-wrap">
+          <span class="splash-typewriter" id="splash-typewriter">KADOMARU Codeworks</span>
+        </div>
+      </div>
+      <!-- プログレスバー -->
+      <div class="splash-progress" id="splash-progress">
+        <div class="splash-progress-bar" id="splash-progress-bar"></div>
+      </div>
+      <div class="splash-curtain" id="splash-curtain"></div>
     </div>
 
     <!-- ヘッダー -->
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300 opacity-0" id="header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- ロゴ -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center gap-2 group">
-                        <div class="w-10 h-10 bg-navy-main rounded-full flex items-center justify-center shadow-sm group-hover:bg-navy-dark transition-colors">
-                            <span class="text-white font-maru font-bold text-xl pb-1">K</span>
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <span class="text-navy-main font-maru font-bold text-xl leading-none tracking-wider group-hover:text-navy-dark transition-colors">KADOMARU</span>
-                            <span class="text-navy-dark font-maru text-xs font-bold tracking-widest leading-none mt-0.5">Codeworks</span>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- ナビゲーション -->
-                <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
-                    <a href="#about" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">強み・特徴</a>
-                    <a href="#works" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">制作実績</a>
-                    <a href="#service" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">料金</a>
-                    <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm shadow-md">
-                        無料相談・お見積り
-                    </a>
-                </nav>
+    <header
+      class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300 opacity-0"
+      id="header">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="header-inner flex justify-between items-center">
+          <!-- ロゴ -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="#" class="block">
+              <img
+                src="img/kadomaru-codeworks_logo_main.png"
+                alt="KADOMARU Codeworks"
+                class="header-logo h-14 w-auto" />
+            </a>
+          </div>
 
-                <!-- ハンバーガー -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-navy-main p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+          <!-- ナビゲーション -->
+          <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+            <a href="#about" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
+              強み・特徴
+            </a>
+            <a href="#profile" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
+              プロフィール
+            </a>
+            <a href="#works" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
+              制作実績
+            </a>
+            <a href="#service" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
+              料金
+            </a>
+            <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm shadow-md">無料相談・お見積り</a>
+          </nav>
 
-        <!-- モバイルメニュー -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white shadow-lg border-t border-gray-100">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#about" class="block px-3 py-3 text-text-dark hover:bg-pale-blue hover:text-navy-main rounded-md font-medium">強み・特徴</a>
-                <a href="#works" class="block px-3 py-3 text-text-dark hover:bg-pale-blue hover:text-navy-main rounded-md font-medium">制作実績</a>
-                <a href="#service" class="block px-3 py-3 text-text-dark hover:bg-pale-blue hover:text-navy-main rounded-md font-medium">料金</a>
-                <a href="#contact" class="block px-3 py-3 mt-4 text-center bg-navy-main text-white rounded-full font-medium shadow-md">
-                    無料相談・お見積り
-                </a>
-            </div>
+          <!-- ハンバーガー -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="mobile-menu-trigger" aria-label="メニューを開く">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- フルスクリーンモバイルメニュー -->
+      <div id="mobile-menu" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+          <nav class="mobile-nav">
+            <a href="#about" class="mobile-nav-link" style="--delay: 0.1s">
+              <span class="mobile-nav-number">01</span>
+              <span class="mobile-nav-text">強み・特徴</span>
+              <span class="mobile-nav-label">STRENGTH</span>
+            </a>
+            <a href="#profile" class="mobile-nav-link" style="--delay: 0.15s">
+              <span class="mobile-nav-number">02</span>
+              <span class="mobile-nav-text">プロフィール</span>
+              <span class="mobile-nav-label">PROFILE</span>
+            </a>
+            <a href="#works" class="mobile-nav-link" style="--delay: 0.2s">
+              <span class="mobile-nav-number">03</span>
+              <span class="mobile-nav-text">制作実績</span>
+              <span class="mobile-nav-label">WORKS</span>
+            </a>
+            <a href="#blog" class="mobile-nav-link" style="--delay: 0.25s">
+              <span class="mobile-nav-number">04</span>
+              <span class="mobile-nav-text">ブログ</span>
+              <span class="mobile-nav-label">BLOG</span>
+            </a>
+            <a href="#service" class="mobile-nav-link" style="--delay: 0.3s">
+              <span class="mobile-nav-number">05</span>
+              <span class="mobile-nav-text">料金プラン</span>
+              <span class="mobile-nav-label">PRICING</span>
+            </a>
+          </nav>
+          <div class="mobile-menu-footer">
+            <a href="#contact" class="mobile-cta-btn">
+              <i class="fa-regular fa-envelope mr-2"></i>
+              無料相談・お見積り
+            </a>
+            <div class="mobile-social">
+              <a href="#" class="mobile-social-link"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- ヒーローエリア -->
-    <section class="pt-32 pb-20 md:pt-40 md:pb-28 bg-hero-pattern bg-cover bg-center relative">
-        <div class="max-w-6xl mx-auto px-4 relative z-10">
-            <div class="flex flex-col-reverse md:flex-row items-center gap-10">
-                <div class="w-full md:w-1/2 fade-up">
-                    <span class="inline-block py-1 px-3 rounded-full bg-white text-navy-main text-xs md:text-sm font-bold mb-4 border border-navy-main/30 shadow-sm">
-                        <i class="fa-solid fa-user-doctor mr-1"></i> Medical Social Worker × Web Creator
-                    </span>
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-text-dark mb-6">
-                        「患者さんの不安」を知っているから、<br>
-                        <span class="text-navy-main relative inline-block">
-                            「安心」を伝える
-                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-amber-200 opacity-60 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
-                            </svg>
-                        </span>
-                        サイトが作れる。
-                    </h1>
-                    <p class="text-text-gray text-base md:text-lg mb-8 leading-relaxed">
-                        医療広告ガイドライン準拠・介護保険制度への深い理解。<br>
-                        現役MSWエンジニアが、貴院の「強み」を正しく翻訳し、<br class="hidden md:inline">
-                        患者様・利用者様に届く言葉で表現します。
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="btn-primary px-10 py-4 rounded-full shadow-xl text-lg w-full sm:w-auto">
-                            まずは無料で相談する <i class="fa-solid fa-chevron-right ml-2 text-sm"></i>
-                        </a>
-                        <a href="#about" class="flex items-center justify-center text-navy-main font-bold hover:underline py-4 px-6 w-full sm:w-auto">
-                            制作者プロフィールを見る
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 flex justify-center fade-up">
-                    <div class="relative w-72 h-72 md:w-96 md:h-96">
-                        <div class="absolute inset-0 bg-navy-main rounded-full opacity-10 animate-pulse"></div>
-                         <img src="https://images.unsplash.com/photo-1576091160550-217358c7e618?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medical x Web" class="w-full h-full object-cover rounded-full shadow-2xl border-4 border-white relative z-10">
-                         
-                         <!-- バッジ -->
-                         <div class="absolute bottom-4 -right-2 bg-white p-4 rounded-xl shadow-lg z-20 border border-gray-100">
-                            <div class="text-center">
-                                <p class="text-xs text-text-gray font-bold">WEB PARTNER</p>
-                                <p class="text-sm font-bold text-navy-main">制作会社 GeneL社<br>技術パートナー</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section
+      class="pt-32 pb-20 md:pt-40 md:pb-28 bg-hero-pattern bg-cover bg-center relative min-h-screen flex items-center overflow-hidden">
+      <!-- グラデーションメッシュ背景 -->
+      <div class="gradient-mesh">
+        <div class="gradient-blob gradient-blob-1"></div>
+        <div class="gradient-blob gradient-blob-2"></div>
+        <div class="gradient-blob gradient-blob-3"></div>
+        <div class="gradient-blob gradient-blob-4"></div>
+      </div>
+
+      <!-- フローティングシェイプ -->
+      <div class="floating-shapes">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
+        <div class="flex flex-col-reverse md:flex-row items-center gap-10">
+          <div class="w-full md:w-3/5">
+            <span
+              class="inline-block py-1 px-3 rounded-full bg-white text-navy-main text-xs md:text-sm font-bold mb-6 border border-navy-main/30 shadow-sm hero-sub-fade"
+              style="animation-delay: 0.1s">
+              <i class="fa-solid fa-user-doctor mr-1"></i>
+              MSW × Web Creator
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-text-dark mb-6 hero-text-reveal">
+              <span>現場がわかる。</span>
+              <br />
+              <span class="text-navy-main relative inline-block">
+                だから、届く。
+                <svg
+                  class="absolute w-full h-3 -bottom-1 left-0 text-amber-200 opacity-60 -z-10"
+                  viewBox="0 0 100 10"
+                  preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+                </svg>
+              </span>
+            </h1>
+            <p class="text-text-gray text-base md:text-lg mb-8 hero-sub-fade">医療・福祉専門のWeb制作</p>
+            <div class="flex flex-col sm:flex-row gap-4 hero-cta-slide">
+              <a
+                href="#contact"
+                class="btn-primary btn-shine px-10 py-4 rounded-full shadow-xl text-lg w-full sm:w-auto text-center">
+                無料で相談する
+                <i class="fa-solid fa-chevron-right ml-2 text-sm"></i>
+              </a>
+              <a
+                href="#profile"
+                class="flex items-center justify-center text-navy-main font-bold hover:underline py-4 px-6 w-full sm:w-auto">
+                詳しく見る
+              </a>
             </div>
+          </div>
+          <div class="w-full md:w-2/5 flex justify-center">
+            <div class="hero-visual">
+              <!-- 回転するテキストリング -->
+              <svg class="hero-rotating-text" viewBox="0 0 200 200">
+                <defs>
+                  <path id="textCircle" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+                </defs>
+                <text class="hero-circle-text">
+                  <textPath href="#textCircle">MEDICAL × WEB • DESIGN × CODE • MSW × CREATOR •</textPath>
+                </text>
+              </svg>
+
+              <!-- グラデーションリング -->
+              <div class="hero-gradient-ring"></div>
+              <div class="hero-gradient-ring hero-gradient-ring-2"></div>
+
+              <!-- 軌道上のドット -->
+              <div class="hero-orbit">
+                <div class="hero-orbit-dot"></div>
+              </div>
+              <div class="hero-orbit hero-orbit-2">
+                <div class="hero-orbit-dot"></div>
+              </div>
+
+              <!-- 中央：写真スライドショー -->
+              <div class="hero-photo-circle">
+                <div class="hero-photo-slider">
+                  <div class="hero-photo-slide active">
+                    <img
+                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                      alt="Medical" />
+                  </div>
+                  <div class="hero-photo-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                      alt="Web Design" />
+                  </div>
+                  <div class="hero-photo-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1576091160550-217358c7e618?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                      alt="Healthcare" />
+                  </div>
+                  <div class="hero-photo-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                      alt="Coding" />
+                  </div>
+                </div>
+                <!-- オーバーレイ -->
+                <div class="hero-photo-overlay"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- スクロールインジケーター -->
+      <div class="scroll-indicator hidden md:flex">
+        <span>SCROLL</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
     </section>
 
     <!-- 強み・コンセプト -->
     <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="section-title fade-up">
-                <span>STRENGTH</span>
-                <h2>選ばれる3つの理由</h2>
-                <p class="mt-4 text-text-gray text-sm">「作れる」だけではない、医療・福祉現場の課題解決力</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Reason 1 -->
-                <div class="bg-pale-blue rounded-xl p-8 fade-up card-hover">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-navy-dark mb-3">医療広告ガイドライン準拠</h3>
-                    <p class="text-sm text-text-gray leading-relaxed text-justify">
-                        医療法における広告規制や、景品表示法を熟知しています。「治ります」「No.1」といったNG表現を避けつつ、貴院の魅力を最大限に伝える表現をご提案します。
-                    </p>
-                </div>
-
-                <!-- Reason 2 -->
-                <div class="bg-pale-blue rounded-xl p-8 fade-up card-hover">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
-                        <i class="fa-solid fa-hands-holding-circle"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-navy-dark mb-3">制度への深い理解</h3>
-                    <p class="text-sm text-text-gray leading-relaxed text-justify">
-                        介護保険制度や診療報酬改定のトレンドを理解しているため、説明コストがかかりません。「加算の要件をWebに載せたい」等のご要望にも即座に対応可能です。
-                    </p>
-                </div>
-
-                <!-- Reason 3 -->
-                <div class="bg-pale-blue rounded-xl p-8 fade-up card-hover">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-navy-dark mb-3">地域連携の肌感覚</h3>
-                    <p class="text-sm text-text-gray leading-relaxed text-justify">
-                        旭市・東総エリアの医療資源や患者層を肌で知っています。単なるWeb制作だけでなく、地域のケアマネジャーや連携室に向けた実質的な広報戦略もご相談ください。
-                    </p>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>STRENGTH</span>
+          <h2>選ばれる3つの理由</h2>
+          <p class="mt-4 text-text-gray text-sm">「作れる」だけではない、医療・福祉現場の課題解決力</p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+          <!-- Reason 1 -->
+          <div class="bg-pale-blue rounded-xl p-8 card-hover tilt-card">
+            <div
+              class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="text-lg font-bold text-navy-dark mb-3">難しいことを、わかりやすく</h3>
+            <p class="text-sm text-text-gray leading-relaxed text-justify">
+              患者さんやご家族への説明を日々行う中で培った「伝える力」。専門用語を使わず、誰にでも伝わる言葉でサイトを構成します。
+            </p>
+          </div>
+
+          <!-- Reason 2 -->
+          <div class="bg-pale-blue rounded-xl p-8 card-hover tilt-card">
+            <div
+              class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
+              <i class="fa-solid fa-universal-access"></i>
+            </div>
+            <h3 class="text-lg font-bold text-navy-dark mb-3">高齢者にもやさしい設計</h3>
+            <p class="text-sm text-text-gray leading-relaxed text-justify">
+              高齢の患者さんと接する機会が多いからこそ、文字サイズ・コントラスト・導線のシンプルさなど「見やすさ・使いやすさ」を大切にしています。
+            </p>
+          </div>
+
+          <!-- Reason 3 -->
+          <div class="bg-pale-blue rounded-xl p-8 card-hover tilt-card">
+            <div
+              class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <h3 class="text-lg font-bold text-navy-dark mb-3">現場目線の機能提案</h3>
+            <p class="text-sm text-text-gray leading-relaxed text-justify">
+              病院・施設の業務フローを知っているから、「本当に必要な機能」が分かります。見た目だけでなく、運用しやすいサイト設計をご提案します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- プロフィール -->
+    <section id="profile" class="py-20 bg-gray-bg overflow-hidden relative">
+      <!-- 背景装飾 -->
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-navy-main/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div
+        class="absolute bottom-0 left-0 w-72 h-72 bg-accent-gold/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+      <div class="max-w-6xl mx-auto px-4 relative z-10">
+        <div class="section-title reveal-up">
+          <span>PROFILE</span>
+          <h2>制作者について</h2>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <!-- 左：写真エリア -->
+          <div class="w-full lg:w-2/5 reveal-left">
+            <div class="relative mx-auto" style="max-width: 320px">
+              <!-- 装飾リング -->
+              <div class="absolute inset-0 border-2 border-navy-main/20 rounded-2xl transform rotate-6 scale-105"></div>
+              <div
+                class="absolute inset-0 border-2 border-accent-gold/30 rounded-2xl transform -rotate-3 scale-110"></div>
+
+              <!-- メイン写真 -->
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="プロフィール写真"
+                  class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <!-- オーバーレイグラデーション -->
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent"></div>
+                <!-- バッジ -->
+                <div class="absolute bottom-4 left-4 right-4">
+                  <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 bg-navy-main rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-stethoscope text-white"></i>
+                      </div>
+                      <div>
+                        <p class="text-xs text-text-gray">Medical Social Worker</p>
+                        <p class="font-bold text-navy-dark text-sm">× Web Creator</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- フローティングタグ -->
+              <div
+                class="absolute -top-4 -right-4 bg-accent-gold text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-bounce"
+                style="animation-duration: 3s">
+                <i class="fa-solid fa-heart-pulse mr-1"></i>
+                現役MSW
+              </div>
+            </div>
+          </div>
+
+          <!-- 右：テキストエリア -->
+          <div class="w-full lg:w-3/5 reveal-right">
+            <!-- 名前・肩書き -->
+            <div class="mb-8">
+              <h3
+                class="text-3xl md:text-4xl font-bold text-navy-dark mb-2 gradient-text"
+                style="
+                  background: linear-gradient(90deg, #0a3a78, #245fa0);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                ">
+                あなたのお名前
+              </h3>
+              <p class="text-text-gray flex items-center gap-2">
+                <span class="inline-block w-8 h-px bg-accent-gold"></span>
+                KADOMARU Codeworks 代表
+              </p>
+            </div>
+
+            <!-- 経歴ストーリー -->
+            <div class="space-y-6 mb-10">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-navy-main/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fa-solid fa-hospital text-navy-main text-sm"></i>
+                </div>
+                <p class="text-text-gray leading-relaxed">
+                  千葉県内の総合病院で
+                  <strong class="text-navy-dark">医療ソーシャルワーカー（MSW）として7年間</strong>
+                  勤務。主に整形外科・心臓外科の患者さんの転院調整支援を担当しています。
+                </p>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-navy-main/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fa-solid fa-laptop-code text-navy-main text-sm"></i>
+                </div>
+                <p class="text-text-gray leading-relaxed">
+                  「現場で感じた課題を、自分の手で解決したい」という思いからWeb制作・システム開発を独学で習得。現在は本業の傍ら、医療・福祉分野に特化したWeb制作を行っています。
+                </p>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 bg-accent-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fa-solid fa-handshake text-accent-gold text-sm"></i>
+                </div>
+                <p class="text-text-gray leading-relaxed">
+                  患者さんやご家族に寄り添ってきた経験を活かし、
+                  <strong class="text-navy-dark">「伝わる」「届く」</strong>
+                  サイト作りを大切にしています。
+                </p>
+              </div>
+            </div>
+
+            <!-- 実績数字（カウントアップ） -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="profile-stat-card">
+                <div class="profile-stat-icon">
+                  <i class="fa-solid fa-briefcase-medical"></i>
+                </div>
+                <p class="text-3xl font-bold text-navy-main">
+                  <span class="count-up" data-target="7">0</span>
+                  <span class="text-lg">年</span>
+                </p>
+                <p class="text-xs text-text-gray mt-1">MSW経験</p>
+              </div>
+              <div class="profile-stat-card">
+                <div class="profile-stat-icon">
+                  <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <p class="text-3xl font-bold text-navy-main">
+                  <span class="count-up" data-target="30">0</span>
+                  <span class="text-lg">件+</span>
+                </p>
+                <p class="text-xs text-text-gray mt-1">制作実績</p>
+              </div>
+              <div class="profile-stat-card">
+                <div class="profile-stat-icon">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <p class="text-3xl font-bold text-navy-main">
+                  <span class="count-up" data-target="20">0</span>
+                  <span class="text-lg">社+</span>
+                </p>
+                <p class="text-xs text-text-gray mt-1">支援企業</p>
+              </div>
+              <div class="profile-stat-card">
+                <div class="profile-stat-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <p class="text-3xl font-bold text-navy-main">
+                  <span class="count-up" data-target="10">0</span>
+                  <span class="text-lg">万</span>
+                </p>
+                <p class="text-xs text-text-gray mt-1">ブログPV</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 実績 -->
     <section id="works" class="py-20 bg-gray-bg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="section-title fade-up">
-                <span>WORKS</span>
-                <h2>制作・開発実績</h2>
-            </div>
-
-            <!-- メイン実績：GeneL社 -->
-            <div class="bg-white rounded-2xl shadow-sm p-8 mb-12 border-l-8 border-navy-main fade-up">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-full md:w-1/3 text-center border-b md:border-b-0 md:border-r border-gray-100 pb-6 md:pb-0 md:pr-6">
-                        <h3 class="text-sm font-bold text-gray-400 mb-1">PARTNERSHIP</h3>
-                        <p class="text-2xl md:text-3xl font-bold text-navy-dark mb-2">株式会社GeneL 様</p>
-                        <p class="text-sm text-text-gray">技術パートナーとして参画中</p>
-                    </div>
-                    <div class="w-full md:w-2/3">
-                        <div class="grid grid-cols-2 gap-4 text-center">
-                            <div class="bg-pale-blue rounded-lg p-4">
-                                <p class="text-xs text-text-gray font-bold">参画プロジェクト</p>
-                                <p class="text-2xl md:text-3xl font-bold text-navy-main">30<span class="text-sm text-text-gray ml-1">件超</span></p>
-                            </div>
-                            <div class="bg-pale-blue rounded-lg p-4">
-                                <p class="text-xs text-text-gray font-bold">支援企業数</p>
-                                <p class="text-2xl md:text-3xl font-bold text-navy-main">20<span class="text-sm text-text-gray ml-1">社超</span></p>
-                            </div>
-                        </div>
-                        <p class="mt-4 text-sm text-text-gray">
-                            Web制作会社様のパートナーとして、コーポレートサイト構築、ヘッドレスCMS導入、API連携などを担当。大規模サイトの設計・実装経験があります。
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 自社プロダクト Bedroute -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-up">
-                    <div class="h-48 bg-navy-dark flex items-center justify-center relative">
-                        <span class="text-white font-bold text-2xl tracking-widest">Bedroute</span>
-                        <div class="absolute top-2 right-2 bg-amber-500 text-white text-xs px-2 py-1 rounded font-bold">開発中</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex gap-2 mb-3">
-                            <span class="text-xs bg-gray-100 px-2 py-1 rounded text-text-gray">自社開発</span>
-                            <span class="text-xs bg-gray-100 px-2 py-1 rounded text-text-gray">業務支援ツール</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-navy-dark mb-2">退院支援管理ツール</h3>
-                        <p class="text-sm text-text-gray mb-4">
-                            MSWの業務効率を改善する管理システムを独自開発中。現場の課題を技術で解決する取り組みです。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 卒業制作 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-up">
-                    <div class="h-48 bg-gray-200 relative">
-                        <img src="https://images.unsplash.com/photo-1516574187841-693083f69382?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex gap-2 mb-3">
-                            <span class="text-xs bg-pale-blue text-navy-main px-2 py-1 rounded font-bold">クリニックHP</span>
-                            <span class="text-xs bg-gray-100 px-2 py-1 rounded text-text-gray">WordPress</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-navy-dark mb-2">リベラルアーツクリニック（仮）</h3>
-                        <p class="text-sm text-text-gray mb-4">
-                            高齢者でも見やすい配色とフォント選定。Web予約への導線を最適化したクリニックサイトです。
-                        </p>
-                        <span class="text-navy-main text-sm font-bold flex items-center gap-1 cursor-pointer hover:text-navy-sub">デモを見る <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                    </div>
-                </div>
-
-                <!-- ブログメディア -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover fade-up">
-                    <div class="h-48 bg-gray-200 relative">
-                        <img src="https://images.unsplash.com/photo-1499750310159-5410055491be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover">
-                        <div class="absolute bottom-2 right-2 bg-accent-gold text-white text-xs px-2 py-1 rounded font-bold shadow">10万PV達成</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex gap-2 mb-3">
-                            <span class="text-xs bg-pale-blue text-navy-main px-2 py-1 rounded font-bold">オウンドメディア</span>
-                            <span class="text-xs bg-gray-100 px-2 py-1 rounded text-text-gray">SEO・集客</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-navy-dark mb-2">個人運営メディア</h3>
-                        <p class="text-sm text-text-gray mb-4">
-                            検索意図を分析し、月間10万PVまで成長。「集客できるコンテンツ」の設計・運用ノウハウがあります。
-                        </p>
-                        <span class="text-navy-main text-sm font-bold flex items-center gap-1 cursor-pointer hover:text-navy-sub">詳細を見る <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>WORKS</span>
+          <h2>制作・開発実績</h2>
         </div>
+
+        <!-- カテゴリタブ -->
+        <div class="flex justify-center gap-3 mb-10 reveal-up flex-wrap">
+          <button class="works-tab active px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="all">
+            All
+          </button>
+          <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="webapp">
+            Web App
+          </button>
+          <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="lp">
+            LP
+          </button>
+          <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="corporate">
+            Corporate
+          </button>
+          <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="media">
+            Media
+          </button>
+        </div>
+
+        <!-- ギャラリーグリッド -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="works-grid">
+          <!-- Bedroute (Web App) -->
+          <div class="works-item" data-category="webapp">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
+              onclick="openWorksModal('bedroute')">
+              <div class="absolute inset-0 bg-navy-dark flex items-center justify-center">
+                <span class="text-white font-bold text-3xl tracking-widest">Bedroute</span>
+              </div>
+              <div class="works-overlay">
+                <span class="works-category">Web App</span>
+                <h3 class="works-title">退院支援管理ツール</h3>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+              <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs px-2 py-1 rounded font-bold z-10">
+                開発中
+              </div>
+            </button>
+          </div>
+
+          <!-- クリニックHP (Corporate) -->
+          <div class="works-item" data-category="corporate">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
+              onclick="openWorksModal('clinic')">
+              <img
+                src="https://images.unsplash.com/photo-1516574187841-693083f69382?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="クリニックHP" />
+              <div class="works-overlay">
+                <span class="works-category">Corporate</span>
+                <h3 class="works-title">クリニックサイト</h3>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- ブログメディア (Media) -->
+          <div class="works-item" data-category="media">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
+              onclick="openWorksModal('blog')">
+              <img
+                src="https://images.unsplash.com/photo-1499750310159-5410055491be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="ブログメディア" />
+              <div class="works-overlay">
+                <span class="works-category">Media</span>
+                <h3 class="works-title">個人運営メディア（10万PV）</h3>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- 採用LP (LP) -->
+          <div class="works-item" data-category="lp">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
+              onclick="openWorksModal('recruit')">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-217358c7e618?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="採用LP" />
+              <div class="works-overlay">
+                <span class="works-category">LP</span>
+                <h3 class="works-title">訪問看護ステーション採用LP</h3>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- 介護施設HP (Corporate) -->
+          <div class="works-item" data-category="corporate">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
+              onclick="openWorksModal('nursing')">
+              <img
+                src="https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="介護施設HP" />
+              <div class="works-overlay">
+                <span class="works-category">Corporate</span>
+                <h3 class="works-title">特別養護老人ホーム</h3>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- チャットボット移行 (Web App) -->
+          <div class="works-item" data-category="webapp">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
+              onclick="openWorksModal('chatbot')">
+              <img
+                src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt="チャットボット" />
+              <div class="works-overlay">
+                <span class="works-category">Web App</span>
+                <h3 class="works-title">チャットボット移行支援</h3>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works モーダル -->
+    <div id="works-modal" class="works-modal-overlay">
+      <div class="works-modal-content">
+        <button class="works-modal-close" onclick="closeWorksModal()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="works-modal-body" id="works-modal-body">
+          <!-- JSで動的に挿入 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ブログ・お知らせ -->
+    <section id="blog" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>BLOG / NEWS</span>
+          <h2>ブログ・お知らせ</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+          <!-- 記事1 -->
+          <a href="#" class="blog-card block bg-gray-bg rounded-xl overflow-hidden card-hover group">
+            <div class="aspect-video overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="ブログ記事" />
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs bg-navy-main text-white px-2 py-1 rounded font-bold">お知らせ</span>
+                <time class="text-xs text-text-gray">2025.01.15</time>
+              </div>
+              <h3 class="font-bold text-text-dark group-hover:text-navy-main transition-colors line-clamp-2">
+                ポートフォリオサイトをリニューアルしました
+              </h3>
+            </div>
+          </a>
+
+          <!-- 記事2 -->
+          <a href="#" class="blog-card block bg-gray-bg rounded-xl overflow-hidden card-hover group">
+            <div class="aspect-video overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="ブログ記事" />
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs bg-accent-gold text-white px-2 py-1 rounded font-bold">ブログ</span>
+                <time class="text-xs text-text-gray">2025.01.10</time>
+              </div>
+              <h3 class="font-bold text-text-dark group-hover:text-navy-main transition-colors line-clamp-2">
+                医療広告ガイドラインとは？クリニックHP制作で気をつけるべきポイント
+              </h3>
+            </div>
+          </a>
+
+          <!-- 記事3 -->
+          <a href="#" class="blog-card block bg-gray-bg rounded-xl overflow-hidden card-hover group">
+            <div class="aspect-video overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                alt="ブログ記事" />
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs bg-accent-gold text-white px-2 py-1 rounded font-bold">ブログ</span>
+                <time class="text-xs text-text-gray">2025.01.05</time>
+              </div>
+              <h3 class="font-bold text-text-dark group-hover:text-navy-main transition-colors line-clamp-2">
+                MSWの業務をWebで効率化する方法を考えてみた
+              </h3>
+            </div>
+          </a>
+        </div>
+
+        <!-- もっと見るボタン -->
+        <div class="text-center mt-10 fade-up">
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-navy-main font-bold hover:text-navy-sub transition-colors">
+            記事一覧を見る
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- 技術スタック -->
     <section id="skill" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="section-title fade-up">
-                <span>SKILL</span>
-                <h2>対応技術</h2>
-                <p class="text-sm text-text-gray mt-4">Web制作からシステム連携まで幅広く対応</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-up">
-                <div class="skill-card">
-                    <i class="fa-brands fa-wordpress text-4xl text-blue-600 mb-3"></i>
-                    <h3 class="font-bold text-sm">WordPress</h3>
-                    <p class="text-xs text-text-gray mt-1">オリジナルテーマ開発<br>更新システム構築</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-shopify text-4xl text-green-600 mb-3"></i>
-                    <h3 class="font-bold text-sm">Shopify</h3>
-                    <p class="text-xs text-text-gray mt-1">ECサイト構築<br>決済機能導入</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-brands fa-js text-4xl text-yellow-400 mb-3"></i>
-                    <h3 class="font-bold text-sm">JavaScript / React</h3>
-                    <p class="text-xs text-text-gray mt-1">動的UI実装<br>APIデータ連携</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fa-solid fa-robot text-4xl text-purple-500 mb-3"></i>
-                    <h3 class="font-bold text-sm">API / 自動化</h3>
-                    <p class="text-xs text-text-gray mt-1">SNS連携<br>業務自動化ツール</p>
-                </div>
-            </div>
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>SKILL</span>
+          <h2>対応技術</h2>
+          <p class="text-sm text-text-gray mt-4">Web制作からシステム連携まで幅広く対応</p>
         </div>
+
+        <!-- デザインツール -->
+        <div class="mb-12 reveal-up">
+          <h3 class="text-sm font-bold text-navy-main mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-palette"></i>
+            デザイン・UIツール
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="skill-card">
+              <i class="fa-brands fa-figma text-3xl text-purple-500 mb-2"></i>
+              <h4 class="font-bold text-sm">Figma</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-pen-nib text-3xl text-orange-500 mb-2"></i>
+              <h4 class="font-bold text-sm">Adobe Illustrator</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-image text-3xl text-blue-500 mb-2"></i>
+              <h4 class="font-bold text-sm">Adobe Photoshop</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-wand-magic-sparkles text-3xl text-pink-500 mb-2"></i>
+              <h4 class="font-bold text-sm">Canva</h4>
+              <p class="text-xs text-accent-gold mt-1">2023年〜</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 開発技術 -->
+        <div class="mb-12 reveal-up">
+          <h3 class="text-sm font-bold text-navy-main mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-code"></i>
+            開発技術
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="skill-card">
+              <i class="fa-brands fa-html5 text-3xl text-orange-600 mb-2"></i>
+              <h4 class="font-bold text-sm">HTML / CSS / SCSS</h4>
+              <p class="text-xs text-accent-gold mt-1">2023年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-js text-3xl text-yellow-400 mb-2"></i>
+              <h4 class="font-bold text-sm">JavaScript</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-react text-3xl text-cyan-400 mb-2"></i>
+              <h4 class="font-bold text-sm">React</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-php text-3xl text-indigo-500 mb-2"></i>
+              <h4 class="font-bold text-sm">PHP</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CMS・プラットフォーム -->
+        <div class="reveal-up">
+          <h3 class="text-sm font-bold text-navy-main mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-globe"></i>
+            CMS・プラットフォーム
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="skill-card">
+              <i class="fa-brands fa-wordpress text-3xl text-blue-600 mb-2"></i>
+              <h4 class="font-bold text-sm">WordPress</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-shopify text-3xl text-green-600 mb-2"></i>
+              <h4 class="font-bold text-sm">Shopify</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-server text-3xl text-gray-600 mb-2"></i>
+              <h4 class="font-bold text-sm">microCMS</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-github text-3xl text-gray-800 mb-2"></i>
+              <h4 class="font-bold text-sm">Git / GitHub</h4>
+              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 料金 -->
     <section id="service" class="py-20 bg-gray-bg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="section-title fade-up">
-                <span>PRICE</span>
-                <h2>参考価格</h2>
-                <p class="text-sm text-text-gray mt-4">貴院の課題に合わせて最適なプランをご提案します</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- ライト -->
-                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
-                    <h3 class="text-lg font-bold text-text-gray mb-2">ライトプラン</h3>
-                    <p class="text-3xl font-bold text-navy-main mb-4">¥150,000<span class="text-sm text-text-gray">〜</span></p>
-                    <p class="text-sm text-text-gray mb-6 border-b pb-4">LP制作・採用ページなど</p>
-                    <ul class="text-sm text-text-gray space-y-3">
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>1ページ構成 (LP)</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>スマホ完全対応</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>お問い合わせフォーム</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>サーバー・ドメイン設定代行</li>
-                    </ul>
-                </div>
-
-                <!-- スタンダード -->
-                <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-navy-main relative transform md:-translate-y-4 fade-up">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-navy-main text-white text-xs px-3 py-1 rounded-full font-bold">推奨プラン</div>
-                    <h3 class="text-lg font-bold text-navy-dark mb-2">スタンダード</h3>
-                    <p class="text-3xl font-bold text-navy-main mb-4">¥300,000<span class="text-sm text-text-gray">〜</span></p>
-                    <p class="text-sm text-text-gray mb-6 border-b pb-4">クリニック・施設HPの標準構成</p>
-                    <ul class="text-sm text-text-gray space-y-3">
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>5ページ構成 (TOP+下層4)</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>WordPress導入 (お知らせ更新)</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>MEO対策 (Googleマップ)</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>アクセス解析導入</li>
-                    </ul>
-                </div>
-
-                <!-- アドバンス -->
-                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
-                    <h3 class="text-lg font-bold text-text-gray mb-2">Webシステム開発</h3>
-                    <p class="text-3xl font-bold text-navy-main mb-4">別途お見積り</p>
-                    <p class="text-sm text-text-gray mb-6 border-b pb-4">業務効率化・独自機能開発</p>
-                    <ul class="text-sm text-text-gray space-y-3">
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>予約システム連携</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>チャットボット導入</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>ECサイト構築 (Shopify)</li>
-                        <li><i class="fa-solid fa-check text-accent-gold mr-2"></i>月次コンサルティング</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>PRICE</span>
+          <h2>参考価格</h2>
+          <p class="text-sm text-text-gray mt-4">貴院の課題に合わせて最適なプランをご提案します</p>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- ライト -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
+            <h3 class="text-lg font-bold text-text-gray mb-2">ライトプラン</h3>
+            <p class="text-3xl font-bold text-navy-main mb-4">
+              ¥150,000
+              <span class="text-sm text-text-gray">〜</span>
+            </p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">LP制作・採用ページなど</p>
+            <ul class="text-sm text-text-gray space-y-3">
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                1ページ構成 (LP)
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                スマホ完全対応
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                お問い合わせフォーム
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                サーバー・ドメイン設定代行
+              </li>
+            </ul>
+          </div>
+
+          <!-- スタンダード -->
+          <div
+            class="bg-white rounded-xl p-8 shadow-lg border-2 border-navy-main relative transform md:-translate-y-4 fade-up">
+            <div
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-navy-main text-white text-xs px-3 py-1 rounded-full font-bold">
+              推奨プラン
+            </div>
+            <h3 class="text-lg font-bold text-navy-dark mb-2">スタンダード</h3>
+            <p class="text-3xl font-bold text-navy-main mb-4">
+              ¥300,000
+              <span class="text-sm text-text-gray">〜</span>
+            </p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">クリニック・施設HPの標準構成</p>
+            <ul class="text-sm text-text-gray space-y-3">
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                5ページ構成 (TOP+下層4)
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                WordPress導入 (お知らせ更新)
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                MEO対策 (Googleマップ)
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                アクセス解析導入
+              </li>
+            </ul>
+          </div>
+
+          <!-- アドバンス -->
+          <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
+            <h3 class="text-lg font-bold text-text-gray mb-2">Webシステム開発</h3>
+            <p class="text-3xl font-bold text-navy-main mb-4">別途お見積り</p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">業務効率化・独自機能開発</p>
+            <ul class="text-sm text-text-gray space-y-3">
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                予約システム連携
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                チャットボット導入
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                ECサイト構築 (Shopify)
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                月次コンサルティング
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- お問い合わせ -->
-    <section id="contact" class="py-20 bg-navy-main text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center fade-up">
-            <h2 class="text-3xl font-bold mb-6">無料相談・お見積り</h2>
-            <p class="mb-10 text-blue-100 leading-relaxed">
-                「今のサイトをスマホ対応させたい」「求人が来るサイトにしたい」など、<br class="hidden md:inline">
-                Webに関するお悩みはお気軽にご相談ください。<br>
-                専門用語を使わず、分かりやすくご提案いたします。
-            </p>
-            
-            <!-- フォームUI -->
-            <div class="bg-white text-left p-6 md:p-8 rounded-2xl shadow-xl max-w-2xl mx-auto mb-8">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('デモサイトのため送信されません。');">
-                    <div class="mb-4">
-                        <label class="block text-text-dark font-bold text-sm mb-2">お名前 / 貴院名 <span class="text-red-500">*</span></label>
-                        <input type="text" class="w-full bg-pale-blue border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main" placeholder="例）医療法人社団〇〇 鈴木一郎">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-text-dark font-bold text-sm mb-2">メールアドレス <span class="text-red-500">*</span></label>
-                        <input type="email" class="w-full bg-pale-blue border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main" placeholder="example@email.com">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-text-dark font-bold text-sm mb-2">ご相談内容 <span class="text-red-500">*</span></label>
-                        <textarea class="w-full bg-pale-blue border border-gray-200 rounded-lg px-4 py-3 h-32 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main" placeholder="例）クリニックのホームページリニューアルを検討しています。"></textarea>
-                    </div>
-                    <button type="submit" class="w-full btn-primary py-4 rounded-lg shadow-md text-lg">
-                        送信する <i class="fa-regular fa-paper-plane ml-2"></i>
-                    </button>
-                </form>
+    <section id="contact" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>CONTACT</span>
+          <h2>お問い合わせ</h2>
+          <p class="mt-4 text-text-gray text-sm">
+            お気軽にご相談ください。1〜2営業日以内にご返信します。
+            <br />
+            お急ぎの場合は件名に「至急」とご記載ください。
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8 fade-up">
+          <!-- フォーム -->
+          <div class="w-full lg:w-2/3">
+            <form
+              action="#"
+              method="POST"
+              onsubmit="event.preventDefault(); alert('デモサイトのため送信されません。');"
+              class="space-y-6">
+              <!-- 名前・メール（横並び） -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-text-dark font-bold text-sm mb-2">
+                    お名前
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
+                    placeholder="田中太郎" />
+                </div>
+                <div>
+                  <label class="block text-text-dark font-bold text-sm mb-2">
+                    メールアドレス
+                    <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
+                    placeholder="example@email.com" />
+                </div>
+              </div>
+
+              <!-- 件名 -->
+              <div>
+                <label class="block text-text-dark font-bold text-sm mb-2">
+                  件名
+                  <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
+                  placeholder="" />
+              </div>
+
+              <!-- 予算・納期（横並び） -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-text-dark font-bold text-sm mb-2">予算の目安（任意）</label>
+                  <input
+                    type="text"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
+                    placeholder="" />
+                </div>
+                <div>
+                  <label class="block text-text-dark font-bold text-sm mb-2">ご希望納期（任意）</label>
+                  <input
+                    type="text"
+                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
+                    placeholder="例：2025年3月末 / 未定" />
+                </div>
+              </div>
+
+              <!-- 相談内容 -->
+              <div>
+                <label class="block text-text-dark font-bold text-sm mb-2">
+                  相談内容
+                  <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-32 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main resize-none"
+                  placeholder="ご相談内容を詳しくお聞かせください..."></textarea>
+              </div>
+
+              <!-- 参考URL -->
+              <div>
+                <label class="block text-text-dark font-bold text-sm mb-2">参考URL（任意・複数可）</label>
+                <textarea
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-24 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main resize-none"
+                  placeholder="参考にしたいサイトのURLがあれば記載してください（改行区切り）"></textarea>
+              </div>
+
+              <!-- ファイル添付 -->
+              <div>
+                <label class="block text-text-dark font-bold text-sm mb-2">ファイル添付（任意）</label>
+                <div
+                  class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-navy-main transition-colors cursor-pointer"
+                  onclick="document.getElementById('file-input').click()">
+                  <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-400 mb-3"></i>
+                  <p class="text-sm text-text-gray">PDF, PNG, JPG（合計10MBまで）</p>
+                  <p class="text-sm text-text-gray">ファイルをドラッグ&ドロップまたはクリックして選択</p>
+                  <input type="file" id="file-input" class="hidden" multiple accept=".pdf,.png,.jpg,.jpeg" />
+                </div>
+              </div>
+
+              <!-- 連絡手段 -->
+              <div>
+                <label class="block text-text-dark font-bold text-sm mb-2">連絡手段の希望（任意）</label>
+                <input
+                  type="text"
+                  class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
+                  placeholder="" />
+              </div>
+
+              <!-- プライバシーポリシー同意 -->
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  class="mt-1 w-4 h-4 text-navy-main border-gray-300 rounded focus:ring-navy-main" />
+                <label for="privacy" class="text-sm text-text-gray">
+                  <span class="text-red-500">*</span>
+                  プライバシーポリシーに同意する
+                  <br />
+                  <span class="text-xs text-gray-400">
+                    お預かりした個人情報は適切に管理し、本件に関する連絡以外には使用いたしません。
+                  </span>
+                </label>
+              </div>
+
+              <!-- 送信ボタン -->
+              <button type="submit" class="w-full btn-primary py-4 rounded-lg shadow-md text-lg">
+                <i class="fa-regular fa-envelope mr-2"></i>
+                送信する
+              </button>
+            </form>
+          </div>
+
+          <!-- サイドバー -->
+          <div class="w-full lg:w-1/3 space-y-6">
+            <!-- 稼働状況 -->
+            <div class="bg-navy-dark text-white rounded-xl p-6">
+              <h3 class="font-bold mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-calendar-check"></i>
+                現在の稼働状況
+              </h3>
+              <div class="flex items-center gap-3 mb-4">
+                <span class="status-badge status-available">
+                  <span class="status-dot"></span>
+                  受付中
+                </span>
+                <span class="text-sm text-blue-200">2025年1月</span>
+              </div>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between items-center">
+                  <span class="text-blue-200">今月の枠</span>
+                  <span class="font-bold">
+                    残り
+                    <span class="text-accent-gold text-lg">2</span>
+                    / 3 社
+                  </span>
+                </div>
+                <div class="w-full bg-navy-main rounded-full h-2 mt-2">
+                  <div class="bg-accent-gold h-2 rounded-full" style="width: 33%"></div>
+                </div>
+              </div>
+              <p class="text-xs text-blue-300 mt-4 border-t border-navy-main pt-4">
+                <i class="fa-solid fa-circle-info mr-1"></i>
+                一社一社丁寧に向き合うため、毎月3社様限定でお引き受けしております。
+              </p>
             </div>
 
-            <p class="text-xs text-blue-200 bg-white/10 inline-block px-4 py-2 rounded-lg">
-                <i class="fa-solid fa-circle-info mr-1"></i>
-                一社一社丁寧に向き合うため、<span class="font-bold text-amber-300">毎月3社様限定</span>でお引き受けしております。<br>
-                24時間以内に必ず折り返しご連絡いたします。
-            </p>
+            <!-- よくある質問 -->
+            <div class="bg-gray-bg rounded-xl p-6">
+              <h3 class="font-bold text-text-dark mb-4 flex items-center gap-2">
+                <i class="fa-regular fa-circle-question text-navy-main"></i>
+                よくある質問
+              </h3>
+              <div class="space-y-4 text-sm">
+                <div>
+                  <p class="font-bold text-text-dark">Q: 制作期間はどのくらいですか？</p>
+                  <p class="text-text-gray">A: 規模により2週間〜2ヶ月程度です。</p>
+                </div>
+                <div>
+                  <p class="font-bold text-text-dark">Q: 途中での仕様変更は可能ですか？</p>
+                  <p class="text-text-gray">A: はい、柔軟に対応いたします。</p>
+                </div>
+                <div>
+                  <p class="font-bold text-text-dark">Q: 保守運用もお願いできますか？</p>
+                  <p class="text-text-gray">A: 継続サポートプランをご用意しています。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- お急ぎの場合 -->
+            <div class="bg-gray-bg rounded-xl p-6">
+              <h3 class="font-bold text-text-dark mb-3">お急ぎの場合</h3>
+              <p class="text-sm text-text-gray mb-4">
+                緊急のご相談やお見積りが必要な場合は、件名に「至急」とご記載ください。
+              </p>
+              <div class="space-y-2 text-sm">
+                <p class="flex items-center gap-2 text-text-gray">
+                  <i class="fa-regular fa-envelope text-navy-main"></i>
+                  通常1〜2営業日でご返信
+                </p>
+                <p class="flex items-center gap-2 text-text-gray">
+                  <i class="fa-regular fa-comment text-navy-main"></i>
+                  Chat対応も可能
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- フッター -->
     <footer class="bg-navy-dark text-white pt-16 pb-8 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <div>
-                    <div class="mb-4 inline-block bg-white px-4 py-2 rounded-lg">
-                        <a href="#" class="flex items-center gap-2">
-                             <div class="w-8 h-8 bg-navy-main rounded-full flex items-center justify-center shadow-sm">
-                                <span class="text-white font-maru font-bold text-lg pb-1">K</span>
-                            </div>
-                            <div class="flex flex-col justify-center">
-                                <span class="text-navy-main font-maru font-bold text-lg leading-none tracking-wider">KADOMARU</span>
-                                <span class="text-navy-dark font-maru text-[10px] font-bold tracking-widest leading-none mt-0.5">Codeworks</span>
-                            </div>
-                        </a>
-                    </div>
-                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                        〒289-2511 千葉県旭市イのXXXX<br>
-                        （Web制作 / システム開発 / コンサルティング）
-                    </p>
-                    <div class="flex gap-4 mt-4">
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-accent-gold font-bold mb-4">MENU</h4>
-                    <ul class="space-y-3 text-sm text-gray-300">
-                        <li><a href="#about" class="hover:text-white transition-colors">強み・特徴</a></li>
-                        <li><a href="#works" class="hover:text-white transition-colors">制作実績</a></li>
-                        <li><a href="#service" class="hover:text-white transition-colors">料金・サービス</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-accent-gold font-bold mb-4">AREA</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        千葉県旭市・銚子市・匝瑳市・香取市など東総エリア。<br>
-                        オンラインにて全国対応可能。
-                    </p>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <div class="mb-4 inline-block bg-white px-4 py-2 rounded-lg">
+              <a href="#">
+                <img src="img/kadomaru-codeworks_logo_main.png" alt="KADOMARU Codeworks" class="h-8 w-auto" />
+              </a>
             </div>
-            <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400">
-                <p>&copy; 2025 KADOMARU Codeworks. All Rights Reserved.</p>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              千葉県内
+              <br />
+              （Web制作 / システム開発 / コンサルティング）
+            </p>
+            <div class="flex gap-4 mt-4">
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                <i class="fa-brands fa-x-twitter text-xl"></i>
+              </a>
             </div>
+          </div>
+          <div>
+            <h4 class="text-accent-gold font-bold mb-4">MENU</h4>
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li><a href="#about" class="hover:text-white transition-colors">強み・特徴</a></li>
+              <li><a href="#profile" class="hover:text-white transition-colors">プロフィール</a></li>
+              <li><a href="#works" class="hover:text-white transition-colors">制作実績</a></li>
+              <li><a href="#service" class="hover:text-white transition-colors">料金・サービス</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-accent-gold font-bold mb-4">AREA</h4>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              オンライン対応のため全国どこでもOK。
+              <br />
+              お気軽にご相談ください。
+            </p>
+          </div>
         </div>
+        <div class="border-t border-gray-600 pt-8 text-center text-xs text-gray-400">
+          <p>&copy; 2025 KADOMARU Codeworks. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
