@@ -439,3 +439,113 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+// ==============================================
+// Contact Form - Confirm & Submit
+// ==============================================
+const contactForm = document.getElementById('contact-form');
+const confirmModal = document.getElementById('confirm-modal');
+const successModal = document.getElementById('success-modal');
+const confirmContent = document.getElementById('confirm-content');
+const confirmSubmitBtn = document.getElementById('confirm-submit-btn');
+
+// フォーム送信時に確認モーダルを表示
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // 必須項目のチェック
+        const name = contactForm.querySelector('[name="name"]').value;
+        const email = contactForm.querySelector('[name="email"]').value;
+        const subject = contactForm.querySelector('[name="subject"]').value;
+        const message = contactForm.querySelector('[name="message"]').value;
+        const privacy = contactForm.querySelector('#privacy').checked;
+        
+        if (!name || !email || !subject || !message) {
+            alert('必須項目を入力してください。');
+            return;
+        }
+        
+        if (!privacy) {
+            alert('プライバシーポリシーへの同意が必要です。');
+            return;
+        }
+        
+        // 確認内容を生成
+        const formData = new FormData(contactForm);
+        let contentHTML = '';
+        
+        const labels = {
+            name: 'お名前',
+            email: 'メールアドレス',
+            subject: '件名',
+            budget: '予算の目安',
+            deadline: 'ご希望納期',
+            message: '相談内容',
+            reference_urls: '参考URL',
+            contact_method: '連絡手段'
+        };
+        
+        for (const [key, value] of formData.entries()) {
+            if (value && labels[key]) {
+                const displayValue = value.length > 100 ? value.substring(0, 100) + '...' : value;
+                contentHTML += `
+                    <div class="border-b border-gray-200 pb-2">
+                        <p class="text-text-gray text-xs mb-1">${labels[key]}</p>
+                        <p class="text-text-dark font-medium whitespace-pre-wrap">${displayValue}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        confirmContent.innerHTML = contentHTML;
+        confirmModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+// 確認モーダルを閉じる
+function closeConfirmModal() {
+    confirmModal.classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+// フォームを実際に送信
+async function submitForm() {
+    const btn = confirmSubmitBtn;
+    const originalText = btn.innerHTML;
+    
+    // ボタンをローディング状態に
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 送信中...';
+    btn.disabled = true;
+    
+    try {
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // 成功
+            closeConfirmModal();
+            successModal.classList.remove('hidden');
+            contactForm.reset();
+        } else {
+            throw new Error('送信に失敗しました');
+        }
+    } catch (error) {
+        alert('送信に失敗しました。もう一度お試しください。');
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+}
+
+// 完了モーダルを閉じる
+function closeSuccessModal() {
+    successModal.classList.add('hidden');
+    document.body.style.overflow = '';
+}
