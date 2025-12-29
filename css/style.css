@@ -123,6 +123,15 @@ html {
     50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
 }
 
+/* スプラッシュロゴ画像 */
+.splash-logo-img {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+    position: relative;
+    z-index: 1;
+}
+
 /* タイプライター */
 .splash-typewriter-wrap {
     display: flex;
