@@ -33,10 +33,10 @@ const runSplashSequence = () => {
         splashLogo.style.display = 'none';
         splashBg.style.display = 'none';
         splashCurtain.classList.add('animate-curtain-fade');
+        mainHeader.classList.remove('opacity-0');
     }, 4500);
     setTimeout(() => {
         splashScreen.remove();
-        mainHeader.classList.remove('opacity-0');
     }, 4900);
 };
 
