@@ -2,6 +2,9 @@
  * KADOMARU Codeworks - Main JavaScript
  */
 
+// JSが有効であることを示すクラスを追加
+document.documentElement.classList.add("js-enabled");
+
 // ==============================================
 // Splash Screen Animation
 // ==============================================
@@ -601,19 +604,20 @@ if (workflowSection) {
             }, index * 300);
           });
 
-          // カードのアニメーション（線のアニメーション後）
-          setTimeout(() => {
-            workflowCards.forEach((card) => {
+          // カードのアニメーション（順番に表示）
+          workflowCards.forEach((card, index) => {
+            setTimeout(() => {
               card.classList.add("revealed");
-            });
-          }, 600);
+            }, 400 + index * 100);
+          });
 
           workflowObserver.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.2,
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
     }
   );
 
