@@ -82,7 +82,7 @@ const worksData = {
     description:
       "医療ソーシャルワーカーとして働く中で感じた「転院調整業務の非効率さ」を解決するために開発中のWebアプリケーション。電話・FAX中心のアナログな業務フローをデジタル化し、患者さんの転院先マッチングを効率化します。",
     role: "企画・設計・開発（フルスタック）",
-    techs: ["React", "Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    techs: ["React", "Vite", "TypeScript", "Supabase", "Tailwind CSS"],
     points: [
       "現場の課題を起点にした要件定義",
       "MSW業務フローを熟知した上でのUI設計",
@@ -92,23 +92,22 @@ const worksData = {
     status: "開発中",
     url: null,
   },
-  clinic: {
-    category: "Corporate",
-    title: "クリニックサイト制作",
-    image:
-      "https://images.unsplash.com/photo-1516574187841-693083f69382?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+  onomichi: {
+    category: "LP",
+    title: "尾道観光キャンペーンLP「SnapOnomichi」",
+    image: "img/onomichi.png",
     description:
-      "内科・小児科クリニックのコーポレートサイト。高齢の患者さんにも見やすいデザインと、スタッフが更新しやすいWordPress構成を両立しました。",
-    role: "デザイン・コーディング・WordPress構築",
-    techs: ["WordPress", "PHP", "SCSS", "JavaScript", "Figma"],
+      "デイトラのWeb制作コース課題として制作した観光キャンペーンランディングページ。「写真映えスポットをシェアしよう」というコンセプトのもと、スクロールアニメーションを駆使した没入感のあるビジュアルデザインに仕上げました。",
+    role: "デザイン・コーディング（デイトラ課題）",
+    techs: ["HTML", "CSS", "JavaScript", "FLOCSS", "BEM"],
     points: [
-      "文字サイズ・コントラストに配慮したアクセシビリティ設計",
-      "診療時間・お知らせをスタッフが簡単に更新可能",
-      "Googleマップ・予約システム連携",
-      "スマートフォン最適化でどの世代も使いやすく",
+      "観光地の雰囲気を伝えるファーストビューのビジュアル設計",
+      "スクロールに連動したCSSアニメーションの実装",
+      "FLOCSSによるCSS設計・BEM記法の徹底",
+      "スマートフォンファーストのレスポンシブ対応",
     ],
     status: "公開中",
-    url: "#",
+    url: "https://onomichi-k-codeworks.com/",
   },
   blog: {
     category: "Media",
@@ -116,53 +115,17 @@ const worksData = {
     image:
       "https://images.unsplash.com/photo-1499750310159-5410055491be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     description:
-      "医療・福祉の現場で働く方に向けた情報発信メディア。SEOを意識した記事設計で、月間10万PVを達成しました。",
+      "医療・福祉の現場で働く方に向けた情報発信メディア「かどふく」。SEOを意識した記事設計で月間10万PVを達成し、アフィリエイト収益化も実現。副業収入の柱のひとつに成長しました。",
     role: "企画・執筆・サイト運営・SEO対策",
     techs: ["WordPress", "Google Analytics", "Search Console", "Canva"],
     points: [
-      "検索意図を捉えたキーワード選定",
-      "読みやすさを重視した記事構成",
-      "内部リンク設計によるサイト回遊率向上",
+      "検索意図を捉えたキーワード選定で月間10万PV達成",
+      "読みやすさを重視した記事構成・内部リンク設計",
       "アフィリエイト収益化の仕組み構築",
+      "医療・福祉分野の専門知識を活かしたコンテンツ設計",
     ],
     status: "運営中",
-    url: "#",
-  },
-  recruit: {
-    category: "LP",
-    title: "訪問看護ステーション採用LP",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-217358c7e618?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    description:
-      "看護師・理学療法士の採用を目的としたランディングページ。「働く人の声」を中心に構成し、応募率向上に貢献しました。",
-    role: "デザイン・コーディング・コピーライティング",
-    techs: ["HTML", "SCSS", "JavaScript", "FLOCSS", "BEM"],
-    points: [
-      "スタッフインタビューを軸にした信頼感のある構成",
-      "応募フォームまでの導線を最適化",
-      "スマートフォンファーストのレスポンシブ設計",
-      "採用担当者が更新しやすいシンプルな構造",
-    ],
-    status: "公開中",
-    url: "#",
-  },
-  nursing: {
-    category: "Corporate",
-    title: "特別養護老人ホーム サイト制作",
-    image:
-      "https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    description:
-      "特別養護老人ホームの施設紹介サイト。ご家族が安心して施設を選べるよう、施設の雰囲気や職員の想いが伝わるデザインを心がけました。",
-    role: "デザイン・コーディング・写真選定",
-    techs: ["WordPress", "PHP", "CSS", "JavaScript"],
-    points: [
-      "温かみのある配色とやさしい印象のデザイン",
-      "施設見学予約フォームの設置",
-      "アクセス情報・周辺環境の分かりやすい表示",
-      "ご家族目線での情報設計",
-    ],
-    status: "公開中",
-    url: "#",
+    url: "https://kadofuku.com",
   },
   genel: {
     category: "Corporate",
@@ -187,14 +150,14 @@ const worksData = {
     image:
       "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     description:
-      "既存のチャットボットシステムを新プラットフォームへ移行するプロジェクト。複数サイトへの展開と、デザインの統一を担当しました。",
-    role: "システム移行・デザイン調整・動作検証",
+      "GeneL inc.との受託案件として取り組んだチャットボット実装プロジェクト。Tag+システムを活用し、複数クライアントサイトへのチャットボット設置・デザイン調整・動作検証を担当しました。",
+    role: "Tag+実装・デザイン調整・動作検証（GeneL inc. 受託）",
     techs: ["JavaScript", "CSS", "Tag+", "チャットボットAPI"],
     points: [
-      "既存データを損なわない安全な移行手順の策定",
-      "各サイトのデザインに合わせたUI調整",
-      "複数サイト横断での一括テスト実施",
-      "クライアントへの操作マニュアル作成",
+      "Tag+システムを活用したチャットボットの複数サイト展開",
+      "各サイトのブランドに合わせたUIカスタマイズ",
+      "本番・ステージング環境での動作検証",
+      "クライアント向け操作マニュアルの作成",
     ],
     status: "完了",
     url: null,
