@@ -16,7 +16,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          server-dir: /home/sv10454/kadomaru-codeworks.com/public_html/
+          server-dir: /home/xs496315/kadomaru-codeworks.com/public_html/
           exclude: |
             **/.git*
             **/.git*/**
