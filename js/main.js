@@ -77,20 +77,19 @@ const worksData = {
   bedroute: {
     category: "Web App",
     title: "退院支援管理ツール「Bedroute」",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "img/bedroute.png",
     description:
-      "医療ソーシャルワーカーとして働く中で感じた「転院調整業務の非効率さ」を解決するために開発中のWebアプリケーション。電話・FAX中心のアナログな業務フローをデジタル化し、患者さんの転院先マッチングを効率化します。",
+      "医療ソーシャルワーカーとして働く中で感じた「転院調整業務の非効率さ」を解決するために開発中のWebアプリケーション。電話・FAX中心のアナログな業務フローをデジタル化し、地域の空床情報をリアルタイムで共有します。",
     role: "企画・設計・開発（フルスタック）",
     techs: ["React", "Vite", "TypeScript", "Supabase", "Tailwind CSS"],
     points: [
-      "現場の課題を起点にした要件定義",
-      "MSW業務フローを熟知した上でのUI設計",
-      "患者情報のセキュリティを考慮した設計",
-      "レスポンシブ対応でスマホからも操作可能",
+      "現場の課題を起点にした要件定義・UI設計",
+      "リアルタイム病床マップ・空床カレンダー実装",
+      "医療処置・ADL・費用などの受け入れ条件の見える化",
+      "患者情報のセキュリティを考慮したSupabase設計",
     ],
-    status: "開発中",
-    url: null,
+    status: "β版公開中",
+    url: "https://bedroute.jp/mypage",
   },
   onomichi: {
     category: "LP",
