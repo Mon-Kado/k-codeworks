@@ -164,6 +164,23 @@ const worksData = {
     status: "公開中",
     url: "#",
   },
+  genel: {
+    category: "Corporate",
+    title: "GeneL inc. コーポレートサイト",
+    image: "img/genel-top.png",
+    description:
+      "AIと人の力で未来のサービスを共に創るIT企業「GeneL inc.」のコーポレートサイト。ワイヤーフレーム策定から参加し、デザイン段階の議論を経て、recruitページのコーディングを担当しました。",
+    role: "ワイヤーフレーム・デザイン参加・recruitページコーディング（チーム開発）",
+    techs: ["HTML", "CSS", "JavaScript", "Figma"],
+    points: [
+      "企画段階からワイヤーフレームを作成し、デザインの方向性に関与",
+      "採用ページでブランドイメージを損なわないレイアウト・アニメーション実装",
+      "チーム開発フローに沿ったコードレビュー・品質管理",
+      "スクロールアニメーションを用いた没入感のあるFV実装",
+    ],
+    status: "公開中",
+    url: "https://www.gene-l.co.jp/recruit",
+  },
   chatbot: {
     category: "Web App",
     title: "チャットボット移行支援",
