@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           protocol: ftp
           port: 21
-          server-dir: /home/xs496315/k-codeworks.com/public_html/
+          server-dir: /home/xs496315/public_html/
           exclude: |
             **/.git*
             **/.git*/**
