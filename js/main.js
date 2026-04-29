@@ -13,9 +13,32 @@ const splashCurtain = document.getElementById("splash-curtain");
 const splashScreen = document.getElementById("splash-screen");
 const splashBg = document.getElementById("splash-bg");
 const mainHeader = document.getElementById("header");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const escapeHTML = (value) =>
+  String(value).replace(/[&<>"']/g, (char) => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return entities[char];
+  });
 
 const runSplashSequence = () => {
   const progressBar = document.getElementById("splash-progress-bar");
+
+  if (!splashLogo || !splashCurtain || !splashScreen || !splashBg || !mainHeader || !progressBar) {
+    return;
+  }
+
+  if (prefersReducedMotion) {
+    splashScreen.remove();
+    mainHeader.classList.remove("opacity-0");
+    return;
+  }
 
   // ロゴアニメーション
   splashLogo.classList.add("animate-logo-in");
@@ -25,24 +48,24 @@ const runSplashSequence = () => {
     splashLogo.classList.add("animate-logo-pulse");
   }, 300);
 
-  // ロゴを1秒見せてからプログレスバー開始（1.8秒で完了）
+  // ロゴを短く見せてからプログレスバー開始
   setTimeout(() => {
     progressBar.style.width = "100%";
-  }, 1500);
+  }, 700);
 
-  // プログレスバー完了後にカーテンスライド（カーテンが完全に覆うまでロゴ表示）
+  // プログレスバー完了後にカーテンスライド
   setTimeout(() => {
     splashCurtain.classList.add("animate-curtain-slide");
-  }, 3500);
+  }, 1700);
   setTimeout(() => {
     splashLogo.style.display = "none";
     splashBg.style.display = "none";
     splashCurtain.classList.add("animate-curtain-fade");
     mainHeader.classList.remove("opacity-0");
-  }, 4500);
+  }, 2300);
   setTimeout(() => {
     splashScreen.remove();
-  }, 4900);
+  }, 2700);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -78,15 +101,14 @@ const worksData = {
     category: "Web App",
     title: "退院支援管理ツール「Bedroute」",
     image: "img/bedroute.png",
-    description:
-      "医療ソーシャルワーカーとして働く中で感じた「転院調整業務の非効率さ」を解決するために開発中のWebアプリケーション。電話・FAX中心のアナログな業務フローをデジタル化し、地域の空床情報をリアルタイムで共有します。",
+    description: "転院調整を見える化するWebアプリ。現場の手間を減らすため、空床情報と受け入れ条件を整理しました。",
     role: "企画・設計・開発（フルスタック）",
     techs: ["React", "Vite", "TypeScript", "Supabase", "Tailwind CSS"],
     points: [
-      "現場の課題を起点にした要件定義・UI設計",
-      "リアルタイム病床マップ・空床カレンダー実装",
-      "医療処置・ADL・費用などの受け入れ条件の見える化",
-      "患者情報のセキュリティを考慮したSupabase設計",
+      "現場課題から要件を整理",
+      "空床マップとカレンダーを実装",
+      "受け入れ条件を見える化",
+      "権限とデータ管理を設計",
     ],
     status: "β版公開中",
     url: "https://bedroute.jp/mypage",
@@ -95,15 +117,14 @@ const worksData = {
     category: "LP",
     title: "尾道観光キャンペーンLP「SnapOnomichi」",
     image: "img/onomichi.png",
-    description:
-      "デイトラのWeb制作コース課題として制作した観光キャンペーンランディングページ。「写真映えスポットをシェアしよう」というコンセプトのもと、スクロールアニメーションを駆使した没入感のあるビジュアルデザインに仕上げました。",
+    description: "尾道の空気感を伝える観光LP。写真、余白、動きでスクロールしたくなる構成にしました。",
     role: "デザイン・コーディング（デイトラ課題）",
     techs: ["HTML", "CSS", "JavaScript", "FLOCSS", "BEM"],
     points: [
-      "観光地の雰囲気を伝えるファーストビューのビジュアル設計",
-      "スクロールに連動したCSSアニメーションの実装",
-      "FLOCSSによるCSS設計・BEM記法の徹底",
-      "スマートフォンファーストのレスポンシブ対応",
+      "写真が映えるFV設計",
+      "スクロール演出を実装",
+      "FLOCSS / BEMでCSS管理",
+      "スマホ前提で調整",
     ],
     status: "公開中",
     url: "https://onomichi-k-codeworks.com/",
@@ -111,17 +132,15 @@ const worksData = {
   blog: {
     category: "Media",
     title: "個人運営ブログメディア",
-    image:
-      "https://images.unsplash.com/photo-1499750310159-5410055491be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    description:
-      "医療・福祉の現場で働く方に向けた情報発信メディア「かどふく」。SEOを意識した記事設計で月間10万PVを達成し、アフィリエイト収益化も実現。副業収入の柱のひとつに成長しました。",
+    image: "img/kadomaru-codeworks_logo_main.png",
+    description: "医療・福祉向けの個人メディア。検索意図に合わせて、記事構成と内部導線を整理しています。",
     role: "企画・執筆・サイト運営・SEO対策",
     techs: ["WordPress", "Google Analytics", "Search Console", "Canva"],
     points: [
-      "検索意図を捉えたキーワード選定で月間10万PV達成",
-      "読みやすさを重視した記事構成・内部リンク設計",
-      "アフィリエイト収益化の仕組み構築",
-      "医療・福祉分野の専門知識を活かしたコンテンツ設計",
+      "検索意図から構成を作成",
+      "読みやすい導線を設計",
+      "内部リンクを整理",
+      "専門知識を記事に反映",
     ],
     status: "運営中",
     url: "https://kadofuku.com",
@@ -130,15 +149,14 @@ const worksData = {
     category: "Corporate",
     title: "GeneL inc. コーポレートサイト",
     image: "img/genel-top.png",
-    description:
-      "AIと人の力で未来のサービスを共に創るIT企業「GeneL inc.」のコーポレートサイト。ワイヤーフレーム策定から参加し、デザイン段階の議論を経て、recruitページのコーディングを担当しました。",
+    description: "IT企業のコーポレートサイト。構成検討から参加し、採用ページのコーディングを担当しました。",
     role: "ワイヤーフレーム・デザイン参加・recruitページコーディング（チーム開発）",
     techs: ["HTML", "CSS", "JavaScript", "Figma"],
     points: [
-      "企画段階からワイヤーフレームを作成し、デザインの方向性に関与",
-      "採用ページでブランドイメージを損なわないレイアウト・アニメーション実装",
-      "チーム開発フローに沿ったコードレビュー・品質管理",
-      "スクロールアニメーションを用いた没入感のあるFV実装",
+      "ワイヤーフレームを作成",
+      "採用ページのUIを実装",
+      "チーム開発で品質管理",
+      "FVアニメーションを実装",
     ],
     status: "公開中",
     url: "https://www.gene-l.co.jp/recruit",
@@ -146,17 +164,15 @@ const worksData = {
   chatbot: {
     category: "Web App",
     title: "チャットボット移行支援",
-    image:
-      "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    description:
-      "GeneL inc.との受託案件として取り組んだチャットボット実装プロジェクト。Tag+システムを活用し、複数クライアントサイトへのチャットボット設置・デザイン調整・動作検証を担当しました。",
+    image: "img/genel-recruit.png",
+    description: "複数サイトへのチャットボット導入支援。設置、デザイン調整、動作検証を担当しました。",
     role: "Tag+実装・デザイン調整・動作検証（GeneL inc. 受託）",
     techs: ["JavaScript", "CSS", "Tag+", "チャットボットAPI"],
     points: [
-      "Tag+システムを活用したチャットボットの複数サイト展開",
-      "各サイトのブランドに合わせたUIカスタマイズ",
-      "本番・ステージング環境での動作検証",
-      "クライアント向け操作マニュアルの作成",
+      "複数サイトへ展開",
+      "ブランドに合わせてUI調整",
+      "本番・検証環境で確認",
+      "操作マニュアルを作成",
     ],
     status: "完了",
     url: null,
@@ -169,23 +185,24 @@ function openWorksModal(id) {
 
   const modal = document.getElementById("works-modal");
   const body = document.getElementById("works-modal-body");
+  const closeButton = modal.querySelector(".works-modal-close");
 
   body.innerHTML = `
-        <img src="${data.image}" alt="${data.title}" class="works-modal-image">
+        <img src="${escapeHTML(data.image)}" alt="${escapeHTML(data.title)}" class="works-modal-image">
         <div class="works-modal-info">
-            <span class="works-modal-category">${data.category}</span>
-            <h3 class="works-modal-title">${data.title}</h3>
-            <p class="works-modal-desc">${data.description}</p>
+            <span class="works-modal-category">${escapeHTML(data.category)}</span>
+            <h3 class="works-modal-title">${escapeHTML(data.title)}</h3>
+            <p class="works-modal-desc">${escapeHTML(data.description)}</p>
             
             <div class="works-modal-section">
                 <h4><i class="fa-solid fa-user"></i> 担当範囲</h4>
-                <p style="color: #475569; font-size: 14px;">${data.role}</p>
+                <p style="color: #475569; font-size: 14px;">${escapeHTML(data.role)}</p>
             </div>
             
             <div class="works-modal-section">
                 <h4><i class="fa-solid fa-code"></i> 使用技術</h4>
                 <div class="works-modal-tags">
-                    ${data.techs.map((tech) => `<span class="works-modal-tag">${tech}</span>`).join("")}
+                    ${data.techs.map((tech) => `<span class="works-modal-tag">${escapeHTML(tech)}</span>`).join("")}
                 </div>
             </div>
             
@@ -193,7 +210,7 @@ function openWorksModal(id) {
                 <h4><i class="fa-solid fa-lightbulb"></i> 工夫したポイント</h4>
                 <div class="works-modal-points">
                     <ul>
-                        ${data.points.map((point) => `<li>${point}</li>`).join("")}
+                        ${data.points.map((point) => `<li>${escapeHTML(point)}</li>`).join("")}
                     </ul>
                 </div>
             </div>
@@ -201,13 +218,13 @@ function openWorksModal(id) {
             ${
               data.url
                 ? `
-                <a href="${data.url}" target="_blank" rel="noopener" class="works-modal-link">
+                <a href="${escapeHTML(data.url)}" target="_blank" rel="noopener" class="works-modal-link">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i> サイトを見る
                 </a>
             `
                 : `
                 <span style="display: inline-block; background: #f1f5f9; color: #64748b; padding: 12px 24px; border-radius: 8px; font-size: 14px;">
-                    <i class="fa-solid fa-clock"></i> ${data.status}
+                    <i class="fa-solid fa-clock"></i> ${escapeHTML(data.status)}
                 </span>
             `
             }
@@ -215,12 +232,15 @@ function openWorksModal(id) {
     `;
 
   modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  closeButton?.focus();
 }
 
 function closeWorksModal() {
   const modal = document.getElementById("works-modal");
   modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
 
@@ -260,27 +280,31 @@ document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
-mobileMenuBtn.addEventListener("click", () => {
-  mobileMenuBtn.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-});
+const setMobileMenuState = (isOpen) => {
+  mobileMenuBtn.classList.toggle("active", isOpen);
+  mobileMenu.classList.toggle("active", isOpen);
+  document.body.classList.toggle("menu-open", isOpen);
+  mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+};
 
-// メニュー内リンククリックで閉じる
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenuBtn.classList.remove("active");
-    mobileMenu.classList.remove("active");
-    document.body.classList.remove("menu-open");
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.setAttribute("aria-expanded", "false");
+  mobileMenuBtn.addEventListener("click", () => {
+    setMobileMenuState(!mobileMenu.classList.contains("active"));
   });
-});
+
+  // メニュー内リンククリックで閉じる
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      setMobileMenuState(false);
+    });
+  });
+}
 
 // ESCキーでメニューを閉じる
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
-    mobileMenuBtn.classList.remove("active");
-    mobileMenu.classList.remove("active");
-    document.body.classList.remove("menu-open");
+  if (e.key === "Escape" && mobileMenu?.classList.contains("active")) {
+    setMobileMenuState(false);
   }
 });
 
@@ -438,7 +462,7 @@ document.body.appendChild(progressBar);
 window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = (scrollTop / docHeight) * 100;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   progressBar.style.width = progress + "%";
 });
 
@@ -462,6 +486,46 @@ const confirmModal = document.getElementById("confirm-modal");
 const successModal = document.getElementById("success-modal");
 const confirmContent = document.getElementById("confirm-content");
 const confirmSubmitBtn = document.getElementById("confirm-submit-btn");
+const fileInput = document.getElementById("file-input");
+const fileFeedback = document.getElementById("file-feedback");
+
+if (fileInput && fileFeedback) {
+  const updateFileFeedback = () => {
+    const files = Array.from(fileInput.files);
+    fileFeedback.textContent = files.length
+      ? `${files.length}件のファイルを選択中：${files.map((file) => file.name).join("、")}`
+      : "";
+  };
+
+  fileInput.addEventListener("change", () => {
+    updateFileFeedback();
+  });
+
+  const fileDrop = fileInput.closest(".file-drop");
+
+  fileDrop?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      fileInput.click();
+    }
+  });
+
+  fileDrop?.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    fileDrop.classList.add("is-dragging");
+  });
+
+  fileDrop?.addEventListener("dragleave", () => {
+    fileDrop.classList.remove("is-dragging");
+  });
+
+  fileDrop?.addEventListener("drop", (e) => {
+    e.preventDefault();
+    fileDrop.classList.remove("is-dragging");
+    fileInput.files = e.dataTransfer.files;
+    updateFileFeedback();
+  });
+}
 
 // フォーム送信時に確認モーダルを表示
 if (contactForm) {
@@ -502,11 +566,11 @@ if (contactForm) {
 
     for (const [key, value] of formData.entries()) {
       if (value && labels[key]) {
-        const displayValue = value.length > 100 ? value.substring(0, 100) + "..." : value;
+        const displayValue = String(value).length > 100 ? String(value).substring(0, 100) + "..." : String(value);
         contentHTML += `
                     <div class="border-b border-gray-200 pb-2">
-                        <p class="text-text-gray text-xs mb-1">${labels[key]}</p>
-                        <p class="text-text-dark font-medium whitespace-pre-wrap">${displayValue}</p>
+                        <p class="text-text-gray text-xs mb-1">${escapeHTML(labels[key])}</p>
+                        <p class="text-text-dark font-medium whitespace-pre-wrap">${escapeHTML(displayValue)}</p>
                     </div>
                 `;
       }
@@ -548,6 +612,9 @@ async function submitForm() {
       closeConfirmModal();
       successModal.classList.remove("hidden");
       contactForm.reset();
+      if (fileFeedback) fileFeedback.textContent = "";
+      btn.innerHTML = originalText;
+      btn.disabled = false;
     } else {
       throw new Error("送信に失敗しました");
     }

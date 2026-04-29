@@ -7,6 +7,8 @@
     <meta
       name="description"
       content="現役医療ソーシャルワーカー(MSW)による、現場理解に基づいたWeb制作。クリニック・介護施設など医療・福祉分野に特化したサイト制作を行っています。" />
+    <meta name="theme-color" content="#0A3A78" />
+    <link rel="canonical" href="https://kadomaru-codeworks.com/" />
 
     <!-- OGP Settings -->
     <meta property="og:title" content="KADOMARU Codeworks | 医療・福祉専門のWeb制作" />
@@ -17,18 +19,18 @@
       content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" />
     <meta
       property="og:description"
-      content="現役MSWエンジニアが、貴院の「強み」を正しく翻訳します。医療広告ガイドライン準拠。月3社限定。" />
+      content="現役MSWエンジニアが、医療・福祉の強みを短く伝わる形へ整えます。" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="apple-touch-icon" href="img/favicon.png" />
 
-    <!-- Google Fonts: Zen Maru Gothic -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
       rel="stylesheet" />
 
     <!-- Font Awesome -->
@@ -82,7 +84,7 @@
           </div>
 
           <!-- ナビゲーション -->
-          <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+          <nav class="hidden md:flex space-x-5 lg:space-x-7 items-center">
             <a href="#about" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
               強み・特徴
             </a>
@@ -92,15 +94,27 @@
             <a href="#works" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
               制作実績
             </a>
+            <a href="#workflow" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
+              制作の流れ
+            </a>
             <a href="#service" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
               料金
             </a>
-            <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm shadow-md">無料相談・お見積り</a>
+            <a href="#contact" class="btn-primary px-6 py-2.5 rounded-full text-sm shadow-md">
+              無料相談・お見積り
+              <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+            </a>
           </nav>
 
           <!-- ハンバーガー -->
           <div class="md:hidden flex items-center">
-            <button id="mobile-menu-btn" class="mobile-menu-trigger" aria-label="メニューを開く">
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              class="mobile-menu-trigger"
+              aria-label="メニューを開く"
+              aria-controls="mobile-menu"
+              aria-expanded="false">
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
@@ -165,7 +179,10 @@
 
     <!-- ヒーローエリア -->
     <section
-      class="pt-32 pb-20 md:pt-40 md:pb-28 bg-hero-pattern bg-cover bg-center relative min-h-screen flex items-center overflow-hidden">
+      id="home"
+      class="hero-section pt-32 pb-20 md:pt-40 md:pb-28 bg-hero-pattern bg-cover bg-center relative min-h-screen flex items-center overflow-hidden">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-big-label" aria-hidden="true">KADOMARU</div>
       <!-- グラデーションメッシュ背景 -->
       <div class="gradient-mesh">
         <div class="gradient-blob gradient-blob-1"></div>
@@ -218,101 +235,83 @@
       </div>
 
       <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
-        <div class="flex flex-col-reverse md:flex-row items-center gap-10">
-          <div class="w-full md:w-3/5">
+        <div class="hero-main-grid flex flex-col md:flex-row items-center gap-10">
+          <div class="hero-copy w-full md:w-1/2">
             <span
-              class="inline-block py-1 px-3 rounded-full bg-white text-navy-main text-xs md:text-sm font-bold mb-6 border border-navy-main/30 shadow-sm hero-sub-fade"
+              class="hero-kicker inline-block py-1 px-3 rounded-full bg-white text-navy-main text-xs md:text-sm font-bold mb-6 border border-navy-main/30 shadow-sm hero-sub-fade"
               style="animation-delay: 0.1s">
               <i class="fa-solid fa-user-doctor mr-1"></i>
-              MSW × Web Creator
+              Medical Web Design
             </span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-text-dark mb-6 hero-text-reveal">
-              <span>現場がわかる。</span>
-              <br />
-              <span class="text-navy-main relative inline-block">
-                だから、
-                <span class="text-accent-gold">届く。</span>
-                <svg
-                  class="absolute w-full h-3 -bottom-1 left-0 text-amber-200 opacity-60 -z-10"
-                  viewBox="0 0 100 10"
-                  preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
-                </svg>
+            <h1 class="hero-display-copy hero-text-reveal">
+              <span class="hero-title-line">
+                <span class="hero-word hero-word-primary">CARE</span>
+                <span class="hero-word hero-word-accent">WEB</span>
               </span>
+              <span class="hero-ja-line">医療福祉に、伝わる余白を。</span>
             </h1>
-            <p class="text-text-gray text-base md:text-lg mb-2 hero-sub-fade">医療・福祉専門のWeb制作</p>
-            <p class="text-sm md:text-base mb-8 hero-sub-fade font-medium" style="animation-delay: 0.2s">
-              <span class="inline-flex items-center gap-2 bg-navy-dark/10 text-navy-dark px-4 py-1.5 rounded-full">
-                <i class="fa-solid fa-gem text-accent-gold"></i>
-                月
-                <span class="text-accent-gold font-bold text-lg">3</span>
-                社限定・丁寧対応
-              </span>
+            <p class="hero-lead hero-sub-fade" style="animation-delay: 0.2s">
+              医療・福祉の現場理解を強みに、<br class="hidden sm:block" />
+              伝わるWebサイト・サービスを制作します。
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 hero-cta-slide">
+            <div class="hero-actions flex flex-col sm:flex-row gap-4 hero-cta-slide mt-8">
               <a
                 href="#contact"
                 class="btn-primary btn-shine px-10 py-4 rounded-full shadow-xl text-lg w-full sm:w-auto text-center">
-                クリニック・施設のHP相談
+                <i class="fa-regular fa-envelope mr-2"></i>
+                無料で相談する
                 <i class="fa-solid fa-chevron-right ml-2 text-sm text-accent-gold"></i>
               </a>
               <a
-                href="#profile"
-                class="flex items-center justify-center text-navy-main font-bold hover:underline py-4 px-6 w-full sm:w-auto">
-                詳しく見る
+                href="#works"
+                class="btn-secondary flex items-center justify-center font-bold py-4 px-6 rounded-full w-full sm:w-auto">
+                <i class="fa-regular fa-file-lines mr-2"></i>
+                制作実績を見る
+                <i class="fa-solid fa-chevron-right ml-2 text-sm"></i>
               </a>
             </div>
+            <p class="hero-assurance hero-sub-fade" style="animation-delay: 0.35s">
+              <i class="fa-solid fa-shield-halved"></i>
+              ご相談・お見積りは無料です。まずはお気軽にご連絡ください。
+            </p>
           </div>
-          <div class="w-full md:w-2/5 flex justify-center">
+          <div class="hero-visual-wrap w-full md:w-1/2 flex justify-center">
             <div class="hero-visual">
-              <!-- 回転するテキストリング -->
-              <svg class="hero-rotating-text" viewBox="0 0 200 200">
-                <defs>
-                  <path id="textCircle" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
-                </defs>
-                <text class="hero-circle-text">
-                  <textPath href="#textCircle">MEDICAL × WEB • DESIGN × CODE • MSW × CREATOR •</textPath>
-                </text>
-              </svg>
-
-              <!-- グラデーションリング -->
-              <div class="hero-gradient-ring"></div>
-              <div class="hero-gradient-ring hero-gradient-ring-2"></div>
-
-              <!-- 軌道上のドット -->
-              <div class="hero-orbit">
-                <div class="hero-orbit-dot"></div>
-              </div>
-              <div class="hero-orbit hero-orbit-2">
-                <div class="hero-orbit-dot"></div>
-              </div>
-
-              <!-- 中央：写真スライドショー -->
-              <div class="hero-photo-circle">
-                <div class="hero-photo-slider">
-                  <div class="hero-photo-slide active">
-                    <img
-                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                      alt="Medical" />
+              <div class="hero-showcase" aria-label="制作実績のプレビュー">
+                <div class="hero-profile-slice">
+                  <img src="img/profile-msw-crop.png" alt="顔を写さない医療現場のプロフィール写真" />
+                </div>
+                <div class="hero-browser hero-browser-main">
+                  <div class="hero-browser-bar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>bedroute.jp</p>
                   </div>
-                  <div class="hero-photo-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                      alt="Web Design" />
-                  </div>
-                  <div class="hero-photo-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1576091160550-217358c7e618?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                      alt="Healthcare" />
-                  </div>
-                  <div class="hero-photo-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                      alt="Coding" />
+                  <img src="img/bedroute.png" alt="退院支援管理ツール Bedroute の画面" />
+                  <div class="hero-browser-caption">
+                    <span>Web App</span>
+                    <strong>Bedroute</strong>
                   </div>
                 </div>
-                <!-- オーバーレイ -->
-                <div class="hero-photo-overlay"></div>
+                <div class="hero-mini-card hero-mini-card-lp">
+                  <img src="img/onomichi.png" alt="尾道観光キャンペーンLPの画面" />
+                  <div>
+                    <span>LP</span>
+                    <strong>世界観設計</strong>
+                  </div>
+                </div>
+                <div class="hero-mini-card hero-mini-card-corp">
+                  <img src="img/genel-top.png" alt="GeneL inc. コーポレートサイトの画面" />
+                  <div>
+                    <span>Corporate</span>
+                    <strong>採用導線</strong>
+                  </div>
+                </div>
+                <div class="hero-result-card">
+                  <span>MSW視点</span>
+                  <strong>現場から設計。</strong>
+                </div>
               </div>
             </div>
           </div>
@@ -326,51 +325,86 @@
       </div>
     </section>
 
+    <!-- 判断材料 -->
+    <section class="proof-strip" aria-label="依頼前にわかること">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="proof-strip-grid">
+          <div class="proof-strip-head">
+            <span>OUR STRENGTH</span>
+            <h2>医療福祉のWeb制作</h2>
+            <p>現場理解から、導線と実装まで。</p>
+          </div>
+          <article class="proof-strip-item">
+            <span>01</span>
+            <div class="proof-strip-icon">
+              <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <h3>対象者を決める</h3>
+            <p>患者・家族・職員を整理</p>
+          </article>
+          <article class="proof-strip-item">
+            <span>02</span>
+            <div class="proof-strip-icon">
+              <i class="fa-solid fa-sitemap"></i>
+            </div>
+            <h3>情報を整える</h3>
+            <p>必要な順番に並べる</p>
+          </article>
+          <article class="proof-strip-item">
+            <span>03</span>
+            <div class="proof-strip-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>相談へつなぐ</h3>
+            <p>迷わない導線を作る</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- 強み・コンセプト -->
     <section id="about" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>STRENGTH</span>
-          <h2>選ばれる3つの理由</h2>
-          <p class="mt-4 text-text-gray text-sm">「作れる」だけではない、医療・福祉現場の課題解決力</p>
+          <h2>現場目線で整える</h2>
+          <p class="mt-4 text-text-gray text-sm">言葉、導線、運用まで。</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
-          <!-- Reason 1 -->
-          <div class="bg-pale-blue rounded-xl p-8 card-hover tilt-card">
-            <div
-              class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-            <h3 class="text-lg font-bold text-navy-dark mb-3">難しいことを、わかりやすく</h3>
-            <p class="text-sm text-text-gray leading-relaxed text-justify">
-              患者さんやご家族への説明を日々行う中で培った「伝える力」。専門用語を使わず、誰にでも伝わる言葉でサイトを構成します。
-            </p>
+        <div class="strength-editorial">
+          <div class="strength-copy">
+            <article>
+              <span>01</span>
+              <h3>専門用語を減らす</h3>
+              <p>患者さんやご家族に伝わる言葉へ。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>迷わない導線</h3>
+              <p>予約、問い合わせ、採用まで自然に。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>更新しやすい形</h3>
+              <p>公開後も運用しやすく。</p>
+            </article>
           </div>
+          <div class="strength-visual">
+            <img src="img/bedroute.png" alt="退院支援管理ツールの画面" />
+            <img src="img/onomichi.png" alt="LP制作実績の画面" />
+          </div>
+        </div>
 
-          <!-- Reason 2 -->
-          <div class="bg-pale-blue rounded-xl p-8 card-hover tilt-card">
-            <div
-              class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
-              <i class="fa-solid fa-universal-access"></i>
-            </div>
-            <h3 class="text-lg font-bold text-navy-dark mb-3">高齢者にもやさしい設計</h3>
-            <p class="text-sm text-text-gray leading-relaxed text-justify">
-              高齢の患者さんと接する機会が多いからこそ、文字サイズ・コントラスト・導線のシンプルさなど「見やすさ・使いやすさ」を大切にしています。
-            </p>
+        <div class="about-bridge reveal-up">
+          <div>
+            <span class="about-bridge-label">Before Design</span>
+            <h3>絞って、見せる。</h3>
           </div>
-
-          <!-- Reason 3 -->
-          <div class="bg-pale-blue rounded-xl p-8 card-hover tilt-card">
-            <div
-              class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-navy-main text-2xl mb-6 shadow-sm">
-              <i class="fa-solid fa-clipboard-check"></i>
-            </div>
-            <h3 class="text-lg font-bold text-navy-dark mb-3">現場目線の機能提案</h3>
-            <p class="text-sm text-text-gray leading-relaxed text-justify">
-              病院・施設の業務フローを知っているから、「本当に必要な機能」が分かります。見た目だけでなく、運用しやすいサイト設計をご提案します。
-            </p>
-          </div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i>対象者別の導線</li>
+            <li><i class="fa-solid fa-check"></i>短く読みやすい原稿</li>
+            <li><i class="fa-solid fa-check"></i>医療広告表現に配慮</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -392,40 +426,31 @@
         <div class="flex flex-col lg:flex-row gap-12 items-center">
           <!-- 左：写真エリア -->
           <div class="w-full lg:w-2/5 reveal-left">
-            <div class="relative mx-auto" style="max-width: 320px">
-              <!-- 装飾リング -->
-              <div class="absolute inset-0 border-2 border-white/20 rounded-2xl transform rotate-6 scale-105"></div>
-              <div
-                class="absolute inset-0 border-2 border-accent-gold/30 rounded-2xl transform -rotate-3 scale-110"></div>
-
-              <!-- メイン写真 -->
-              <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="プロフィール写真"
-                  class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" />
-                <!-- オーバーレイグラデーション -->
-                <div class="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent"></div>
-                <!-- バッジ -->
-                <div class="absolute bottom-4 left-4 right-4">
-                  <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 bg-navy-main rounded-full flex items-center justify-center">
-                        <i class="fa-solid fa-stethoscope text-white"></i>
-                      </div>
-                      <div>
-                        <p class="text-xs text-text-gray">Medical Social Worker</p>
-                        <p class="font-bold text-navy-dark text-sm">× Web Creator</p>
-                      </div>
-                    </div>
-                  </div>
+            <div class="profile-identity-card">
+              <div class="profile-photo-mask">
+                <img src="img/profile-msw-crop.png" alt="顔を写さない医療現場のプロフィール写真" />
+                <span>MSW / Web Creator</span>
+              </div>
+              <div class="profile-identity-logo">
+                <img src="img/kadomaru-codeworks_logo_white.png" alt="KADOMARU Codeworks" />
+              </div>
+              <p class="profile-identity-label">Medical Social Worker / Web Creator</p>
+              <h3>MSW × Web</h3>
+              <div class="profile-identity-list">
+                <div>
+                  <span>01</span>
+                  <p>医療福祉の導線設計</p>
+                </div>
+                <div>
+                  <span>02</span>
+                  <p>短く伝わる原稿整理</p>
+                </div>
+                <div>
+                  <span>03</span>
+                  <p>更新・改善まで相談可</p>
                 </div>
               </div>
-
-              <!-- フローティングタグ -->
-              <div
-                class="absolute -top-4 -right-4 bg-accent-gold text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-bounce"
-                style="animation-duration: 3s">
+              <div class="profile-identity-badge">
                 <i class="fa-solid fa-heart-pulse mr-1"></i>
                 現役MSW
               </div>
@@ -450,9 +475,9 @@
                   <i class="fa-solid fa-hospital text-white text-sm"></i>
                 </div>
                 <p class="text-white/80 leading-relaxed">
-                  千葉県内の総合病院で
-                  <strong class="text-white">医療ソーシャルワーカー（MSW）として7年間</strong>
-                  勤務。主に整形外科・心臓外科の患者さんの転院調整支援を担当しています。
+                  総合病院で
+                  <strong class="text-white">医療ソーシャルワーカーとして勤務</strong>
+                  。現場の不安や迷いを、Web設計に活かしています。
                 </p>
               </div>
               <div class="flex gap-4 items-start">
@@ -460,7 +485,9 @@
                   <i class="fa-solid fa-laptop-code text-white text-sm"></i>
                 </div>
                 <p class="text-white/80 leading-relaxed">
-                  「現場で感じた課題を、自分の手で解決したい」という思いからWeb制作・システム開発を独学で習得。現在は本業の傍ら、医療・福祉分野に特化したWeb制作を行っています。
+                  LP、サイト、業務アプリまで。
+                  <strong class="text-white">見た目と使いやすさ</strong>
+                  を両立します。
                 </p>
               </div>
               <div class="flex gap-4 items-start">
@@ -468,9 +495,9 @@
                   <i class="fa-solid fa-handshake text-accent-gold text-sm"></i>
                 </div>
                 <p class="text-white/80 leading-relaxed">
-                  患者さんやご家族に寄り添ってきた経験を活かし、
-                  <strong class="text-white">「伝わる」「届く」</strong>
-                  サイト作りを大切にしています。
+                  依頼前の不安を減らし、
+                  <strong class="text-white">相談しやすい導線</strong>
+                  へ整えます。
                 </p>
               </div>
             </div>
@@ -482,8 +509,7 @@
                   <i class="fa-solid fa-briefcase-medical"></i>
                 </div>
                 <p class="text-3xl font-bold text-navy-main">
-                  <span class="count-up text-accent-gold" data-target="7">0</span>
-                  <span class="text-lg">年</span>
+                  <span class="count-up text-accent-gold" data-target="8">8</span><span class="text-lg">年目</span>
                 </p>
                 <p class="text-xs text-text-gray mt-1">MSW経験</p>
               </div>
@@ -491,31 +517,22 @@
                 <div class="profile-stat-icon">
                   <i class="fa-solid fa-folder-open"></i>
                 </div>
-                <p class="text-3xl font-bold text-navy-main">
-                  <span class="count-up text-accent-gold" data-target="30">0</span>
-                  <span class="text-lg">件+</span>
-                </p>
-                <p class="text-xs text-text-gray mt-1">制作実績</p>
+                <p class="profile-stat-word">実案件</p>
+                <p class="text-xs text-text-gray mt-1">LP・サイト制作</p>
               </div>
               <div class="profile-stat-card">
                 <div class="profile-stat-icon">
                   <i class="fa-solid fa-building"></i>
                 </div>
-                <p class="text-3xl font-bold text-navy-main">
-                  <span class="count-up text-accent-gold" data-target="20">0</span>
-                  <span class="text-lg">社+</span>
-                </p>
-                <p class="text-xs text-text-gray mt-1">支援企業</p>
+                <p class="profile-stat-word">β版</p>
+                <p class="text-xs text-text-gray mt-1">Bedroute公開中</p>
               </div>
               <div class="profile-stat-card">
                 <div class="profile-stat-icon">
                   <i class="fa-solid fa-chart-line"></i>
                 </div>
-                <p class="text-3xl font-bold text-navy-main">
-                  <span class="count-up text-accent-gold" data-target="10">0</span>
-                  <span class="text-lg">万</span>
-                </p>
-                <p class="text-xs text-text-gray mt-1">ブログPV</p>
+                <p class="profile-stat-word">運営中</p>
+                <p class="text-xs text-text-gray mt-1">個人メディア</p>
               </div>
             </div>
           </div>
@@ -529,6 +546,28 @@
         <div class="section-title reveal-up">
           <span>WORKS</span>
           <h2>制作・開発実績</h2>
+          <p class="mt-4 text-text-gray text-sm">見た目、導線、実装まで。</p>
+        </div>
+
+        <div class="works-case-lead reveal-up">
+          <div>
+            <span>Approach</span>
+            <h3>見た目と導線</h3>
+          </div>
+          <div class="works-case-flow">
+            <article>
+              <span>課題</span>
+              <p>強みが伝わりにくい。</p>
+            </article>
+            <article>
+              <span>設計</span>
+              <p>情報を絞り、順番を整える。</p>
+            </article>
+            <article>
+              <span>結果</span>
+              <p>相談まで迷わせない。</p>
+            </article>
+          </div>
         </div>
 
         <!-- カテゴリタブ -->
@@ -551,19 +590,22 @@
         </div>
 
         <!-- ギャラリーグリッド -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="works-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 works-bento-grid" id="works-grid">
           <!-- Bedroute (Web App) -->
-          <div class="works-item" data-category="webapp">
+          <div class="works-item works-featured" data-category="webapp">
             <button
               class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
               onclick="openWorksModal('bedroute')">
               <img
                 src="img/bedroute.png"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
                 alt="Bedroute" />
               <div class="works-overlay">
                 <span class="works-category">Web App</span>
                 <h3 class="works-title">退院支援管理ツール「Bedroute」</h3>
+                <p class="works-summary">転院調整を見える化</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
               <div class="absolute top-3 right-3 bg-teal-600 text-white text-xs px-2 py-1 rounded font-bold z-10">
@@ -580,10 +622,13 @@
               <img
                 src="img/onomichi.png"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
                 alt="SnapOnomichi" />
               <div class="works-overlay">
                 <span class="works-category">LP</span>
                 <h3 class="works-title">尾道観光キャンペーンLP</h3>
+                <p class="works-summary">世界観を伝えるLP</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
             </button>
@@ -595,12 +640,15 @@
               class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
               onclick="openWorksModal('blog')">
               <img
-                src="https://images.unsplash.com/photo-1499750310159-5410055491be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                src="img/kadomaru-codeworks_logo_main.png"
+                class="w-full h-full object-contain bg-white p-10 transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
                 alt="ブログメディア" />
               <div class="works-overlay">
                 <span class="works-category">Media</span>
-                <h3 class="works-title">個人運営メディア（10万PV）</h3>
+                <h3 class="works-title">個人運営メディア</h3>
+                <p class="works-summary">SEOメディア運営</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
             </button>
@@ -614,10 +662,13 @@
               <img
                 src="img/genel-top.png"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
                 alt="GeneL inc." />
               <div class="works-overlay">
                 <span class="works-category">Corporate</span>
                 <h3 class="works-title">GeneL inc. コーポレートサイト</h3>
+                <p class="works-summary">採用導線の実装</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
             </button>
@@ -629,12 +680,15 @@
               class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
               onclick="openWorksModal('chatbot')">
               <img
-                src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="img/genel-recruit.png"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
                 alt="チャットボット" />
               <div class="works-overlay">
                 <span class="works-category">Web App</span>
                 <h3 class="works-title">チャットボット移行支援</h3>
+                <p class="works-summary">導入・調整・検証</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
             </button>
@@ -644,9 +698,9 @@
     </section>
 
     <!-- Works モーダル -->
-    <div id="works-modal" class="works-modal-overlay">
+    <div id="works-modal" class="works-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
       <div class="works-modal-content">
-        <button class="works-modal-close" onclick="closeWorksModal()">
+        <button type="button" class="works-modal-close" onclick="closeWorksModal()" aria-label="実績詳細を閉じる">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="works-modal-body" id="works-modal-body">
@@ -663,17 +717,31 @@
           <h2>ブログ・お知らせ</h2>
         </div>
 
-        <!-- 準備中表示 -->
-        <div class="text-center py-16 fade-up">
-          <div class="w-20 h-20 bg-gray-bg rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fa-solid fa-pen-to-square text-3xl text-gray-400"></i>
+        <div class="blog-preview-wrap fade-up">
+          <div class="blog-preview-head">
+            <div class="w-16 h-16 bg-pale-blue rounded-2xl flex items-center justify-center">
+              <i class="fa-solid fa-pen-to-square text-2xl text-navy-main"></i>
+            </div>
+            <div>
+              <p class="blog-preview-label">Coming Soon</p>
+              <h3>制作メモを準備中。</h3>
+              <p>文章、導線、採用ページのこと。</p>
+            </div>
           </div>
-          <p class="text-text-gray text-lg mb-2">コンテンツ準備中</p>
-          <p class="text-text-gray text-sm">
-            医療・福祉Web制作に関する情報を発信予定です。
-            <br />
-            もう少々お待ちください。
-          </p>
+          <div class="blog-preview-grid">
+            <article class="blog-preview-card">
+              <span>Writing</span>
+              <h4>専門用語を短くする</h4>
+            </article>
+            <article class="blog-preview-card">
+              <span>Recruit</span>
+              <h4>職場の空気感を見せる</h4>
+            </article>
+            <article class="blog-preview-card">
+              <span>Operation</span>
+              <h4>更新しやすく作る</h4>
+            </article>
+          </div>
         </div>
 
         <!-- 記事一覧（準備中のためコメントアウト）
@@ -695,101 +763,57 @@
     </section>
 
     <!-- 技術スタック -->
-    <section id="skill" class="py-20 bg-pale-blue">
-      <div class="max-w-5xl mx-auto px-4">
+    <section id="skill" class="py-16 bg-pale-blue">
+      <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>SKILL</span>
-          <h2>対応技術</h2>
-          <p class="text-sm text-text-gray mt-4">Web制作からシステム連携まで幅広く対応</p>
+          <h2>使う技術だけ</h2>
+          <p class="text-sm text-text-gray mt-4">見た目と運用に必要なものに絞っています。</p>
         </div>
 
-        <!-- デザインツール -->
-        <div class="mb-12 reveal-up">
-          <h3 class="text-sm font-bold text-navy-main mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-palette"></i>
-            デザイン・UIツール
-          </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="skill-card">
-              <i class="fa-brands fa-figma text-3xl text-purple-500 mb-2"></i>
-              <h4 class="font-bold text-sm">Figma</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-solid fa-pen-nib text-3xl text-orange-500 mb-2"></i>
-              <h4 class="font-bold text-sm">Adobe Illustrator</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-solid fa-image text-3xl text-blue-500 mb-2"></i>
-              <h4 class="font-bold text-sm">Adobe Photoshop</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-solid fa-wand-magic-sparkles text-3xl text-pink-500 mb-2"></i>
-              <h4 class="font-bold text-sm">Canva</h4>
-              <p class="text-xs text-accent-gold mt-1">2023年〜</p>
-            </div>
+        <div class="skill-focus reveal-up">
+          <div class="skill-focus-head">
+            <span>Core Stack</span>
+            <h3>必要な技術だけ</h3>
+            <p>案件に合わせて、必要なものだけ選びます。</p>
           </div>
-        </div>
 
-        <!-- 開発技術 -->
-        <div class="mb-12 reveal-up">
-          <h3 class="text-sm font-bold text-navy-main mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-code"></i>
-            開発技術
-          </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="skill-card">
-              <i class="fa-brands fa-html5 text-3xl text-orange-600 mb-2"></i>
-              <h4 class="font-bold text-sm">HTML / CSS / SCSS</h4>
-              <p class="text-xs text-accent-gold mt-1">2023年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-brands fa-js text-3xl text-yellow-400 mb-2"></i>
-              <h4 class="font-bold text-sm">JavaScript</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-brands fa-react text-3xl text-cyan-400 mb-2"></i>
-              <h4 class="font-bold text-sm">React</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-brands fa-php text-3xl text-indigo-500 mb-2"></i>
-              <h4 class="font-bold text-sm">PHP</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
+          <div class="skill-focus-grid">
+            <article>
+              <i class="fa-brands fa-figma"></i>
+              <h4>Figma</h4>
+              <p>画面設計</p>
+            </article>
+            <article>
+              <i class="fa-brands fa-html5"></i>
+              <h4>HTML / CSS</h4>
+              <p>静的サイト</p>
+            </article>
+            <article>
+              <i class="fa-brands fa-js"></i>
+              <h4>JavaScript</h4>
+              <p>動き・フォーム</p>
+            </article>
+            <article>
+              <i class="fa-brands fa-react"></i>
+              <h4>React</h4>
+              <p>業務アプリ</p>
+            </article>
+            <article>
+              <i class="fa-brands fa-wordpress"></i>
+              <h4>WordPress</h4>
+              <p>更新型サイト</p>
+            </article>
+            <article>
+              <i class="fa-brands fa-github"></i>
+              <h4>GitHub</h4>
+              <p>公開・管理</p>
+            </article>
           </div>
-        </div>
 
-        <!-- CMS・プラットフォーム -->
-        <div class="reveal-up">
-          <h3 class="text-sm font-bold text-navy-main mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-globe"></i>
-            CMS・プラットフォーム
-          </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="skill-card">
-              <i class="fa-brands fa-wordpress text-3xl text-blue-600 mb-2"></i>
-              <h4 class="font-bold text-sm">WordPress</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-brands fa-shopify text-3xl text-green-600 mb-2"></i>
-              <h4 class="font-bold text-sm">Shopify</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-solid fa-server text-3xl text-gray-600 mb-2"></i>
-              <h4 class="font-bold text-sm">microCMS</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
-            <div class="skill-card">
-              <i class="fa-brands fa-github text-3xl text-gray-800 mb-2"></i>
-              <h4 class="font-bold text-sm">Git / GitHub</h4>
-              <p class="text-xs text-accent-gold mt-1">2024年〜</p>
-            </div>
+          <div class="skill-tools-line">
+            <span>必要に応じて</span>
+            <p>Photoshop / Illustrator / microCMS / Shopify / PHP</p>
           </div>
         </div>
       </div>
@@ -800,96 +824,71 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>WORKFLOW</span>
-          <h2>制作の流れ</h2>
-          <p class="text-sm text-text-gray mt-4">ヒアリングから公開後サポートまで一貫対応</p>
+          <h2>作る前に、決める</h2>
+          <p class="text-sm text-text-gray mt-4">誰に、何を、どの順番で伝えるか。</p>
         </div>
 
-        <!-- ワークフローグリッド -->
-        <div class="workflow-container">
-          <!-- 接続線（デスクトップのみ） -->
-          <div class="workflow-line workflow-line-1"></div>
-          <div class="workflow-line workflow-line-2"></div>
+        <div class="workflow-redesign">
+          <div class="workflow-message-card">
+            <span>Approach</span>
+            <h3>テンプレで作らない。まず、整理する。</h3>
+            <p>目的、対象者、導線を決めてから作る。</p>
+          </div>
 
-          <div class="workflow-grid">
-            <!-- Step 1 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">1</div>
-              <span class="workflow-label">Contact</span>
-              <h3 class="workflow-title">お問い合わせ</h3>
-              <p class="workflow-desc">フォームまたはメールでお気軽にご連絡ください</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">2</div>
-              <span class="workflow-label">Hearing</span>
-              <h3 class="workflow-title">ヒアリング</h3>
-              <p class="workflow-desc">課題・ご要望・ターゲットなどを詳しくお伺いします</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">3</div>
-              <span class="workflow-label">Proposal</span>
-              <h3 class="workflow-title">ご提案</h3>
-              <p class="workflow-desc">サイト構成・デザイン方針・お見積りをご提示</p>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">4</div>
-              <span class="workflow-label">Design</span>
-              <h3 class="workflow-title">デザイン</h3>
-              <p class="workflow-desc">ワイヤーフレーム→デザインカンプを作成</p>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">5</div>
-              <span class="workflow-label">Coding</span>
-              <h3 class="workflow-title">コーディング</h3>
-              <p class="workflow-desc">レスポンシブ対応で実装</p>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">6</div>
-              <span class="workflow-label">Test</span>
-              <h3 class="workflow-title">テスト・確認</h3>
-              <p class="workflow-desc">表示確認・修正対応</p>
-            </div>
-
-            <!-- Step 7 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">7</div>
-              <span class="workflow-label">Launch</span>
-              <h3 class="workflow-title">公開</h3>
-              <p class="workflow-desc">サーバー設定・ドメイン設定・公開作業</p>
-            </div>
-
-            <!-- Step 8 -->
-            <div class="workflow-card">
-              <div class="workflow-step-number">8</div>
-              <span class="workflow-label">Support</span>
-              <h3 class="workflow-title">公開後サポート</h3>
-              <p class="workflow-desc">更新方法のレクチャー・保守対応</p>
-            </div>
+          <div class="workflow-timeline">
+            <article class="workflow-phase">
+              <span class="workflow-phase-number">01</span>
+              <div>
+                <p class="workflow-phase-label">Fit Check</p>
+                <h3>無料相談</h3>
+                <p>目的・予算・課題を確認。</p>
+              </div>
+            </article>
+            <article class="workflow-phase">
+              <span class="workflow-phase-number">02</span>
+              <div>
+                <p class="workflow-phase-label">Direction</p>
+                <h3>構成整理</h3>
+                <p>強みと導線を固定。</p>
+              </div>
+            </article>
+            <article class="workflow-phase">
+              <span class="workflow-phase-number">03</span>
+              <div>
+                <p class="workflow-phase-label">Design</p>
+                <h3>デザイン</h3>
+                <p>原稿、余白、写真を整理。</p>
+              </div>
+            </article>
+            <article class="workflow-phase">
+              <span class="workflow-phase-number">04</span>
+              <div>
+                <p class="workflow-phase-label">Build</p>
+                <h3>実装</h3>
+                <p>スマホで読みやすく。</p>
+              </div>
+            </article>
+            <article class="workflow-phase">
+              <span class="workflow-phase-number">05</span>
+              <div>
+                <p class="workflow-phase-label">Launch</p>
+                <h3>公開</h3>
+                <p>フォーム確認、更新案内。</p>
+              </div>
+            </article>
           </div>
         </div>
 
-        <!-- 制作期間の目安 -->
-        <div class="mt-12 text-center reveal-up">
-          <div class="inline-flex flex-wrap justify-center gap-4 md:gap-8 bg-pale-blue rounded-xl px-6 py-4">
-            <div class="flex items-center gap-2 text-sm">
-              <i class="fa-solid fa-clock text-accent-gold"></i>
-              <span class="text-text-gray">LP制作：</span>
-              <span class="font-bold text-navy-dark">2〜3週間</span>
-            </div>
-            <div class="flex items-center gap-2 text-sm">
-              <i class="fa-solid fa-clock text-accent-gold"></i>
-              <span class="text-text-gray">コーポレートサイト：</span>
-              <span class="font-bold text-navy-dark">1〜2ヶ月</span>
-            </div>
+        <div class="workflow-note reveal-up">
+          <div>
+            <i class="fa-solid fa-clock text-accent-gold"></i>
+            <span>LP・採用ページ：</span>
+            <strong>2〜4週間</strong>
+          </div>
+          <div>
+            <i class="fa-solid fa-clock text-accent-gold"></i>
+            <span>5ページ前後のサイト：</span>
+            <strong>1〜2ヶ月</strong>
           </div>
         </div>
       </div>
@@ -900,35 +899,50 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>PRICE</span>
-          <h2>参考価格</h2>
-          <p class="text-sm text-text-gray mt-4">貴院の課題に合わせて最適なプランをご提案します</p>
+          <h2>料金の考え方</h2>
+          <p class="text-sm text-text-gray mt-4">コーディングだけでなく、設計込みの価格です。</p>
+        </div>
+
+        <div class="price-philosophy reveal-up">
+          <div>
+            <span>Direction</span>
+            <p>強み・対象者・導線</p>
+          </div>
+          <div>
+            <span>Design / Build</span>
+            <p>デザイン・実装・スマホ対応</p>
+          </div>
+          <div>
+            <span>Launch</span>
+            <p>フォーム確認・更新サポート</p>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- ライト -->
           <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
-            <h3 class="text-lg font-bold text-text-gray mb-2">ライトプラン</h3>
+            <h3 class="text-lg font-bold text-text-gray mb-2">ミニマムLP</h3>
             <p class="text-3xl font-bold text-navy-main mb-4">
               ¥150,000
               <span class="text-sm text-text-gray">〜</span>
             </p>
-            <p class="text-sm text-text-gray mb-6 border-b pb-4">LP制作・採用ページなど</p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">1ページで相談・採用導線を整える</p>
             <ul class="text-sm text-text-gray space-y-3">
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                1ページ構成 (LP)
+                1ページ構成
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                スマホ完全対応
+                構成・見出し整理
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                お問い合わせフォーム
+                スマホ最適化
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                サーバー・ドメイン設定代行
+                フォーム設置
               </li>
             </ul>
           </div>
@@ -940,41 +954,48 @@
               class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-navy-main text-white text-xs px-3 py-1 rounded-full font-bold">
               推奨プラン
             </div>
-            <h3 class="text-lg font-bold text-navy-dark mb-2">スタンダード</h3>
+            <h3 class="text-lg font-bold text-navy-dark mb-2">標準サイト制作</h3>
             <p class="text-3xl font-bold text-navy-main mb-4">
               ¥300,000
               <span class="text-sm text-text-gray">〜</span>
             </p>
-            <p class="text-sm text-text-gray mb-6 border-b pb-4">クリニック・施設HPの標準構成</p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">クリニック・施設HPの基本形</p>
             <ul class="text-sm text-text-gray space-y-3">
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                5ページ構成 (TOP+下層4)
+                5ページ前後
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                WordPress導入 (お知らせ更新)
+                強み・導線・原稿整理
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                MEO対策 (Googleマップ)
+                お知らせ更新導入は相談可
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                アクセス解析導入
+                基本SEO・フォーム・公開対応
               </li>
             </ul>
           </div>
 
           <!-- アドバンス -->
           <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
-            <h3 class="text-lg font-bold text-text-gray mb-2">Webシステム開発</h3>
-            <p class="text-3xl font-bold text-navy-main mb-4">別途お見積り</p>
-            <p class="text-sm text-text-gray mb-6 border-b pb-4">業務効率化・独自機能開発</p>
+            <h3 class="text-lg font-bold text-text-gray mb-2">業務改善・拡張</h3>
+            <p class="text-3xl font-bold text-navy-main mb-4">
+              ¥500,000
+              <span class="text-sm text-text-gray">〜</span>
+            </p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">予約・更新・チャットなどの連携</p>
             <ul class="text-sm text-text-gray space-y-3">
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                予約システム連携
+                予約・外部サービス連携
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
+                WordPress / microCMS
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
@@ -982,15 +1003,15 @@
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                ECサイト構築 (Shopify)
-              </li>
-              <li>
-                <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                月次コンサルティング
+                要件整理から個別見積り
               </li>
             </ul>
           </div>
         </div>
+
+        <p class="price-disclaimer reveal-up">
+          ※ ページ数、CMS、外部連携、素材量で変動します。予算内で優先順位を整理します。
+        </p>
       </div>
     </section>
 
@@ -1000,11 +1021,7 @@
         <div class="section-title reveal-up">
           <span>CONTACT</span>
           <h2 class="!text-navy-dark">お問い合わせ</h2>
-          <p class="mt-4 text-sm text-text-gray">
-            お気軽にご相談ください。1〜2営業日以内にご返信します。
-            <br />
-            お急ぎの場合は件名に「至急」とご記載ください。
-          </p>
+          <p class="mt-4 text-sm text-text-gray">1〜2営業日以内に返信します。</p>
         </div>
 
         <!-- こんな方へ -->
@@ -1012,12 +1029,12 @@
           <span
             class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10">
             <i class="fa-solid fa-check text-accent-gold"></i>
-            クリニックのHPを新しく作りたい
+            HPを新しく作りたい
           </span>
           <span
             class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10">
             <i class="fa-solid fa-check text-accent-gold"></i>
-            古くなったサイトをリニューアルしたい
+            サイトをリニューアルしたい
           </span>
           <span
             class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10">
@@ -1027,22 +1044,30 @@
           <span
             class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10">
             <i class="fa-solid fa-check text-accent-gold"></i>
-            患者さんに伝わるサイトにしたい
+            伝わるサイトにしたい
           </span>
         </div>
 
         <div class="flex flex-col lg:flex-row gap-8 fade-up">
           <!-- フォーム -->
           <div class="w-full lg:w-2/3">
-            <form id="contact-form" action="https://formspree.io/f/mzdbovdg" method="POST" class="space-y-6">
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/mzdbovdg"
+              method="POST"
+              enctype="multipart/form-data"
+              class="space-y-6">
+              <input type="hidden" name="_subject" value="KADOMARU Codeworksへのお問い合わせ" />
+              <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
               <!-- 名前・メール（横並び） -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-text-dark font-bold text-sm mb-2">
+                  <label for="name" class="block text-text-dark font-bold text-sm mb-2">
                     お名前
                     <span class="text-red-500">*</span>
                   </label>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     required
@@ -1050,11 +1075,12 @@
                     placeholder="田中太郎" />
                 </div>
                 <div>
-                  <label class="block text-text-dark font-bold text-sm mb-2">
+                  <label for="email" class="block text-text-dark font-bold text-sm mb-2">
                     メールアドレス
                     <span class="text-red-500">*</span>
                   </label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     required
@@ -1065,31 +1091,34 @@
 
               <!-- 件名 -->
               <div>
-                <label class="block text-text-dark font-bold text-sm mb-2">
+                <label for="subject" class="block text-text-dark font-bold text-sm mb-2">
                   件名
                   <span class="text-red-500">*</span>
                 </label>
                 <input
+                  id="subject"
                   type="text"
                   name="subject"
                   required
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
-                  placeholder="" />
+                  placeholder="例：クリニックサイトのリニューアル相談" />
               </div>
 
               <!-- 予算・納期（横並び） -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-text-dark font-bold text-sm mb-2">予算の目安（任意）</label>
+                  <label for="budget" class="block text-text-dark font-bold text-sm mb-2">予算の目安（任意）</label>
                   <input
+                    id="budget"
                     type="text"
                     name="budget"
                     class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
-                    placeholder="" />
+                    placeholder="例：30〜50万円 / 未定" />
                 </div>
                 <div>
-                  <label class="block text-text-dark font-bold text-sm mb-2">ご希望納期（任意）</label>
+                  <label for="deadline" class="block text-text-dark font-bold text-sm mb-2">ご希望納期（任意）</label>
                   <input
+                    id="deadline"
                     type="text"
                     name="deadline"
                     class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
@@ -1099,47 +1128,63 @@
 
               <!-- 相談内容 -->
               <div>
-                <label class="block text-text-dark font-bold text-sm mb-2">
+                <label for="message" class="block text-text-dark font-bold text-sm mb-2">
                   相談内容
                   <span class="text-red-500">*</span>
                 </label>
                 <textarea
+                  id="message"
                   name="message"
                   required
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-32 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main resize-none"
-                  placeholder="ご相談内容を詳しくお聞かせください..."></textarea>
+                  placeholder="例：HPリニューアル、採用ページ制作"></textarea>
               </div>
 
               <!-- 参考URL -->
               <div>
-                <label class="block text-text-dark font-bold text-sm mb-2">参考URL（任意・複数可）</label>
+                <label for="reference_urls" class="block text-text-dark font-bold text-sm mb-2">
+                  参考URL（任意・複数可）
+                </label>
                 <textarea
+                  id="reference_urls"
                   name="reference_urls"
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 h-24 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main resize-none"
-                  placeholder="参考にしたいサイトのURLがあれば記載してください（改行区切り）"></textarea>
+                  placeholder="参考URL（改行区切り）"></textarea>
               </div>
 
               <!-- ファイル添付 -->
               <div>
-                <label class="block text-text-dark font-bold text-sm mb-2">ファイル添付（任意）</label>
+                <label for="file-input" class="block text-text-dark font-bold text-sm mb-2">ファイル添付（任意）</label>
                 <div
-                  class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-navy-main transition-colors cursor-pointer"
+                  class="file-drop border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-navy-main transition-colors cursor-pointer"
+                  role="button"
+                  tabindex="0"
                   onclick="document.getElementById('file-input').click()">
                   <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-400 mb-3"></i>
                   <p class="text-sm text-text-gray">PDF, PNG, JPG（合計10MBまで）</p>
-                  <p class="text-sm text-text-gray">ファイルをドラッグ&ドロップまたはクリックして選択</p>
-                  <input type="file" id="file-input" class="hidden" multiple accept=".pdf,.png,.jpg,.jpeg" />
+                  <p class="text-sm text-text-gray">ドラッグまたはクリック</p>
+                  <input
+                    type="file"
+                    id="file-input"
+                    name="attachment[]"
+                    class="hidden"
+                    multiple
+                    accept=".pdf,.png,.jpg,.jpeg" />
+                  <p id="file-feedback" class="file-feedback" aria-live="polite"></p>
                 </div>
               </div>
 
               <!-- 連絡手段 -->
               <div>
-                <label class="block text-text-dark font-bold text-sm mb-2">連絡手段の希望（任意）</label>
+                <label for="contact_method" class="block text-text-dark font-bold text-sm mb-2">
+                  連絡手段の希望（任意）
+                </label>
                 <input
+                  id="contact_method"
                   type="text"
                   name="contact_method"
                   class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-navy-main focus:ring-1 focus:ring-navy-main"
-                  placeholder="" />
+                  placeholder="例：メール優先 / Chat希望" />
               </div>
 
               <!-- プライバシーポリシー同意 -->
@@ -1147,6 +1192,7 @@
                 <input
                   type="checkbox"
                   id="privacy"
+                  required
                   class="mt-1 w-4 h-4 text-navy-main border-gray-300 rounded focus:ring-navy-main" />
                 <label for="privacy" class="privacy-text text-sm text-text-gray">
                   <span class="text-red-500">*</span>
@@ -1155,9 +1201,7 @@
                   </a>
                   に同意する
                   <br />
-                  <span class="text-xs text-text-gray/70">
-                    お預かりした個人情報は適切に管理し、本件に関する連絡以外には使用いたしません。
-                  </span>
+                  <span class="text-xs text-text-gray/70">個人情報は本件連絡にのみ使用します。</span>
                 </label>
               </div>
 
@@ -1188,22 +1232,16 @@
               </div>
               <div class="space-y-2 text-sm">
                 <div class="flex justify-between items-center">
-                  <span class="text-white/70">今月の枠</span>
-                  <span class="font-bold">
-                    残り
-                    <span class="text-accent-gold text-lg">2</span>
-                    / 3 社
-                  </span>
+                  <span class="text-white/70">新規相談</span>
+                  <span class="font-bold text-accent-gold">受付中</span>
                 </div>
                 <div class="w-full bg-white/20 rounded-full h-2 mt-2">
-                  <div class="bg-accent-gold h-2 rounded-full" style="width: 33%"></div>
+                  <div class="bg-accent-gold h-2 rounded-full" style="width: 70%"></div>
                 </div>
               </div>
               <p class="text-xs text-white/60 mt-4 border-t border-white/10 pt-4">
                 <i class="fa-solid fa-circle-info mr-1"></i>
-                一社一社丁寧に向き合うため、毎月
-                <span class="text-accent-gold font-bold text-sm">3</span>
-                社様限定でお引き受けしております。
+                内容確認後、対応可否と概算を返信します。
               </p>
             </div>
 
@@ -1216,15 +1254,15 @@
               <div class="space-y-4 text-sm">
                 <div>
                   <p class="question-text font-bold text-navy-dark">Q: 制作期間はどのくらいですか？</p>
-                  <p class="text-text-gray">A: 規模により2週間〜2ヶ月程度です。</p>
+                  <p class="text-text-gray">A: 2週間〜2ヶ月程度です。</p>
                 </div>
                 <div>
                   <p class="question-text font-bold text-navy-dark">Q: 途中での仕様変更は可能ですか？</p>
-                  <p class="text-text-gray">A: はい、柔軟に対応いたします。</p>
+                  <p class="text-text-gray">A: 可能です。</p>
                 </div>
                 <div>
-                  <p class="question-text font-bold text-navy-dark">Q: 保守運用もお願いできますか？</p>
-                  <p class="text-text-gray">A: 継続サポートプランをご用意しています。</p>
+                  <p class="question-text font-bold text-navy-dark">Q: 保守運用は？</p>
+                  <p class="text-text-gray">A: 対応できます。</p>
                 </div>
               </div>
             </div>
@@ -1232,9 +1270,7 @@
             <!-- お急ぎの場合 -->
             <div class="sidebar-card bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
               <h3 class="font-bold text-navy-dark mb-3">お急ぎの場合</h3>
-              <p class="text-sm text-text-gray mb-4">
-                緊急のご相談やお見積りが必要な場合は、件名に「至急」とご記載ください。
-              </p>
+              <p class="text-sm text-text-gray mb-4">件名に「至急」と入れてください。</p>
               <div class="space-y-2 text-sm">
                 <p class="flex items-center gap-2 text-text-gray">
                   <i class="fa-regular fa-envelope text-accent-gold"></i>
@@ -1263,7 +1299,7 @@
             </h3>
           </div>
           <div class="p-6">
-            <p class="text-text-gray mb-4">以下の内容で送信します。よろしいですか？</p>
+            <p class="text-text-gray mb-4">この内容で送信しますか？</p>
             <div id="confirm-content" class="bg-gray-bg rounded-xl p-4 max-h-64 overflow-y-auto text-sm space-y-3">
               <!-- JSで動的に挿入 -->
             </div>
@@ -1296,12 +1332,8 @@
             <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <i class="fa-solid fa-check text-green-500 text-4xl"></i>
             </div>
-            <h3 class="text-2xl font-bold text-navy-dark mb-2">送信完了しました！</h3>
-            <p class="text-text-gray px-6">
-              お問い合わせありがとうございます。
-              <br />
-              1〜2営業日以内にご返信いたします。
-            </p>
+            <h3 class="text-2xl font-bold text-navy-dark mb-2">送信完了</h3>
+            <p class="text-text-gray px-6">1〜2営業日以内に返信します。</p>
           </div>
           <div class="px-6 pb-8">
             <button

@@ -16,7 +16,7 @@ tailwind.config = {
         "text-gray": "#475569",
       },
       fontFamily: {
-        maru: ['"Zen Maru Gothic"', "sans-serif"],
+        maru: ['"Noto Sans JP"', '"Zen Kaku Gothic New"', "sans-serif"],
       },
       backgroundImage: {
         "hero-pattern":
