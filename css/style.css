@@ -4816,7 +4816,38 @@ body {
   }
 
   .hero-main-grid {
+    flex-direction: column !important;
+    align-items: center !important;
     min-height: auto;
+    gap: 3rem !important;
+  }
+
+  .hero-copy,
+  .hero-visual-wrap {
+    width: 100% !important;
+    max-width: 720px;
+  }
+
+  .hero-copy {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-section .hero-kicker,
+  .hero-title-line,
+  .hero-ja-line,
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions,
+  .hero-assurance {
+    justify-content: center;
+  }
+
+  .hero-visual-wrap {
+    justify-content: center !important;
   }
 
   .hero-title-line {
@@ -4824,9 +4855,9 @@ body {
   }
 
   .hero-section .hero-visual {
-    width: min(92vw, 660px);
+    width: min(92vw, 620px);
     min-width: 0;
-    height: 520px;
+    height: 500px;
   }
 
   .proof-strip {
@@ -4889,16 +4920,16 @@ body {
   }
 
   .hero-section .hero-visual {
-    height: 430px;
+    height: 400px;
   }
 
   .hero-section .hero-browser-main {
-    inset: 42px 0 76px 0;
+    inset: 46px 0 74px 0;
     transform: rotate(1.5deg);
   }
 
   .hero-section .hero-mini-card {
-    width: 174px;
+    width: 160px;
   }
 
   .hero-section .hero-mini-card-plan {
@@ -4910,6 +4941,10 @@ body {
     right: auto;
     left: 10px;
     bottom: 0;
+  }
+
+  .hero-section .hero-mini-card-corp img {
+    height: 86px;
   }
 
   .proof-strip-grid {
