@@ -40,10 +40,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwind Custom Config -->
-    <script src="js/tailwind.config.js?v=20260430"></script>
+    <script src="js/tailwind.config.js?v=20260430b"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260430" />
+    <link rel="stylesheet" href="css/style.css?v=20260430b" />
   </head>
   <body>
     <!-- Splash Screen -->
@@ -144,8 +144,8 @@
             </a>
             <a href="#blog" class="mobile-nav-link" style="--delay: 0.25s">
               <span class="mobile-nav-number">04</span>
-              <span class="mobile-nav-text">ブログ</span>
-              <span class="mobile-nav-label">BLOG</span>
+              <span class="mobile-nav-text">あるある</span>
+              <span class="mobile-nav-label">COMIC</span>
             </a>
             <a href="#workflow" class="mobile-nav-link" style="--delay: 0.3s">
               <span class="mobile-nav-number">05</span>
@@ -163,15 +163,6 @@
               <i class="fa-regular fa-envelope mr-2"></i>
               無料相談・お見積り
             </a>
-            <div class="mobile-social">
-              <a
-                href="https://x.com/monvloger20014"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mobile-social-link">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -679,25 +670,6 @@
             </button>
           </div>
 
-          <!-- チャットボット移行 (Web App) -->
-          <div class="works-item" data-category="webapp">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-[4/3] group w-full text-left"
-              onclick="openWorksModal('chatbot')">
-              <img
-                src="img/genel-recruit.png"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="チャットボット" />
-              <div class="works-overlay">
-                <span class="works-category">Web App</span>
-                <h3 class="works-title">チャットボット移行支援</h3>
-                <p class="works-summary">導入・調整・検証</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
-            </button>
-          </div>
         </div>
       </div>
     </section>
@@ -714,37 +686,40 @@
       </div>
     </div>
 
-    <!-- ブログ・お知らせ -->
+    <!-- MSWあるある -->
     <section id="blog" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
-          <span>BLOG / NEWS</span>
-          <h2>ブログ・お知らせ</h2>
+          <span>MSW COMIC</span>
+          <h2>MSWあるある</h2>
         </div>
 
         <div class="blog-preview-wrap fade-up">
           <div class="blog-preview-head">
             <div class="w-16 h-16 bg-pale-blue rounded-2xl flex items-center justify-center">
-              <i class="fa-solid fa-pen-to-square text-2xl text-navy-main"></i>
+              <i class="fa-regular fa-comments text-2xl text-navy-main"></i>
             </div>
             <div>
-              <p class="blog-preview-label">Coming Soon</p>
-              <h3>制作メモを準備中。</h3>
-              <p>文章、導線、採用ページのこと。</p>
+              <p class="blog-preview-label">Comic Series</p>
+              <h3>現場の「それ、あるある」を漫画に。</h3>
+              <p>MSWとして日々感じた違和感や小さな共感を、個人情報に触れない形で短い漫画にしていきます。</p>
             </div>
           </div>
           <div class="blog-preview-grid">
             <article class="blog-preview-card">
-              <span>Writing</span>
-              <h4>専門用語を短くする</h4>
+              <span>Case 01</span>
+              <h4>退院調整あるある</h4>
+              <p>今日決まって、今日動く。</p>
             </article>
             <article class="blog-preview-card">
-              <span>Recruit</span>
-              <h4>職場の空気感を見せる</h4>
+              <span>Case 02</span>
+              <h4>連携あるある</h4>
+              <p>電話一本で空気が変わる。</p>
             </article>
             <article class="blog-preview-card">
-              <span>Operation</span>
-              <h4>更新しやすく作る</h4>
+              <span>Case 03</span>
+              <h4>家族面談あるある</h4>
+              <p>言葉選びで伝わり方が変わる。</p>
             </article>
           </div>
         </div>
@@ -992,7 +967,7 @@
               ¥500,000
               <span class="text-sm text-text-gray">〜</span>
             </p>
-            <p class="text-sm text-text-gray mb-6 border-b pb-4">予約・更新・チャットなどの連携</p>
+            <p class="text-sm text-text-gray mb-6 border-b pb-4">予約・更新・業務導線の連携</p>
             <ul class="text-sm text-text-gray space-y-3">
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
@@ -1004,7 +979,7 @@
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
-                チャットボット導入
+                管理画面・更新導線の整理
               </li>
               <li>
                 <i class="fa-solid fa-check text-accent-gold mr-2"></i>
@@ -1386,8 +1361,9 @@
                 href="https://x.com/monvloger20014"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-300 hover:text-white transition-colors">
-                <i class="fa-brands fa-x-twitter text-xl"></i>
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-sm font-black text-gray-300 hover:border-white hover:text-white transition-colors"
+                aria-label="Xを見る">
+                X
               </a>
             </div>
           </div>
@@ -1421,6 +1397,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js?v=20260430"></script>
+    <script src="js/main.js?v=20260430b"></script>
   </body>
 </html>

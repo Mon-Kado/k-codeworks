@@ -169,22 +169,6 @@ const worksData = {
     status: "公開中",
     url: "https://www.gene-l.co.jp/recruit",
   },
-  chatbot: {
-    category: "Web App",
-    title: "チャットボット移行支援",
-    image: "img/genel-recruit.png",
-    description: "複数サイトへのチャットボット導入支援。設置、デザイン調整、動作検証を担当しました。",
-    role: "Tag+実装・デザイン調整・動作検証（GeneL inc. 受託）",
-    techs: ["JavaScript", "CSS", "Tag+", "チャットボットAPI"],
-    points: [
-      "複数サイトへ展開",
-      "ブランドに合わせてUI調整",
-      "本番・検証環境で確認",
-      "操作マニュアルを作成",
-    ],
-    status: "完了",
-    url: null,
-  },
 };
 
 function openWorksModal(id) {

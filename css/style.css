@@ -727,14 +727,33 @@ textarea:focus-visible {
    Blog Preview
    ============================================== */
 .blog-preview-wrap {
-  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-  border: 1px solid rgba(10, 58, 120, 0.08);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(201, 164, 102, 0.18), transparent 24%),
+    linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  border: 1px solid rgba(10, 58, 120, 0.1);
   border-radius: 28px;
   padding: clamp(1.5rem, 4vw, 3rem);
   box-shadow: 0 16px 45px rgba(10, 58, 120, 0.08);
 }
 
+.blog-preview-wrap::before {
+  content: "ARUARU";
+  position: absolute;
+  right: -0.12em;
+  bottom: -0.1em;
+  color: rgba(10, 58, 120, 0.04);
+  font-size: clamp(4rem, 13vw, 10rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+  pointer-events: none;
+}
+
 .blog-preview-head {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1.25rem;
@@ -754,28 +773,44 @@ textarea:focus-visible {
 .blog-preview-head h3 {
   color: var(--navy-dark);
   font-size: clamp(1.2rem, 2vw, 1.75rem);
-  font-weight: 700;
-  line-height: 1.6;
+  font-weight: 900;
+  line-height: 1.45;
 }
 
 .blog-preview-head p:last-child {
   color: var(--muted);
   font-size: 0.92rem;
   margin-top: 0.35rem;
+  max-width: 680px;
+  line-height: 1.8;
 }
 
 .blog-preview-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .blog-preview-card {
+  position: relative;
   background: white;
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 1.25rem;
+  padding: 1.3rem 1.25rem 1.4rem;
   transition: all 0.3s ease;
+}
+
+.blog-preview-card::after {
+  content: "";
+  position: absolute;
+  right: 1.2rem;
+  top: 1.15rem;
+  width: 34px;
+  height: 25px;
+  border: 2px solid rgba(10, 58, 120, 0.12);
+  border-radius: 999px 999px 999px 8px;
 }
 
 .blog-preview-card:hover {
@@ -797,6 +832,14 @@ textarea:focus-visible {
 .blog-preview-card h4 {
   color: var(--navy-dark);
   font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.55;
+}
+
+.blog-preview-card p {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.84rem;
   font-weight: 700;
   line-height: 1.7;
 }
@@ -901,10 +944,10 @@ textarea:focus-visible {
 
 .mobile-menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100svh;
+  min-height: 100vh;
   background: #0a3a78;
   background: linear-gradient(135deg, #0a3a78 0%, #062952 50%, #041a36 100%);
   z-index: 55;
@@ -920,11 +963,11 @@ textarea:focus-visible {
 }
 
 .mobile-menu-content {
-  height: 100%;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 100px 40px 60px;
+  justify-content: flex-start;
+  padding: max(104px, calc(env(safe-area-inset-top) + 72px)) max(32px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(32px, env(safe-area-inset-left));
 }
 
 .mobile-nav {
@@ -980,8 +1023,8 @@ textarea:focus-visible {
 }
 
 .mobile-menu-footer {
-  margin-top: auto;
-  padding-top: 40px;
+  margin-top: clamp(2rem, 7vh, 4.5rem);
+  padding-top: 0;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.4s ease 0.35s;
@@ -1010,34 +1053,38 @@ textarea:focus-visible {
   color: white;
 }
 
-.mobile-social {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 24px;
-}
-
-.mobile-social-link {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  color: white;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-.mobile-social-link:hover {
-  background: white;
-  color: #0a3a78;
-  border-color: white;
-}
-
 body.menu-open {
   overflow: hidden;
+}
+
+body.menu-open #header {
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh;
+  min-height: 100vh;
+  transform: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(135deg, #0a3a78 0%, #062952 50%, #041a36 100%) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+body.menu-open #header > div {
+  position: relative;
+  z-index: 60;
+  max-width: none;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
+body.menu-open #header .header-inner {
+  height: 82px;
+}
+
+body.menu-open #header .header-logo {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ==============================================
