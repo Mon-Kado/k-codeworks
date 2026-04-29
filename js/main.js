@@ -80,6 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
     currentMonthEl.textContent = `${year}年${month}月`;
   }
 
+  // 納期例が古く見えないよう、閲覧月の翌月末を起点にする
+  const deadlineInput = document.getElementById("deadline");
+  if (deadlineInput) {
+    const now = new Date();
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+    deadlineInput.placeholder = `例：${nextMonth.getFullYear()}年${nextMonth.getMonth() + 1}月末 / 未定`;
+  }
+
   // ヒーロー写真スライドショー
   const slides = document.querySelectorAll(".hero-photo-slide");
   let currentSlide = 0;
