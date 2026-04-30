@@ -170,6 +170,23 @@ const worksData = {
     status: "公開中",
     url: "https://www.gene-l.co.jp/recruit",
   },
+  minamiClinic: {
+    category: "WordPress",
+    title: "みなみ歯科クリニック",
+    image: "img/minami-clinic.png",
+    description:
+      "歯科医院向けのWordPressサイト。デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
+    role: "WordPress構築・コーディング・レスポンシブ調整",
+    techs: ["WordPress", "PHP", "SCSS", "JavaScript", "Swiper"],
+    points: [
+      "トップページと下層ページを実装",
+      "診療案内と医院情報を整理",
+      "スマホ用ドロワーを実装",
+      "WordPressテーマとして構築",
+    ],
+    status: "デモ公開中",
+    url: "https://minami-clinic.k-codeworks.com/",
+  },
 };
 
 function openWorksModal(id) {
