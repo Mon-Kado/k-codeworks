@@ -122,19 +122,20 @@ const worksData = {
     url: "https://bedroute.jp/mypage",
   },
   onomichi: {
-    category: "LP",
-    title: "尾道観光キャンペーンLP「SnapOnomichi」",
+    category: "LP / 課題制作",
+    title: "デイトラ課題LP「SnapOnomichi」",
     image: "img/onomichi.png",
-    description: "尾道の空気感を伝える観光LP。写真、余白、動きでスクロールしたくなる構成にしました。",
-    role: "デザイン・コーディング（デイトラ課題）",
+    description:
+      "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。",
+    role: "課題対応：コーディング・レスポンシブ調整",
     techs: ["HTML", "CSS", "JavaScript", "FLOCSS", "BEM"],
     points: [
-      "写真が映えるFV設計",
-      "スクロール演出を実装",
+      "指定デザインの再現",
+      "レスポンシブ表示を調整",
       "FLOCSS / BEMでCSS管理",
-      "スマホ前提で調整",
+      "スクロール演出を実装",
     ],
-    status: "公開中",
+    status: "デイトラ課題",
     url: "https://onomichi-k-codeworks.com/",
   },
   blog: {
@@ -187,7 +188,7 @@ function openWorksModal(id) {
             <p class="works-modal-desc">${escapeHTML(data.description)}</p>
             
             <div class="works-modal-section">
-                <h4><i class="fa-solid fa-user"></i> 担当範囲</h4>
+                <h4><i class="fa-solid fa-user"></i> 制作種別 / 対応範囲</h4>
                 <p style="color: #475569; font-size: 14px;">${escapeHTML(data.role)}</p>
             </div>
             
