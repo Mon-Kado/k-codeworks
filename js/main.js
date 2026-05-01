@@ -173,7 +173,7 @@ const worksData = {
   minamiClinic: {
     category: "WordPress",
     title: "みなみ歯科クリニック",
-    image: "img/minami-clinic.png",
+    image: "img/minami-clinic.png?v=20260501c",
     description:
       "歯科医院向けのWordPressサイト。デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
     role: "WordPress構築・コーディング・レスポンシブ調整",
