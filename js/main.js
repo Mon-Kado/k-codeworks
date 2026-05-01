@@ -171,12 +171,12 @@ const worksData = {
     url: "https://www.gene-l.co.jp/recruit",
   },
   minamiClinic: {
-    category: "WordPress",
-    title: "みなみ歯科クリニック",
-    image: "img/minami-clinic.png?v=20260501c",
+    category: "WordPress / 課題制作",
+    title: "デイトラ課題サイト「みなみ歯科クリニック」",
+    image: "img/minami-clinic.png?v=20260502",
     description:
-      "歯科医院向けのWordPressサイト。デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
-    role: "WordPress構築・コーディング・レスポンシブ調整",
+      "デイトラの課題として取り組んだ歯科医院向けWordPressサイトです。実案件ではなく、デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
+    role: "課題対応：WordPress構築・コーディング・レスポンシブ調整",
     techs: ["WordPress", "PHP", "SCSS", "JavaScript", "Swiper"],
     points: [
       "トップページと下層ページを実装",
@@ -184,7 +184,7 @@ const worksData = {
       "スマホ用ドロワーを実装",
       "WordPressテーマとして構築",
     ],
-    status: "デモ公開中",
+    status: "デイトラ課題",
     url: "https://minami-clinic.k-codeworks.com/",
   },
 };
