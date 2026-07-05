@@ -105,11 +105,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // Works Modal
 // ==============================================
 const worksData = {
-  bedroute: {
+  dischargeTool: {
     category: "Web App",
-    title: "退院支援管理ツール「Bedroute」",
-    image: "img/bedroute.png",
-    description: "転院調整を見える化するWebアプリ。現場の手間を減らすため、空床情報と受け入れ条件を整理しました。",
+    title: "退院支援管理ツール（自主開発）",
+    image: "img/discharge-tool.png",
+    description:
+      "転院調整を見える化するWebアプリを自主開発し、β版として公開中です。現場の手間を減らすため、空床情報と受け入れ条件を整理しました。※サービス名・URLはご相談時にお伝えします。",
     role: "企画・設計・開発（フルスタック）",
     techs: ["React", "Vite", "TypeScript", "Supabase", "Tailwind CSS"],
     points: [
@@ -118,8 +119,25 @@ const worksData = {
       "受け入れ条件を見える化",
       "権限とデータ管理を設計",
     ],
-    status: "β版公開中",
-    url: "https://bedroute.jp/mypage",
+    status: "β版公開中（詳細はご相談時に）",
+    url: "",
+  },
+  ecCro: {
+    category: "EC改善 / 継続受注",
+    title: "ECサイト改善施策の実装（Web接客ツール）",
+    image: "img/ec-cover.svg",
+    description:
+      "国内SaaSのWeb接客ツールを用いた、ECサイトの売上改善施策の実装を業務委託で継続受注しています。直近3ヶ月の実績は62件（月20件前後）、約8割は修正なしの一発検収。守秘義務のためクライアント名・画面は非公開ですが、ご相談時に可能な範囲でご説明できます。",
+    role: "施策実装（HTML/CSS/JS）・既存サイトのデザイン再現・検証",
+    techs: ["HTML", "CSS", "JavaScript", "jQuery", "Web接客ツール（SaaS）"],
+    points: [
+      "商品ページへのレコメンド（閲覧履歴・ランキング）設置",
+      "入力フォーム改善（EFO）・ポップアップ・クーポン施策一式",
+      "既存サイトのDOM/CSSに干渉しない差し込み実装",
+      "他クリエイターの技術相談・トラブル解決も担当（相談役）",
+    ],
+    status: "継続受注中",
+    url: "",
   },
   onomichi: {
     category: "LP / 課題制作",
@@ -351,6 +369,13 @@ worksTabs.forEach((tab) => {
 const revealElements = document.querySelectorAll(
   ".reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .section-title, .underline-animation"
 );
+
+
+document.querySelectorAll("main > section").forEach((section) => {
+  section.querySelectorAll(".reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .section-title, .underline-animation").forEach((target, index) => {
+    target.style.setProperty("--reveal-delay", `${Math.min(index * 90, 360)}ms`);
+  });
+});
 
 const revealObserver = new IntersectionObserver(
   (entries) => {

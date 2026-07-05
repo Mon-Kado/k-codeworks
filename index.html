@@ -43,33 +43,12 @@
     <script src="js/tailwind.config.js?v=20260502"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260502" />
+    <link rel="stylesheet" href="css/style.css?v=20260705d" />
   </head>
   <body>
-    <!-- Splash Screen -->
-    <div id="splash-screen">
-      <div class="splash-bg" id="splash-bg">
-        <!-- グラデーションメッシュ -->
-        <div class="splash-mesh">
-          <div class="splash-mesh-blob"></div>
-          <div class="splash-mesh-blob"></div>
-          <div class="splash-mesh-blob"></div>
-        </div>
-      </div>
-      <div class="splash-logo" id="splash-logo">
-        <div class="splash-logo-glow"></div>
-        <img src="img/kadomaru-codeworks_logo_white.png" alt="KADOMARU Codeworks" class="splash-logo-img" />
-      </div>
-      <!-- プログレスバー -->
-      <div class="splash-progress" id="splash-progress">
-        <div class="splash-progress-bar" id="splash-progress-bar"></div>
-      </div>
-      <div class="splash-curtain" id="splash-curtain"></div>
-    </div>
-
     <!-- ヘッダー -->
     <header
-      class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300 opacity-0"
+      class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300"
       id="header">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="header-inner flex justify-between items-center">
@@ -142,11 +121,6 @@
               <span class="mobile-nav-text">制作実績</span>
               <span class="mobile-nav-label">WORKS</span>
             </a>
-            <a href="#blog" class="mobile-nav-link" style="--delay: 0.25s">
-              <span class="mobile-nav-number">04</span>
-              <span class="mobile-nav-text">あるある</span>
-              <span class="mobile-nav-label">COMIC</span>
-            </a>
             <a href="#workflow" class="mobile-nav-link" style="--delay: 0.3s">
               <span class="mobile-nav-number">05</span>
               <span class="mobile-nav-text">制作の流れ</span>
@@ -182,9 +156,8 @@
     <!-- ヒーローエリア -->
     <section
       id="home"
-      class="hero-section pt-32 pb-20 md:pt-40 md:pb-28 bg-hero-pattern bg-cover bg-center relative min-h-screen flex items-center overflow-hidden">
+      class="hero-section pt-32 pb-20 md:pt-40 md:pb-28 relative min-h-screen flex items-center overflow-hidden">
       <div class="hero-noise" aria-hidden="true"></div>
-      <div class="hero-big-label" aria-hidden="true">KADOMARU</div>
       <!-- グラデーションメッシュ背景 -->
       <div class="gradient-mesh">
         <div class="gradient-blob gradient-blob-1"></div>
@@ -244,16 +217,16 @@
                 <span class="hero-word hero-word-primary">CARE</span>
                 <span class="hero-word hero-word-accent">WEB</span>
               </span>
-              <span class="hero-ja-line">医療福祉に、伝わる余白を。</span>
+              <span class="hero-ja-line">医療・福祉に強い、<br class="sm:hidden" />Web制作室。</span>
             </h1>
             <p class="hero-lead hero-sub-fade" style="animation-delay: 0.2s">
-              医療・福祉の現場理解を強みに、<br class="hidden sm:block" />
-              伝わるWebサイト・サービスを制作します。
+              病院で働く現役の医療ソーシャルワーカーが、<br />
+              クリニック・施設のHPから業務ツールまで<br class="sm:hidden" />お作りします。
             </p>
             <div class="hero-actions flex flex-col sm:flex-row gap-4 hero-cta-slide mt-8">
               <a
                 href="#contact"
-                class="btn-primary btn-shine px-10 py-4 rounded-full shadow-xl text-lg w-full sm:w-auto text-center">
+                class="btn-primary px-10 py-4 rounded-full shadow-xl text-lg w-full sm:w-auto text-center">
                 <i class="fa-regular fa-envelope mr-2"></i>
                 無料で相談する
                 <i class="fa-solid fa-chevron-right ml-2 text-sm text-accent-gold"></i>
@@ -268,7 +241,7 @@
             </div>
             <p class="hero-assurance hero-sub-fade" style="animation-delay: 0.35s">
               <i class="fa-solid fa-shield-halved"></i>
-              ご相談・お見積りは無料です。まずはお気軽にご連絡ください。
+              ご相談・お見積りは無料です。<br class="sm:hidden" />まずはお気軽にご連絡ください。
             </p>
           </div>
           <div class="hero-visual-wrap w-full md:w-1/2 flex justify-center">
@@ -282,12 +255,12 @@
                     <span></span>
                     <span></span>
                     <span></span>
-                    <p>bedroute.jp</p>
+                    <p>web-app.example</p>
                   </div>
-                  <img src="img/bedroute.png" alt="退院支援管理ツール Bedroute の画面" />
+                  <img src="img/discharge-tool.png" alt="自主開発した退院支援管理ツールの画面" />
                   <div class="hero-browser-caption">
                     <span>Web App</span>
-                    <strong>Bedroute</strong>
+                    <strong>退院支援管理ツール</strong>
                   </div>
                 </div>
                 <div class="hero-mini-card hero-mini-card-plan">
@@ -327,7 +300,7 @@
     </section>
 
     <!-- 強み・コンセプト -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" data-bg="STRENGTH" class="py-20 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>STRENGTH</span>
@@ -354,7 +327,7 @@
             </article>
           </div>
           <div class="strength-visual">
-            <img src="img/bedroute.png" alt="退院支援管理ツールの画面" />
+            <img src="img/discharge-tool.png" alt="退院支援管理ツールの画面" />
             <img src="img/onomichi.png" alt="LP制作実績の画面" />
           </div>
         </div>
@@ -370,11 +343,29 @@
             <li><i class="fa-solid fa-check"></i>医療広告表現に配慮</li>
           </ul>
         </div>
+
+        <div class="strength-proof reveal-up" aria-label="Strengthの具体例">
+          <article>
+            <span>Before</span>
+            <h3>専門用語が多い</h3>
+            <p>患者さん・ご家族向けの言葉に整理。</p>
+          </article>
+          <article>
+            <span>Route</span>
+            <h3>問い合わせが遠い</h3>
+            <p>予約・相談・採用へ迷わない導線に。</p>
+          </article>
+          <article>
+            <span>After</span>
+            <h3>更新が止まる</h3>
+            <p>公開後も直しやすい構成で制作。</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- プロフィール -->
-    <section id="profile" class="py-20 bg-navy-main overflow-hidden relative">
+    <section id="profile" data-bg="PROFILE" class="py-20 bg-navy-main overflow-hidden relative">
       <!-- 背景装飾 -->
       <div
         class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -481,15 +472,17 @@
                 <div class="profile-stat-icon">
                   <i class="fa-solid fa-folder-open"></i>
                 </div>
-                <p class="profile-stat-word">実案件</p>
-                <p class="text-xs text-text-gray mt-1">LP・サイト制作</p>
+                <p class="text-3xl font-bold text-navy-main">
+                  <span class="count-up text-accent-gold" data-target="62">62</span><span class="text-lg">件</span>
+                </p>
+                <p class="text-xs text-text-gray mt-1">EC改善実装（直近3ヶ月）</p>
               </div>
               <div class="profile-stat-card">
                 <div class="profile-stat-icon">
                   <i class="fa-solid fa-building"></i>
                 </div>
                 <p class="profile-stat-word">β版</p>
-                <p class="text-xs text-text-gray mt-1">Bedroute公開中</p>
+                <p class="text-xs text-text-gray mt-1">自社ツール公開中</p>
               </div>
               <div class="profile-stat-card">
                 <div class="profile-stat-icon">
@@ -505,7 +498,7 @@
     </section>
 
     <!-- 実績 -->
-    <section id="works" class="py-20 bg-gray-bg">
+    <section id="works" data-bg="WORKS" class="py-20 bg-gray-bg">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>WORKS</span>
@@ -542,6 +535,9 @@
           <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="webapp">
             Web App
           </button>
+          <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="ec">
+            EC改善
+          </button>
           <button class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all" data-category="lp">
             LP
           </button>
@@ -555,20 +551,20 @@
 
         <!-- ギャラリーグリッド -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 works-bento-grid" id="works-grid">
-          <!-- Bedroute (Web App) -->
+          <!-- 退院支援管理ツール (Web App) -->
           <div class="works-item works-featured" data-category="webapp">
             <button
               class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('bedroute')">
+              onclick="openWorksModal('dischargeTool')">
               <img
-                src="img/bedroute.png"
+                src="img/discharge-tool.png"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
-                alt="Bedroute" />
+                alt="退院支援管理ツール" />
               <div class="works-overlay">
                 <span class="works-category">Web App</span>
-                <h3 class="works-title">退院支援管理ツール「Bedroute」</h3>
+                <h3 class="works-title">退院支援管理ツール（自主開発）</h3>
                 <p class="works-summary">転院調整を見える化</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
@@ -578,8 +574,31 @@
             </button>
           </div>
 
+          <!-- EC・サイト改善実装 (EC) -->
+          <div class="works-item" data-category="ec">
+            <button
+              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
+              onclick="openWorksModal('ecCro')">
+              <img
+                src="img/ec-cover.svg"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
+                alt="ECサイト改善施策の実装イメージ" />
+              <div class="works-overlay">
+                <span class="works-category">EC改善 / 継続受注</span>
+                <h3 class="works-title">ECサイト改善施策の実装</h3>
+                <p class="works-summary">Web接客ツールで直近3ヶ月62件</p>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+              <div class="absolute top-3 right-3 bg-accent-gold text-navy-main text-xs px-2 py-1 rounded font-bold z-10">
+                継続受注中
+              </div>
+            </button>
+          </div>
+
           <!-- SnapOnomichi LP (LP) -->
-          <div class="works-item" data-category="lp">
+          <div class="works-item is-study-work" data-category="lp">
             <button
               class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
               onclick="openWorksModal('onomichi')">
@@ -639,7 +658,7 @@
           </div>
 
           <!-- みなみ歯科クリニック (Corporate) -->
-          <div class="works-item" data-category="corporate">
+          <div class="works-item is-study-work" data-category="corporate">
             <button
               class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
               onclick="openWorksModal('minamiClinic')">
@@ -675,7 +694,7 @@
     </div>
 
     <!-- MSWあるある -->
-    <section id="blog" class="py-20 bg-white">
+    <section id="blog" data-bg="COMIC" class="py-20 bg-white" hidden aria-hidden="true">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>MSW COMIC</span>
@@ -731,7 +750,7 @@
     </section>
 
     <!-- 技術スタック -->
-    <section id="skill" class="py-16 bg-pale-blue">
+    <section id="skill" data-bg="SKILL" class="py-16 bg-pale-blue">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>SKILL</span>
@@ -781,14 +800,14 @@
 
           <div class="skill-tools-line">
             <span>必要に応じて</span>
-            <p>Photoshop / Illustrator / microCMS / Shopify / PHP</p>
+            <p>Web接客ツール（SaaS） / GAS / Photoshop / Illustrator / microCMS / Shopify / PHP</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ワークフロー -->
-    <section id="workflow" class="py-20 bg-white overflow-hidden">
+    <section id="workflow" data-bg="FLOW" class="py-20 bg-white overflow-hidden">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>WORKFLOW</span>
@@ -863,12 +882,14 @@
     </section>
 
     <!-- 料金 -->
-    <section id="service" class="py-20 bg-gray-bg">
+    <section id="service" data-bg="PRICE" class="py-20 bg-gray-bg">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>PRICE</span>
           <h2>料金の考え方</h2>
-          <p class="text-sm text-text-gray mt-4">コーディングだけでなく、設計込みの価格です。</p>
+          <p class="text-sm text-text-gray mt-4">
+            個人運営のため、制作会社より抑えた価格でお受けしています。設計・原稿整理込みです。
+          </p>
         </div>
 
         <div class="price-philosophy reveal-up">
@@ -891,7 +912,7 @@
           <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
             <h3 class="text-lg font-bold text-text-gray mb-2">ミニマムLP</h3>
             <p class="text-3xl font-bold text-navy-main mb-4">
-              ¥150,000
+              ¥60,000
               <span class="text-sm text-text-gray">〜</span>
             </p>
             <p class="text-sm text-text-gray mb-6 border-b pb-4">1ページで相談・採用導線を整える</p>
@@ -924,7 +945,7 @@
             </div>
             <h3 class="text-lg font-bold text-navy-dark mb-2">標準サイト制作</h3>
             <p class="text-3xl font-bold text-navy-main mb-4">
-              ¥300,000
+              ¥150,000
               <span class="text-sm text-text-gray">〜</span>
             </p>
             <p class="text-sm text-text-gray mb-6 border-b pb-4">クリニック・施設HPの基本形</p>
@@ -952,7 +973,7 @@
           <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 fade-up card-hover">
             <h3 class="text-lg font-bold text-text-gray mb-2">業務改善・拡張</h3>
             <p class="text-3xl font-bold text-navy-main mb-4">
-              ¥500,000
+              ¥250,000
               <span class="text-sm text-text-gray">〜</span>
             </p>
             <p class="text-sm text-text-gray mb-6 border-b pb-4">予約・更新・業務導線の連携</p>
@@ -978,13 +999,14 @@
         </div>
 
         <p class="price-disclaimer reveal-up">
-          ※ ページ数、CMS、外部連携、素材量で変動します。予算内で優先順位を整理します。
+          ※ ページ数、CMS、外部連携、素材量で変動します。予算内で優先順位を整理します。<br />
+          ※ 既存サイトの部分改善・施策実装（スポット）のご相談も承ります。
         </p>
       </div>
     </section>
 
     <!-- お問い合わせ -->
-    <section id="contact" class="py-20 bg-pale-gold">
+    <section id="contact" data-bg="CONTACT" class="py-20 bg-pale-gold">
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>CONTACT</span>
@@ -1013,6 +1035,11 @@
             class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10">
             <i class="fa-solid fa-check text-accent-gold"></i>
             伝わるサイトにしたい
+          </span>
+          <span
+            class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10">
+            <i class="fa-solid fa-check text-accent-gold"></i>
+            ECの売上・CVRを改善したい
           </span>
         </div>
 
@@ -1222,15 +1249,15 @@
               <div class="space-y-4 text-sm">
                 <div>
                   <p class="question-text font-bold text-navy-dark">Q: 制作期間はどのくらいですか？</p>
-                  <p class="text-text-gray">A: 2週間〜2ヶ月程度です。</p>
+                  <p class="text-text-gray">A: LPで2〜4週間、5ページ前後のサイトで1〜2ヶ月が目安です。</p>
                 </div>
                 <div>
                   <p class="question-text font-bold text-navy-dark">Q: 途中での仕様変更は可能ですか？</p>
-                  <p class="text-text-gray">A: 可能です。</p>
+                  <p class="text-text-gray">A: 可能です。影響範囲を確認して、必要ならお見積りを出し直します。</p>
                 </div>
                 <div>
                   <p class="question-text font-bold text-navy-dark">Q: 保守運用は？</p>
-                  <p class="text-text-gray">A: 対応できます。</p>
+                  <p class="text-text-gray">A: 対応できます。月額契約ではなく、必要な時だけのスポット対応も可能です。</p>
                 </div>
               </div>
             </div>
@@ -1385,6 +1412,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js?v=20260502"></script>
+    <script src="js/main.js?v=20260705"></script>
   </body>
 </html>
