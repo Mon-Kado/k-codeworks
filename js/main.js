@@ -142,7 +142,7 @@ const worksData = {
   onomichi: {
     category: "LP / 課題制作",
     title: "デイトラ課題LP「SnapOnomichi」",
-    image: "img/onomichi.png",
+    image: "img/onomichi.png?v=20260705",
     description:
       "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。",
     role: "課題対応：コーディング・レスポンシブ調整",
