@@ -5331,3 +5331,191 @@ body::before {
   position: relative;
   z-index: 3;
 }
+
+/* ==============================================
+   実装デモ（触って試せる実装サンプル）
+   ============================================== */
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem 1.6rem;
+  border: 1px solid rgba(10, 58, 120, 0.12);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(10, 58, 120, 0.06);
+}
+
+.demo-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.demo-card-head i {
+  color: #c9a466;
+  font-size: 1.15rem;
+}
+
+.demo-card-head h3 {
+  color: #17295a;
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+.demo-desc {
+  margin-bottom: 1.1rem;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.demo-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #17295a;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.demo-select {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(10, 58, 120, 0.25);
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #17295a;
+  font-size: 0.9rem;
+}
+
+.demo-result {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid #c9a466;
+  border-radius: 10px;
+  background: #f6f9ff;
+}
+
+.demo-result-main {
+  color: #17295a;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.demo-result-main strong {
+  color: #0a3a78;
+  font-size: 1.05rem;
+}
+
+.demo-result-main i {
+  margin-right: 0.3rem;
+  color: #c9a466;
+}
+
+.demo-result-sub {
+  margin-top: 0.3rem;
+  color: #475569;
+  font-size: 0.82rem;
+}
+
+.demo-coupon {
+  display: flex;
+  align-items: stretch;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.demo-coupon code {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.8rem;
+  border: 2px dashed rgba(10, 58, 120, 0.35);
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0a3a78;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.demo-copy-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #0a3a78;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    transform 0.15s;
+}
+
+.demo-copy-btn:hover {
+  background: #0d4f9e;
+  transform: translateY(-1px);
+}
+
+.demo-copy-btn.is-copied {
+  background: #1a9c6b;
+}
+
+.demo-countdown-label {
+  color: #64748b;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.demo-countdown {
+  margin-top: 0.2rem;
+  color: #17295a;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.demo-faq details {
+  border-bottom: 1px solid rgba(10, 58, 120, 0.1);
+}
+
+.demo-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.2rem;
+  color: #17295a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.demo-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-faq summary::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 0.6rem;
+  color: #c9a466;
+  font-size: 0.7rem;
+  transition: transform 0.25s;
+}
+
+.demo-faq details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.demo-faq details p {
+  padding: 0 0.2rem 0.85rem;
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.75;
+}

@@ -43,7 +43,7 @@
     <script src="js/tailwind.config.js?v=20260502"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260705d" />
+    <link rel="stylesheet" href="css/style.css?v=20260705e" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -72,6 +72,9 @@
             </a>
             <a href="#works" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
               制作実績
+            </a>
+            <a href="#demo" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
+              実装デモ
             </a>
             <a href="#workflow" class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm">
               制作の流れ
@@ -120,6 +123,11 @@
               <span class="mobile-nav-number">03</span>
               <span class="mobile-nav-text">制作実績</span>
               <span class="mobile-nav-label">WORKS</span>
+            </a>
+            <a href="#demo" class="mobile-nav-link" style="--delay: 0.25s">
+              <span class="mobile-nav-number">04</span>
+              <span class="mobile-nav-text">実装デモ</span>
+              <span class="mobile-nav-label">DEMO</span>
             </a>
             <a href="#workflow" class="mobile-nav-link" style="--delay: 0.3s">
               <span class="mobile-nav-number">05</span>
@@ -472,10 +480,8 @@
                 <div class="profile-stat-icon">
                   <i class="fa-solid fa-folder-open"></i>
                 </div>
-                <p class="text-3xl font-bold text-navy-main">
-                  <span class="count-up text-accent-gold" data-target="62">62</span><span class="text-lg">件</span>
-                </p>
-                <p class="text-xs text-text-gray mt-1">EC改善実装（直近3ヶ月）</p>
+                <p class="profile-stat-word">継続中</p>
+                <p class="text-xs text-text-gray mt-1">EC改善の施策実装</p>
               </div>
               <div class="profile-stat-card">
                 <div class="profile-stat-icon">
@@ -588,7 +594,7 @@
               <div class="works-overlay">
                 <span class="works-category">EC改善 / 継続受注</span>
                 <h3 class="works-title">ECサイト改善施策の実装</h3>
-                <p class="works-summary">Web接客ツールで直近3ヶ月62件</p>
+                <p class="works-summary">Web接客ツールで多数の施策を実装</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
               <div class="absolute top-3 right-3 bg-accent-gold text-navy-main text-xs px-2 py-1 rounded font-bold z-10">
@@ -692,6 +698,86 @@
         </div>
       </div>
     </div>
+
+    <!-- 実装デモ -->
+    <section id="demo" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="section-title reveal-up">
+          <span>DEMO</span>
+          <h2>触って試せる実装サンプル</h2>
+          <p class="mt-4 text-text-gray text-sm">
+            ECの現場でよく作る仕掛けを、このページ用に書き下ろしました。実際に動かせます。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+          <!-- デモ1: 都道府県別お届け日数 -->
+          <div class="demo-card">
+            <div class="demo-card-head">
+              <i class="fa-solid fa-truck-fast"></i>
+              <h3>お届け日数の自動表示</h3>
+            </div>
+            <p class="demo-desc">都道府県を選ぶと、お届け目安と送料が切り替わります。</p>
+            <label class="demo-label" for="demo-pref">お住まいの都道府県</label>
+            <select id="demo-pref" class="demo-select">
+              <option value="">選択してください</option>
+            </select>
+            <div id="demo-shipping-result" class="demo-result" hidden>
+              <p class="demo-result-main">
+                <i class="fa-regular fa-clock"></i>
+                お届け目安：<strong id="demo-shipping-days"></strong>
+              </p>
+              <p class="demo-result-sub">送料：<span id="demo-shipping-fee"></span>（税込）</p>
+            </div>
+          </div>
+
+          <!-- デモ2: クーポンコピー＋カウントダウン -->
+          <div class="demo-card">
+            <div class="demo-card-head">
+              <i class="fa-solid fa-ticket"></i>
+              <h3>クーポン＋締切カウントダウン</h3>
+            </div>
+            <p class="demo-desc">ワンタップでコードをコピー。締切までの残り時間を表示します。</p>
+            <div class="demo-coupon">
+              <code id="demo-coupon-code">KADO2026</code>
+              <button type="button" id="demo-copy-btn" class="demo-copy-btn">
+                <i class="fa-regular fa-copy"></i>
+                コピー
+              </button>
+            </div>
+            <p class="demo-countdown-label">本日締切まで</p>
+            <p id="demo-countdown" class="demo-countdown">--:--:--</p>
+          </div>
+
+          <!-- デモ3: FAQアコーディオン -->
+          <div class="demo-card">
+            <div class="demo-card-head">
+              <i class="fa-solid fa-circle-question"></i>
+              <h3>FAQアコーディオン</h3>
+            </div>
+            <p class="demo-desc">クリックで開閉。よくある質問の整理に使う定番UIです。</p>
+            <div class="demo-faq">
+              <details>
+                <summary>既存サイトに後から追加できますか？</summary>
+                <p>できます。タグを1つ入れるだけで、サイト本体のコードを触らずに実装できます。</p>
+              </details>
+              <details>
+                <summary>スマホ表示にも対応していますか？</summary>
+                <p>対応しています。PC・スマホそれぞれで表示を確認してから納品します。</p>
+              </details>
+              <details>
+                <summary>デザインはサイトに合わせられますか？</summary>
+                <p>合わせられます。既存のフォント・色・余白に馴染む形で作ります。</p>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-xs text-text-gray mt-8 reveal-up">
+          ※ いずれも本ページ用に作成した自作デモです（データはサンプル）。
+        </p>
+      </div>
+    </section>
 
     <!-- MSWあるある -->
     <section id="blog" data-bg="COMIC" class="py-20 bg-white" hidden aria-hidden="true">
@@ -1412,6 +1498,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js?v=20260705"></script>
+    <script src="js/main.js?v=20260705e"></script>
   </body>
 </html>

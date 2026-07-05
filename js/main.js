@@ -127,14 +127,14 @@ const worksData = {
     title: "ECサイト改善施策の実装（Web接客ツール）",
     image: "img/ec-cover.svg",
     description:
-      "国内SaaSのWeb接客ツールを用いた、ECサイトの売上改善施策の実装を業務委託で継続受注しています。直近3ヶ月の実績は62件（月20件前後）、約8割は修正なしの一発検収。守秘義務のためクライアント名・画面は非公開ですが、ご相談時に可能な範囲でご説明できます。",
+      "Web接客ツールを用いた、ECサイトの売上改善施策の実装を業務委託で継続して行っています。レコメンド・フォーム改善・ポップアップ・クーポン等、多数の施策を実装してきました。守秘義務のためクライアント名・画面は非公開ですが、同種の仕掛けを本ページの「実装サンプル」で実際に試せます。",
     role: "施策実装（HTML/CSS/JS）・既存サイトのデザイン再現・検証",
     techs: ["HTML", "CSS", "JavaScript", "jQuery", "Web接客ツール（SaaS）"],
     points: [
       "商品ページへのレコメンド（閲覧履歴・ランキング）設置",
       "入力フォーム改善（EFO）・ポップアップ・クーポン施策一式",
       "既存サイトのDOM/CSSに干渉しない差し込み実装",
-      "他クリエイターの技術相談・トラブル解決も担当（相談役）",
+      "都道府県別のお届け日数表示・カウントダウン等の動的UI",
     ],
     status: "継続受注中",
     url: "",
@@ -705,3 +705,99 @@ if (workflowSection) {
 
   workflowObserver.observe(workflowSection);
 }
+
+// ==============================================
+// 実装デモ（触って試せる実装サンプル）
+// ==============================================
+(function () {
+  // --- デモ1: 都道府県別お届け日数 ---
+  const PREF_GROUPS = [
+    { days: "3〜4日後", fee: 1080, prefs: ["北海道"] },
+    { days: "2〜3日後", fee: 880, prefs: ["青森県", "岩手県", "秋田県", "宮城県", "山形県", "福島県"] },
+    {
+      days: "翌日〜2日後",
+      fee: 780,
+      prefs: ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "山梨県"],
+    },
+    {
+      days: "2日後",
+      fee: 780,
+      prefs: ["新潟県", "長野県", "富山県", "石川県", "福井県", "岐阜県", "静岡県", "愛知県", "三重県"],
+    },
+    { days: "2日後", fee: 880, prefs: ["滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県"] },
+    { days: "2〜3日後", fee: 980, prefs: ["鳥取県", "島根県", "岡山県", "広島県", "山口県"] },
+    { days: "3日後", fee: 980, prefs: ["徳島県", "香川県", "愛媛県", "高知県"] },
+    {
+      days: "3日後",
+      fee: 1080,
+      prefs: ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"],
+    },
+    { days: "4〜5日後", fee: 1480, prefs: ["沖縄県"] },
+  ];
+
+  const prefSelect = document.getElementById("demo-pref");
+  if (prefSelect) {
+    PREF_GROUPS.forEach((g) => {
+      g.prefs.forEach((p) => {
+        const opt = document.createElement("option");
+        opt.value = p;
+        opt.textContent = p;
+        prefSelect.appendChild(opt);
+      });
+    });
+
+    prefSelect.addEventListener("change", () => {
+      const result = document.getElementById("demo-shipping-result");
+      const group = PREF_GROUPS.find((g) => g.prefs.includes(prefSelect.value));
+      if (!group) {
+        result.hidden = true;
+        return;
+      }
+      document.getElementById("demo-shipping-days").textContent = group.days;
+      document.getElementById("demo-shipping-fee").textContent = "¥" + group.fee.toLocaleString();
+      result.hidden = false;
+    });
+  }
+
+  // --- デモ2: クーポンコピー＋カウントダウン ---
+  const copyBtn = document.getElementById("demo-copy-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      const code = document.getElementById("demo-coupon-code").textContent;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch (e) {
+        // 古いブラウザ向けフォールバック
+        const ta = document.createElement("textarea");
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+      const original = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> コピーしました';
+      copyBtn.classList.add("is-copied");
+      setTimeout(() => {
+        copyBtn.innerHTML = original;
+        copyBtn.classList.remove("is-copied");
+      }, 2000);
+    });
+  }
+
+  const countdownEl = document.getElementById("demo-countdown");
+  if (countdownEl) {
+    const pad = (n) => String(n).padStart(2, "0");
+    const tick = () => {
+      const now = new Date();
+      const end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+      let diff = Math.max(0, Math.floor((end - now) / 1000));
+      const h = Math.floor(diff / 3600);
+      const m = Math.floor((diff % 3600) / 60);
+      const s = diff % 60;
+      countdownEl.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
