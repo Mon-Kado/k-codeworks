@@ -191,7 +191,7 @@ const worksData = {
   minamiClinic: {
     category: "WordPress / 課題制作",
     title: "デイトラ課題サイト「みなみ歯科クリニック」",
-    image: "img/minami-clinic.png?v=20260502",
+    image: "img/minami-clinic.png?v=20260705",
     description:
       "デイトラの課題として取り組んだ歯科医院向けWordPressサイトです。実案件ではなく、デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
     role: "課題対応：WordPress構築・コーディング・レスポンシブ調整",
