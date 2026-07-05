@@ -34,7 +34,16 @@ const runSplashSequence = () => {
     return;
   }
 
-  if (prefersReducedMotion) {
+  // スプラッシュは初回訪問のみ（回遊・再訪では即表示してCV導線を優先）
+  let splashShown = false;
+  try {
+    splashShown = sessionStorage.getItem("kcwSplashShown") === "1";
+    sessionStorage.setItem("kcwSplashShown", "1");
+  } catch (e) {
+    /* プライベートモード等では毎回表示 */
+  }
+
+  if (prefersReducedMotion || splashShown) {
     splashScreen.remove();
     mainHeader.classList.remove("opacity-0");
     return;
