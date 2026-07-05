@@ -5607,3 +5607,69 @@ body::before {
 .demo-zip-status.is-ng {
   color: #d14343;
 }
+
+/* デモ: スマホでの可読性を底上げ */
+@media (max-width: 767px) {
+  .demo-card {
+    padding: 1.5rem 1.3rem;
+  }
+
+  .demo-card-head h3 {
+    font-size: 1.08rem;
+  }
+
+  .demo-desc {
+    font-size: 0.9rem;
+  }
+
+  .demo-label {
+    font-size: 0.85rem;
+  }
+
+  .demo-select {
+    font-size: 1rem;
+  }
+
+  .demo-result-main {
+    font-size: 1rem;
+  }
+
+  .demo-result-sub {
+    font-size: 0.9rem;
+  }
+
+  .demo-faq summary {
+    font-size: 0.95rem;
+  }
+
+  .demo-faq details p {
+    font-size: 0.88rem;
+  }
+
+  .demo-review {
+    flex-basis: 220px;
+  }
+
+  .demo-review-text {
+    font-size: 0.88rem;
+  }
+
+  .demo-review-name {
+    font-size: 0.8rem;
+  }
+
+  .demo-countdown-label {
+    font-size: 0.82rem;
+  }
+
+  .demo-zip-status {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #demo .section-title h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0;
+  }
+}
