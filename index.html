@@ -41,7 +41,7 @@
     <script src="js/tailwind.config.js?v=20260502"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260706b" />
+    <link rel="stylesheet" href="css/style.css?v=20260706c" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -263,7 +263,7 @@
                     <span></span>
                     <p>web-app.example</p>
                   </div>
-                  <img src="img/discharge-tool.png" alt="自主開発した退院支援管理ツールの画面" />
+                  <img src="img/discharge-tool.png?v=20260706" alt="自主開発した退院支援管理ツールの画面" />
                   <div class="hero-browser-caption">
                     <span>Web App</span>
                     <strong>退院支援管理ツール</strong>
@@ -333,7 +333,7 @@
             </article>
           </div>
           <div class="strength-visual">
-            <img src="img/discharge-tool.png" alt="退院支援管理ツールの画面" />
+            <img src="img/discharge-tool.png?v=20260706" alt="退院支援管理ツールの画面" />
             <img src="img/onomichi.png?v=20260705" alt="LP制作実績の画面" />
           </div>
         </div>
@@ -555,87 +555,23 @@
 
         <!-- ギャラリーグリッド -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 works-bento-grid" id="works-grid">
-          <!-- 退院支援管理ツール (Web App) -->
-          <div class="works-item works-featured" data-category="webapp">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('dischargeTool')">
-              <img
-                src="img/discharge-tool-mock.png?v=20260705"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="退院支援管理ツール" />
-              <div class="works-overlay">
-                <span class="works-category">Web App</span>
-                <h3 class="works-title">退院支援管理ツール（自主開発）</h3>
-                <p class="works-summary">転院調整を見える化</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
-              <div class="absolute top-3 right-3 bg-teal-600 text-white text-xs px-2 py-1 rounded font-bold z-10">
-                β版公開中
-              </div>
-            </button>
-          </div>
-
           <!-- EC・サイト改善実装 (EC) -->
           <div class="works-item" data-category="ec">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('ecCro')">
-              <img
-                src="img/ec-cover.svg"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="ECサイト改善施策の実装イメージ" />
-              <div class="works-overlay">
+            <button class="works-card group w-full text-left" onclick="openWorksModal('ecCro')">
+              <div class="works-thumb">
+                <img
+                  src="img/ec-cover.svg"
+                  loading="lazy"
+                  decoding="async"
+                  alt="ECサイト改善施策の実装イメージ" />
+                <div class="absolute top-3 right-3 bg-accent-gold text-navy-main text-xs px-2 py-1 rounded font-bold z-10">
+                  継続受注中
+                </div>
+              </div>
+              <div class="works-caption">
                 <span class="works-category">EC改善 / 継続受注</span>
                 <h3 class="works-title">ECサイト改善施策の実装</h3>
                 <p class="works-summary">Web接客ツールで多数の施策を実装</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
-              <div class="absolute top-3 right-3 bg-accent-gold text-navy-main text-xs px-2 py-1 rounded font-bold z-10">
-                継続受注中
-              </div>
-            </button>
-          </div>
-
-          <!-- SnapOnomichi LP (LP) -->
-          <div class="works-item is-study-work" data-category="lp">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('onomichi')">
-              <img
-                src="img/onomichi.png?v=20260705"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="SnapOnomichi" />
-              <div class="works-overlay">
-                <span class="works-category">LP / 課題制作</span>
-                <h3 class="works-title">デイトラ課題LP</h3>
-                <p class="works-summary">指定デザインを実装</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
-            </button>
-          </div>
-
-          <!-- ブログメディア (Media) -->
-          <div class="works-item" data-category="media">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('blog')">
-              <img
-                src="img/blog-media.png?v=20260705"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="ブログメディア" />
-              <div class="works-overlay">
-                <span class="works-category">Media</span>
-                <h3 class="works-title">個人運営メディア</h3>
-                <p class="works-summary">SEOメディア運営</p>
                 <span class="works-link">詳細を見る →</span>
               </div>
             </button>
@@ -643,16 +579,15 @@
 
           <!-- GeneL コーポレートサイト (Corporate) -->
           <div class="works-item" data-category="corporate">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('genel')">
-              <img
-                src="img/genel-top.png?v=20260705"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="GeneL inc." />
-              <div class="works-overlay">
+            <button class="works-card group w-full text-left" onclick="openWorksModal('genel')">
+              <div class="works-thumb">
+                <img
+                  src="img/genel-top.png?v=20260705"
+                  loading="lazy"
+                  decoding="async"
+                  alt="GeneL inc." />
+              </div>
+              <div class="works-caption">
                 <span class="works-category">Corporate</span>
                 <h3 class="works-title">GeneL inc. コーポレートサイト</h3>
                 <p class="works-summary">採用導線の実装</p>
@@ -661,18 +596,77 @@
             </button>
           </div>
 
+          <!-- 退院支援管理ツール (Web App) -->
+          <div class="works-item works-featured" data-category="webapp">
+            <button class="works-card group w-full text-left" onclick="openWorksModal('dischargeTool')">
+              <div class="works-thumb">
+                <img
+                  src="img/discharge-tool-mock.png?v=20260706"
+                  loading="lazy"
+                  decoding="async"
+                  alt="退院支援管理ツール" />
+                <div class="absolute top-3 right-3 bg-teal-600 text-white text-xs px-2 py-1 rounded font-bold z-10">
+                  β版公開中
+                </div>
+              </div>
+              <div class="works-caption">
+                <span class="works-category">Web App</span>
+                <h3 class="works-title">退院支援管理ツール（自主開発）</h3>
+                <p class="works-summary">転院調整を見える化</p>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- ブログメディア (Media) -->
+          <div class="works-item" data-category="media">
+            <button class="works-card group w-full text-left" onclick="openWorksModal('blog')">
+              <div class="works-thumb">
+                <img
+                  src="img/blog-media.png?v=20260705"
+                  loading="lazy"
+                  decoding="async"
+                  alt="ブログメディア" />
+              </div>
+              <div class="works-caption">
+                <span class="works-category">Media</span>
+                <h3 class="works-title">個人運営メディア</h3>
+                <p class="works-summary">SEOメディア運営</p>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- SnapOnomichi LP (LP) -->
+          <div class="works-item is-study-work" data-category="lp">
+            <button class="works-card group w-full text-left" onclick="openWorksModal('onomichi')">
+              <div class="works-thumb">
+                <img
+                  src="img/onomichi.png?v=20260705"
+                  loading="lazy"
+                  decoding="async"
+                  alt="SnapOnomichi" />
+              </div>
+              <div class="works-caption">
+                <span class="works-category">LP / 課題制作</span>
+                <h3 class="works-title">デイトラ課題LP</h3>
+                <p class="works-summary">指定デザインを実装</p>
+                <span class="works-link">詳細を見る →</span>
+              </div>
+            </button>
+          </div>
+
           <!-- みなみ歯科クリニック (Corporate) -->
           <div class="works-item is-study-work" data-category="corporate">
-            <button
-              class="works-card block relative overflow-hidden rounded-2xl aspect-video group w-full text-left"
-              onclick="openWorksModal('minamiClinic')">
-              <img
-                src="img/minami-clinic.png?v=20260705"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-                decoding="async"
-                alt="みなみ歯科クリニック" />
-              <div class="works-overlay">
+            <button class="works-card group w-full text-left" onclick="openWorksModal('minamiClinic')">
+              <div class="works-thumb">
+                <img
+                  src="img/minami-clinic.png?v=20260705"
+                  loading="lazy"
+                  decoding="async"
+                  alt="みなみ歯科クリニック" />
+              </div>
+              <div class="works-caption">
                 <span class="works-category">WordPress / 課題制作</span>
                 <h3 class="works-title">デイトラ課題サイト</h3>
                 <p class="works-summary">歯科医院サイトを実装</p>
@@ -1036,7 +1030,7 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="section-title reveal-up">
           <span>PRICE</span>
-          <h2>料金の考え方</h2>
+          <h2>料金プラン</h2>
           <p class="text-sm text-text-gray mt-4">
             個人運営のため、制作会社より抑えた価格でお受けしています。設計・原稿整理込みです。
           </p>
@@ -1152,6 +1146,18 @@
           ※ ページ数、CMS、外部連携、素材量で変動します。予算内で優先順位を整理します。<br />
           ※ 既存サイトの部分改善・施策実装（スポット）のご相談も承ります。
         </p>
+
+        <!-- 相談CTA -->
+        <div class="mt-14 text-center reveal-up">
+          <p class="text-text-gray text-sm mb-5">どのプランが合うか分からなくても大丈夫です。現状の整理からご一緒します。</p>
+          <a
+            href="#contact"
+            class="btn-primary inline-flex items-center justify-center px-10 py-4 rounded-full shadow-xl text-lg">
+            <i class="fa-regular fa-envelope mr-2"></i>
+            無料で相談する
+            <i class="fa-solid fa-chevron-right ml-2 text-sm text-accent-gold"></i>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -1539,7 +1545,9 @@
               <li><a href="#about" class="hover:text-white transition-colors">強み・特徴</a></li>
               <li><a href="#profile" class="hover:text-white transition-colors">プロフィール</a></li>
               <li><a href="#works" class="hover:text-white transition-colors">制作実績</a></li>
-              <li><a href="#service" class="hover:text-white transition-colors">料金・サービス</a></li>
+              <li><a href="#demo" class="hover:text-white transition-colors">実装デモ</a></li>
+              <li><a href="#workflow" class="hover:text-white transition-colors">制作の流れ</a></li>
+              <li><a href="#service" class="hover:text-white transition-colors">料金</a></li>
             </ul>
           </div>
           <!-- エリア＆ポリシー -->
