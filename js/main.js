@@ -159,8 +159,9 @@ const worksData = {
   blog: {
     category: "Media",
     title: "個人運営ブログメディア",
-    image: "img/kadomaru-codeworks_logo_main.png",
-    description: "医療・福祉向けの個人メディア。検索意図に合わせて、記事構成と内部導線を整理しています。",
+    image: "img/blog-media.png?v=20260705",
+    description:
+      "お金・仕事・暮らしをテーマにした個人メディア（累計400記事以上）。検索意図に合わせて、記事構成と内部導線を整理しています。",
     role: "企画・執筆・サイト運営・SEO対策",
     techs: ["WordPress", "Google Analytics", "Search Console", "Canva"],
     points: [
