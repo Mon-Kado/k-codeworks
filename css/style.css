@@ -5519,3 +5519,91 @@ body::before {
   font-size: 0.8rem;
   line-height: 1.75;
 }
+
+/* デモ4: レビューカルーセル */
+.demo-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demo-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.demo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.demo-review {
+  flex: 0 0 244px;
+  scroll-snap-align: start;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(10, 58, 120, 0.1);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.demo-review-stars {
+  color: #c9a466;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.demo-review-text {
+  margin-top: 0.5rem;
+  color: #334155;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.demo-review-name {
+  margin-top: 0.6rem;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.demo-carousel-btn {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(10, 58, 120, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: #0a3a78;
+  cursor: pointer;
+  transition:
+    opacity 0.25s,
+    background 0.25s;
+}
+
+.demo-carousel-btn:hover:not(:disabled) {
+  background: #f0f5ff;
+}
+
+/* 端では消さずに薄く（誤クリック防止の定石） */
+.demo-carousel-btn:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* デモ5: 郵便番号→住所 */
+.demo-zip-status {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.demo-zip-status.is-ok {
+  color: #1a9c6b;
+}
+
+.demo-zip-status.is-ng {
+  color: #d14343;
+}

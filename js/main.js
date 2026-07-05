@@ -801,3 +801,86 @@ if (workflowSection) {
     setInterval(tick, 1000);
   }
 })();
+
+// ==============================================
+// 実装デモ 追加分（カルーセル・住所自動入力）
+// ==============================================
+(function () {
+  // --- デモ4: レビューカルーセル ---
+  const carousel = document.getElementById("demo-carousel");
+  if (carousel) {
+    const btns = document.querySelectorAll(".demo-carousel-btn");
+    const step = () => {
+      const card = carousel.querySelector(".demo-review");
+      return card ? card.offsetWidth + 16 : 260;
+    };
+    // 端で矢印をdisabled半透明に（消さない＝誤クリック防止の定石）
+    const updateBtns = () => {
+      const max = carousel.scrollWidth - carousel.clientWidth - 2;
+      btns.forEach((b) => {
+        const dir = Number(b.dataset.dir);
+        const atEdge = dir < 0 ? carousel.scrollLeft <= 2 : carousel.scrollLeft >= max;
+        b.disabled = atEdge;
+      });
+    };
+    btns.forEach((b) => {
+      b.addEventListener("click", () => {
+        carousel.scrollBy({ left: step() * Number(b.dataset.dir), behavior: "smooth" });
+      });
+    });
+    carousel.addEventListener("scroll", updateBtns, { passive: true });
+    updateBtns();
+
+    // 自動スライド（ホバー中は停止・端で巻き戻し）
+    let hover = false;
+    carousel.addEventListener("mouseenter", () => (hover = true));
+    carousel.addEventListener("mouseleave", () => (hover = false));
+    setInterval(() => {
+      if (hover || !carousel.offsetParent) return;
+      const max = carousel.scrollWidth - carousel.clientWidth - 2;
+      if (carousel.scrollLeft >= max) {
+        carousel.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        carousel.scrollBy({ left: step(), behavior: "smooth" });
+      }
+    }, 4000);
+  }
+
+  // --- デモ5: 郵便番号→住所自動入力 ---
+  const zipInput = document.getElementById("demo-zip");
+  if (zipInput) {
+    const addressInput = document.getElementById("demo-address");
+    const status = document.getElementById("demo-zip-status");
+    const showStatus = (msg, ok) => {
+      status.textContent = msg;
+      status.hidden = false;
+      status.classList.toggle("is-ok", ok);
+      status.classList.toggle("is-ng", !ok);
+    };
+    let timer = null;
+    zipInput.addEventListener("input", () => {
+      zipInput.value = zipInput.value.replace(/[^0-9]/g, "");
+      status.hidden = true;
+      clearTimeout(timer);
+      if (zipInput.value.length !== 7) return;
+      showStatus("検索中…", true);
+      timer = setTimeout(async () => {
+        try {
+          const res = await fetch(
+            "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + encodeURIComponent(zipInput.value)
+          );
+          const data = await res.json();
+          if (data.results && data.results[0]) {
+            const r = data.results[0];
+            addressInput.value = r.address1 + r.address2 + r.address3;
+            showStatus("住所を自動入力しました", true);
+          } else {
+            showStatus("該当する住所が見つかりませんでした", false);
+          }
+        } catch (e) {
+          showStatus("検索に失敗しました。時間をおいてお試しください", false);
+        }
+      }, 300);
+    });
+  }
+})();

@@ -43,7 +43,7 @@
     <script src="js/tailwind.config.js?v=20260502"></script>
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260705e" />
+    <link rel="stylesheet" href="css/style.css?v=20260705f" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -773,6 +773,72 @@
           </div>
         </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 reveal-up">
+          <!-- デモ4: レビューカルーセル -->
+          <div class="demo-card md:col-span-2">
+            <div class="demo-card-head">
+              <i class="fa-solid fa-star"></i>
+              <h3>レビューカルーセル</h3>
+            </div>
+            <p class="demo-desc">お客様の声を自動で流す横スクロールUI。矢印は端で薄くなり誤操作を防ぎます。</p>
+            <div class="demo-carousel-wrap">
+              <button type="button" class="demo-carousel-btn" data-dir="-1" aria-label="前のレビューへ">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <div class="demo-carousel" id="demo-carousel">
+                <div class="demo-review">
+                  <p class="demo-review-stars">★★★★★</p>
+                  <p class="demo-review-text">問い合わせから公開までがスムーズで、説明も分かりやすかったです。</p>
+                  <p class="demo-review-name">A様（サンプル）</p>
+                </div>
+                <div class="demo-review">
+                  <p class="demo-review-stars">★★★★★</p>
+                  <p class="demo-review-text">こちらの要望を汲み取って、先回りの提案までしてもらえました。</p>
+                  <p class="demo-review-name">B様（サンプル）</p>
+                </div>
+                <div class="demo-review">
+                  <p class="demo-review-stars">★★★★☆</p>
+                  <p class="demo-review-text">スマホでの見え方まで丁寧に確認してくれて安心できました。</p>
+                  <p class="demo-review-name">C様（サンプル）</p>
+                </div>
+                <div class="demo-review">
+                  <p class="demo-review-stars">★★★★★</p>
+                  <p class="demo-review-text">公開後の修正にも素早く対応いただき、助かっています。</p>
+                  <p class="demo-review-name">D様（サンプル）</p>
+                </div>
+                <div class="demo-review">
+                  <p class="demo-review-stars">★★★★★</p>
+                  <p class="demo-review-text">専門用語を使わない説明で、社内の稟議も通しやすかったです。</p>
+                  <p class="demo-review-name">E様（サンプル）</p>
+                </div>
+              </div>
+              <button type="button" class="demo-carousel-btn" data-dir="1" aria-label="次のレビューへ">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- デモ5: 郵便番号→住所自動入力（EFO） -->
+          <div class="demo-card">
+            <div class="demo-card-head">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <h3>住所の自動入力（EFO）</h3>
+            </div>
+            <p class="demo-desc">郵便番号を入れると住所が自動で埋まります。フォームの離脱を減らす定番改善です。</p>
+            <label class="demo-label" for="demo-zip">郵便番号（ハイフンなし7桁）</label>
+            <input
+              type="text"
+              id="demo-zip"
+              class="demo-select"
+              inputmode="numeric"
+              maxlength="7"
+              placeholder="例：1000001" />
+            <p id="demo-zip-status" class="demo-zip-status" hidden></p>
+            <label class="demo-label mt-3" for="demo-address">住所（自動入力）</label>
+            <input type="text" id="demo-address" class="demo-select" placeholder="郵便番号から自動で入ります" />
+          </div>
+        </div>
+
         <p class="text-center text-xs text-text-gray mt-8 reveal-up">
           ※ いずれも本ページ用に作成した自作デモです（データはサンプル）。
         </p>
@@ -1498,6 +1564,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js?v=20260705e"></script>
+    <script src="js/main.js?v=20260705f"></script>
   </body>
 </html>
