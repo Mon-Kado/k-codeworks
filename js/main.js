@@ -108,7 +108,7 @@ const worksData = {
   dischargeTool: {
     category: "Web App",
     title: "退院支援管理ツール（自主開発）",
-    image: "img/discharge-tool.png",
+    image: "img/discharge-tool-mock.png?v=20260705",
     description:
       "転院調整を見える化するWebアプリを自主開発し、β版として公開中です。現場の手間を減らすため、空床情報と受け入れ条件を整理しました。※サービス名・URLはご相談時にお伝えします。",
     role: "企画・設計・開発（フルスタック）",
@@ -175,7 +175,7 @@ const worksData = {
   genel: {
     category: "Corporate",
     title: "GeneL inc. コーポレートサイト",
-    image: "img/genel-top.png",
+    image: "img/genel-top.png?v=20260705",
     description: "IT企業のコーポレートサイト。構成検討から参加し、採用ページのコーディングを担当しました。",
     role: "ワイヤーフレーム・デザイン参加・recruitページコーディング（チーム開発）",
     techs: ["HTML", "CSS", "JavaScript", "Figma"],
