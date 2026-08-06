@@ -5157,8 +5157,8 @@ section[data-bg]::after {
 }
 
 
-/* Small viewport hardening */
-@media (max-width: 768px) {
+/* Small viewport hardening（sm:flex-row境界=640pxと揃える。768pxのままだと640-767px幅でボタン2つが横並びのままhero-actionsが21remに圧縮され、pillボタンが正円状に潰れる） */
+@media (max-width: 639px) {
   .hero-lead {
     width: min(100%, 18.5rem) !important;
   }
