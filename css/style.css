@@ -6053,63 +6053,164 @@ body .hero-section > .hero-photo {
 }
 
 @media (max-width: 767px) {
-  /* SP：文字ブロック（クリーム地）＋下にイラスト、の分離レイアウト */
+  /* SP：クリーム地に文字→イラストが連続する一体構成（2026-08-28 改訂） */
   .hero-section {
     flex-direction: column !important;
     align-items: stretch !important;
-    background: #f3eee3 !important;
+    justify-content: flex-start !important;
+    background: #f7f3eb !important;
+    padding-top: 116px !important;
     padding-bottom: 0 !important;
+    min-height: 100svh;
   }
   .hero-section::before {
-    background: #f3eee3 !important;
+    background: #f7f3eb !important;
   }
   .hero-section::after {
     display: none !important;
   }
+
+  /* イラスト：下部に敷き、上端をクリームへ溶かして一体化 */
   body .hero-section > .hero-photo {
     position: static;
     order: 2;
     inset: auto;
     width: 100%;
-    height: 400px;
-    margin-top: auto;
+    height: 340px;
+    margin-top: -28px;
   }
   .hero-photo picture {
     display: block;
     width: 100%;
     height: 100%;
   }
-  .hero-photo img {
+  body .hero-section > .hero-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
+    object-fit: cover !important;
+    object-position: center 84% !important;
   }
   .hero-photo::after {
-    content: none;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 340px;
+    background: linear-gradient(
+      180deg,
+      #f7f3eb 0%,
+      rgba(247, 243, 235, 0.72) 12%,
+      rgba(247, 243, 235, 0) 30%
+    );
+    pointer-events: none;
   }
+
+  /* テキストブロック */
   .hero-section .max-w-6xl {
     order: 1;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
   .hero-copy {
     text-align: left;
   }
+
+  /* CARE WEB ラベル → 見出し */
+  .hero-title-line {
+    margin-bottom: 0.7rem;
+  }
+  .hero-word {
+    font-size: 0.9rem !important;
+    letter-spacing: 0.3em !important;
+  }
+  .hero h1,
+  .hero-section .hero-display-copy {
+    margin-bottom: 0 !important;
+  }
   .hero-ja-line {
-    margin-left: 0 !important;
-    margin-right: auto !important;
+    display: block !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    font-size: 1.58rem !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0.005em !important;
+    color: #17295a !important;
   }
-  .hero-lead,
-  .hero-assurance {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    text-align: left;
+  /* 見出し下のゴールドライン：短く上品に */
+  .hero-ja-line::after {
+    content: "" !important;
+    display: block !important;
+    width: 56px !important;
+    height: 3px !important;
+    margin-top: 1.15rem !important;
+    border-radius: 2px;
+    background: #c09a5b !important;
+    opacity: 1 !important;
   }
+
+  /* 説明文：行間広め・サイズ抑制 */
+  .hero-lead {
+    margin: 1.5rem 0 0 !important;
+    font-size: 0.94rem !important;
+    line-height: 2 !important;
+    font-weight: 700 !important;
+    color: #33405c !important;
+  }
+
+  /* CTA：横幅を揃え、上品な角丸 */
+  .hero-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1.9rem 0 0 !important;
+    gap: 0.75rem !important;
+  }
+  .hero-section .btn-primary,
+  .hero-section .btn-secondary {
+    width: 100% !important;
+    min-height: 58px !important;
+    padding: 0 1.25rem !important;
+    border-radius: 12px !important;
+    font-size: 1rem !important;
+    box-shadow: none !important;
+  }
+  .hero-section .btn-primary {
+    background: #17295a !important;
+    color: #fff !important;
+    border: 1px solid #17295a !important;
+  }
+  .hero-section .btn-secondary {
+    background: #fff !important;
+    color: #17295a !important;
+    border: 1px solid #17295a !important;
+  }
+  .hero-section .hero-actions i {
+    font-size: 0.82em !important;
+  }
+
+  /* 補足文：CTAより控えめに */
   .hero-assurance {
+    margin: 1.15rem 0 2.2rem !important;
     justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left;
+    font-size: 0.78rem !important;
+    line-height: 1.75 !important;
+    color: #5c6478 !important;
+    opacity: 0.95;
   }
+  .hero-assurance i {
+    color: #17295a !important;
+    opacity: 0.55;
+  }
+
   /* fixedヘッダーの全幅白背景をクリームに馴染ませる（未スクロール時のみ） */
   #header:not(.scrolled) {
-    background: rgba(243, 238, 227, 0.92) !important;
+    background: rgba(247, 243, 235, 0.92) !important;
     box-shadow: none !important;
   }
   .hero-phone-mock {
