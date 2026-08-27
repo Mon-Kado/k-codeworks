@@ -6051,11 +6051,20 @@ body .hero-section > .hero-photo {
   .hero-photo::after {
     background: linear-gradient(
       180deg,
-      rgba(247, 251, 255, 0.97) 0%,
-      rgba(247, 251, 255, 0.92) 40%,
-      rgba(247, 251, 255, 0.55) 66%,
-      rgba(247, 251, 255, 0.2) 100%
+      rgba(247, 251, 255, 0.55) 0%,
+      rgba(247, 251, 255, 0.42) 34%,
+      rgba(247, 251, 255, 0.16) 60%,
+      rgba(247, 251, 255, 0) 100%
     );
+  }
+  .hero-photo img {
+    object-position: center bottom;
+  }
+  .hero-assurance {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(247, 251, 255, 0.88);
   }
   .hero-phone-mock {
     display: none;
