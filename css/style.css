@@ -5473,16 +5473,9 @@ section[data-bg]::after {
 .hero-section::after {
   z-index: 100 !important;
   background:
-    linear-gradient(
-      180deg,
-      rgba(248, 251, 255, 1) 0px,
-      rgba(248, 251, 255, 1) 210px,
-      rgba(248, 251, 255, 0) 260px
-    ),
     linear-gradient(rgba(10, 58, 120, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(10, 58, 120, 0.045) 1px, transparent 1px) !important;
   background-size:
-    auto,
     72px 72px,
     72px 72px !important;
 }
@@ -5493,20 +5486,7 @@ body {
 }
 
 body::before {
-  content: "";
-  position: absolute;
-  top: 86px;
-  left: 0;
-  right: 0;
-  height: 170px;
-  z-index: 150;
-  background: linear-gradient(
-    180deg,
-    rgba(248, 251, 255, 1) 0%,
-    rgba(248, 251, 255, 0.96) 72%,
-    rgba(248, 251, 255, 0) 100%
-  );
-  pointer-events: none;
+  content: none;
 }
 
 @media (max-width: 1023px) {
@@ -6090,5 +6070,5 @@ body .hero-section > .hero-photo {
   max-width: 620px;
 }
 .hero-photo img {
-  object-position: center 48%;
+  object-position: center center;
 }
