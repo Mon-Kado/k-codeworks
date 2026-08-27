@@ -6008,7 +6008,12 @@ body .hero-section > .hero-photo {
       rgba(247, 251, 255, 0.3) 58%,
       rgba(247, 251, 255, 0) 78%
     ),
-    linear-gradient(0deg, rgba(10, 58, 120, 0.14) 0%, rgba(10, 58, 120, 0) 32%);
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 68%,
+      rgba(255, 255, 255, 0.6) 86%,
+      rgba(255, 255, 255, 1) 97%
+    );
 }
 
 .hero-visual-devices {
@@ -6049,13 +6054,20 @@ body .hero-section > .hero-photo {
 
 @media (max-width: 767px) {
   .hero-photo::after {
-    background: linear-gradient(
-      180deg,
-      rgba(247, 251, 255, 0.55) 0%,
-      rgba(247, 251, 255, 0.42) 34%,
-      rgba(247, 251, 255, 0.16) 60%,
-      rgba(247, 251, 255, 0) 100%
-    );
+    background:
+      linear-gradient(
+        180deg,
+        rgba(247, 251, 255, 0.55) 0%,
+        rgba(247, 251, 255, 0.42) 34%,
+        rgba(247, 251, 255, 0.16) 60%,
+        rgba(247, 251, 255, 0) 80%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 82%,
+        rgba(255, 255, 255, 0.55) 93%,
+        rgba(255, 255, 255, 1) 100%
+      );
   }
   .hero-photo img {
     object-position: center bottom;
