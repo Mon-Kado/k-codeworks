@@ -13,7 +13,9 @@ const splashCurtain = document.getElementById("splash-curtain");
 const splashScreen = document.getElementById("splash-screen");
 const splashBg = document.getElementById("splash-bg");
 const mainHeader = document.getElementById("header");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 const escapeHTML = (value) =>
   String(value).replace(/[&<>"']/g, (char) => {
@@ -30,7 +32,14 @@ const escapeHTML = (value) =>
 const runSplashSequence = () => {
   const progressBar = document.getElementById("splash-progress-bar");
 
-  if (!splashLogo || !splashCurtain || !splashScreen || !splashBg || !mainHeader || !progressBar) {
+  if (
+    !splashLogo ||
+    !splashCurtain ||
+    !splashScreen ||
+    !splashBg ||
+    !mainHeader ||
+    !progressBar
+  ) {
     return;
   }
 
@@ -186,7 +195,8 @@ const worksData = {
     category: "Corporate",
     title: "GeneL inc. コーポレートサイト",
     image: "img/genel-top.png?v=20260705",
-    description: "IT企業のコーポレートサイト。構成検討から参加し、採用ページのコーディングを担当しました。",
+    description:
+      "IT企業のコーポレートサイト。構成検討から参加し、採用ページのコーディングを担当しました。",
     role: "ワイヤーフレーム・デザイン参加・recruitページコーディング（チーム開発）",
     techs: ["HTML", "CSS", "JavaScript", "Figma"],
     points: [
@@ -307,7 +317,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 );
 
 document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
@@ -377,14 +387,20 @@ worksTabs.forEach((tab) => {
 
 // Reveal Animation
 const revealElements = document.querySelectorAll(
-  ".reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .section-title, .underline-animation"
+  ".reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .section-title, .underline-animation",
 );
 
-
 document.querySelectorAll("main > section").forEach((section) => {
-  section.querySelectorAll(".reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .section-title, .underline-animation").forEach((target, index) => {
-    target.style.setProperty("--reveal-delay", `${Math.min(index * 90, 360)}ms`);
-  });
+  section
+    .querySelectorAll(
+      ".reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-children, .section-title, .underline-animation",
+    )
+    .forEach((target, index) => {
+      target.style.setProperty(
+        "--reveal-delay",
+        `${Math.min(index * 90, 360)}ms`,
+      );
+    });
 });
 
 const revealObserver = new IntersectionObserver(
@@ -398,7 +414,7 @@ const revealObserver = new IntersectionObserver(
   {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
-  }
+  },
 );
 
 revealElements.forEach((el) => revealObserver.observe(el));
@@ -435,7 +451,7 @@ const countObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.5 },
 );
 
 countElements.forEach((el) => countObserver.observe(el));
@@ -611,7 +627,10 @@ if (contactForm) {
 
     for (const [key, value] of formData.entries()) {
       if (value && labels[key]) {
-        const displayValue = String(value).length > 100 ? String(value).substring(0, 100) + "..." : String(value);
+        const displayValue =
+          String(value).length > 100
+            ? String(value).substring(0, 100) + "..."
+            : String(value);
         contentHTML += `
                     <div class="border-b border-gray-200 pb-2">
                         <p class="text-text-gray text-xs mb-1">${escapeHTML(labels[key])}</p>
@@ -697,9 +716,12 @@ if (workflowSection) {
 
           // カードのアニメーション（順番に表示）
           workflowCards.forEach((card, index) => {
-            setTimeout(() => {
-              card.classList.add("revealed");
-            }, 400 + index * 100);
+            setTimeout(
+              () => {
+                card.classList.add("revealed");
+              },
+              400 + index * 100,
+            );
           });
 
           workflowObserver.unobserve(entry.target);
@@ -709,7 +731,7 @@ if (workflowSection) {
     {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
-    }
+    },
   );
 
   workflowObserver.observe(workflowSection);
@@ -722,24 +744,67 @@ if (workflowSection) {
   // --- デモ1: 都道府県別お届け日数 ---
   const PREF_GROUPS = [
     { days: "3〜4日後", fee: 1080, prefs: ["北海道"] },
-    { days: "2〜3日後", fee: 880, prefs: ["青森県", "岩手県", "秋田県", "宮城県", "山形県", "福島県"] },
+    {
+      days: "2〜3日後",
+      fee: 880,
+      prefs: ["青森県", "岩手県", "秋田県", "宮城県", "山形県", "福島県"],
+    },
     {
       days: "翌日〜2日後",
       fee: 780,
-      prefs: ["茨城県", "栃木県", "群馬県", "埼玉県", "千葉県", "東京都", "神奈川県", "山梨県"],
+      prefs: [
+        "茨城県",
+        "栃木県",
+        "群馬県",
+        "埼玉県",
+        "千葉県",
+        "東京都",
+        "神奈川県",
+        "山梨県",
+      ],
     },
     {
       days: "2日後",
       fee: 780,
-      prefs: ["新潟県", "長野県", "富山県", "石川県", "福井県", "岐阜県", "静岡県", "愛知県", "三重県"],
+      prefs: [
+        "新潟県",
+        "長野県",
+        "富山県",
+        "石川県",
+        "福井県",
+        "岐阜県",
+        "静岡県",
+        "愛知県",
+        "三重県",
+      ],
     },
-    { days: "2日後", fee: 880, prefs: ["滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県"] },
-    { days: "2〜3日後", fee: 980, prefs: ["鳥取県", "島根県", "岡山県", "広島県", "山口県"] },
-    { days: "3日後", fee: 980, prefs: ["徳島県", "香川県", "愛媛県", "高知県"] },
+    {
+      days: "2日後",
+      fee: 880,
+      prefs: ["滋賀県", "京都府", "大阪府", "兵庫県", "奈良県", "和歌山県"],
+    },
+    {
+      days: "2〜3日後",
+      fee: 980,
+      prefs: ["鳥取県", "島根県", "岡山県", "広島県", "山口県"],
+    },
+    {
+      days: "3日後",
+      fee: 980,
+      prefs: ["徳島県", "香川県", "愛媛県", "高知県"],
+    },
     {
       days: "3日後",
       fee: 1080,
-      prefs: ["福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県"],
+      prefs: [
+        "福岡県",
+        "佐賀県",
+        "長崎県",
+        "熊本県",
+        "大分県",
+        "宮崎県",
+        "鹿児島県",
+      ],
     },
     { days: "4〜5日後", fee: 1480, prefs: ["沖縄県"] },
   ];
@@ -763,7 +828,8 @@ if (workflowSection) {
         return;
       }
       document.getElementById("demo-shipping-days").textContent = group.days;
-      document.getElementById("demo-shipping-fee").textContent = "¥" + group.fee.toLocaleString();
+      document.getElementById("demo-shipping-fee").textContent =
+        "¥" + group.fee.toLocaleString();
       result.hidden = false;
     });
   }
@@ -799,7 +865,14 @@ if (workflowSection) {
     const pad = (n) => String(n).padStart(2, "0");
     const tick = () => {
       const now = new Date();
-      const end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+      const end = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        23,
+        59,
+        59,
+      );
       let diff = Math.max(0, Math.floor((end - now) / 1000));
       const h = Math.floor(diff / 3600);
       const m = Math.floor((diff % 3600) / 60);
@@ -828,13 +901,17 @@ if (workflowSection) {
       const max = carousel.scrollWidth - carousel.clientWidth - 2;
       btns.forEach((b) => {
         const dir = Number(b.dataset.dir);
-        const atEdge = dir < 0 ? carousel.scrollLeft <= 2 : carousel.scrollLeft >= max;
+        const atEdge =
+          dir < 0 ? carousel.scrollLeft <= 2 : carousel.scrollLeft >= max;
         b.disabled = atEdge;
       });
     };
     btns.forEach((b) => {
       b.addEventListener("click", () => {
-        carousel.scrollBy({ left: step() * Number(b.dataset.dir), behavior: "smooth" });
+        carousel.scrollBy({
+          left: step() * Number(b.dataset.dir),
+          behavior: "smooth",
+        });
       });
     });
     carousel.addEventListener("scroll", updateBtns, { passive: true });
@@ -876,7 +953,8 @@ if (workflowSection) {
       timer = setTimeout(async () => {
         try {
           const res = await fetch(
-            "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + encodeURIComponent(zipInput.value)
+            "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" +
+              encodeURIComponent(zipInput.value),
           );
           const data = await res.json();
           if (data.results && data.results[0]) {
@@ -897,34 +975,67 @@ if (workflowSection) {
 // ヒーロー内モックアップ：実績を順番に表示するローテーター
 (function () {
   const rotatorImg = document.getElementById("heroRotatorImg");
+  const rotatorImgPhone = document.getElementById("heroRotatorImgPhone");
   const rotatorCategory = document.getElementById("heroRotatorCategory");
   const rotatorTitle = document.getElementById("heroRotatorTitle");
   if (!rotatorImg || !rotatorCategory || !rotatorTitle) return;
 
   const works = [
-    { img: "img/discharge-tool.png?v=20260706", category: "Web App", title: "退院支援管理ツール（自主開発）" },
-    { img: "img/genel-top.png?v=20260705", category: "Corporate", title: "GeneL inc. コーポレートサイト" },
-    { img: "img/ec-cover.svg", category: "EC改善 / 継続受注", title: "ECサイト改善施策の実装" },
-    { img: "img/blog-media.png?v=20260705", category: "Media", title: "個人運営メディア" },
-    { img: "img/onomichi.png?v=20260705", category: "LP / 課題制作", title: "デイトラ課題LP" },
-    { img: "img/minami-clinic.png?v=20260705", category: "WordPress / 課題制作", title: "デイトラ課題サイト" },
+    {
+      img: "img/discharge-tool.png?v=20260706",
+      category: "Web App",
+      title: "退院支援管理ツール（自主開発）",
+    },
+    {
+      img: "img/genel-top.png?v=20260705",
+      category: "Corporate",
+      title: "GeneL inc. コーポレートサイト",
+    },
+    {
+      img: "img/ec-cover.svg",
+      category: "EC改善 / 継続受注",
+      title: "ECサイト改善施策の実装",
+    },
+    {
+      img: "img/blog-media.png?v=20260705",
+      category: "Media",
+      title: "個人運営メディア",
+    },
+    {
+      img: "img/onomichi.png?v=20260705",
+      category: "LP / 課題制作",
+      title: "デイトラ課題LP",
+    },
+    {
+      img: "img/minami-clinic.png?v=20260705",
+      category: "WordPress / 課題制作",
+      title: "デイトラ課題サイト",
+    },
   ];
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
   let index = 0;
 
   function showWork(i) {
     const work = works[i];
     rotatorImg.style.opacity = "0";
+    if (rotatorImgPhone) rotatorImgPhone.style.opacity = "0";
     window.setTimeout(() => {
       rotatorImg.src = work.img;
       rotatorCategory.textContent = work.category;
       rotatorTitle.textContent = work.title;
       rotatorImg.style.opacity = "";
+      if (rotatorImgPhone) {
+        rotatorImgPhone.src = work.img;
+        rotatorImgPhone.style.opacity = "";
+      }
     }, 260);
   }
 
   rotatorImg.style.transition = "opacity .26s ease";
+  if (rotatorImgPhone) rotatorImgPhone.style.transition = "opacity .26s ease";
 
   if (!prefersReducedMotion) {
     window.setInterval(() => {

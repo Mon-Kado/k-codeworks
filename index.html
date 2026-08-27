@@ -195,71 +195,8 @@
       id="home"
       class="hero-section pt-32 pb-20 md:pt-40 md:pb-28 relative min-h-screen flex items-center overflow-hidden"
     >
-      <div class="hero-noise" aria-hidden="true"></div>
-      <!-- グラデーションメッシュ背景 -->
-      <div class="gradient-mesh">
-        <div class="gradient-blob gradient-blob-1"></div>
-        <div class="gradient-blob gradient-blob-2"></div>
-        <div class="gradient-blob gradient-blob-3"></div>
-        <div class="gradient-blob gradient-blob-4"></div>
-      </div>
-
-      <!-- ストロークアニメーション -->
-      <div class="hero-strokes">
-        <!-- メインストローク（白） -->
-        <svg
-          class="hero-stroke hero-stroke-1"
-          viewBox="0 0 1440 900"
-          preserveAspectRatio="none"
-        >
-          <path
-            class="stroke-path"
-            d="M-100,800 Q200,600 400,650 T800,400 T1200,500 T1600,200"
-            fill="none"
-            stroke="white"
-            stroke-width="4"
-            stroke-linecap="round"
-          />
-        </svg>
-
-        <!-- サブストローク（ゴールド） -->
-        <svg
-          class="hero-stroke hero-stroke-2"
-          viewBox="0 0 1440 900"
-          preserveAspectRatio="none"
-        >
-          <path
-            class="stroke-path"
-            d="M-50,100 Q300,300 500,200 T900,450 T1300,300 T1550,500"
-            fill="none"
-            stroke="#c9a466"
-            stroke-width="3"
-            stroke-linecap="round"
-          />
-        </svg>
-
-        <!-- 第3ストローク（白・細め） -->
-        <svg
-          class="hero-stroke hero-stroke-3"
-          viewBox="0 0 1440 900"
-          preserveAspectRatio="none"
-        >
-          <path
-            class="stroke-path"
-            d="M1500,850 Q1200,700 1000,750 T600,500 T200,600 T-100,350"
-            fill="none"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-          />
-        </svg>
-      </div>
-
-      <!-- フローティングシェイプ -->
-      <div class="floating-shapes">
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
+      <div class="hero-photo" aria-hidden="true">
+        <img src="img/hero-clinic-photo.jpg" alt="" loading="eager" />
       </div>
 
       <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
@@ -273,14 +210,14 @@
                 <span class="hero-word hero-word-accent">WEB</span>
               </span>
               <span class="hero-ja-line"
-                >医療・福祉に強い、<br class="sm:hidden" />Web制作室。</span
+                >医療・福祉の現場を知る、<br />一人のWeb制作室。</span
               >
             </h1>
             <p class="hero-lead hero-sub-fade" style="animation-delay: 0.2s">
-              病院で働く現役の医療ソーシャルワーカーが、<br
+              病院やクリニック、福祉・介護施設の想いを、<br
                 class="hidden md:block"
               />
-              クリニック・施設のHPから業務ツールまでお作りします。
+              丁寧にくみ取り、伝わるかたちに。企画から公開後の運用まで、伴走します。
             </p>
             <div
               class="hero-actions flex flex-col sm:flex-row gap-4 hero-cta-slide mt-8"
@@ -315,57 +252,30 @@
             </p>
           </div>
           <div class="hero-visual-wrap w-full md:w-1/2 flex justify-center">
-            <div class="hero-visual">
-              <div class="hero-showcase" aria-label="制作実績のプレビュー">
-                <div class="hero-profile-slice">
-                  <img
-                    src="img/profile-msw-crop.png"
-                    alt="顔を写さない医療現場のプロフィール写真"
-                  />
+            <div class="hero-visual hero-visual-devices">
+              <div class="hero-browser hero-browser-main" id="heroRotator">
+                <div class="hero-browser-bar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <p>web-app.example</p>
                 </div>
-                <div class="hero-browser hero-browser-main" id="heroRotator">
-                  <div class="hero-browser-bar">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <p>web-app.example</p>
-                  </div>
-                  <img
-                    id="heroRotatorImg"
-                    src="img/discharge-tool.png?v=20260706"
-                    alt="制作実績のプレビュー"
-                  />
-                  <div class="hero-browser-caption">
-                    <span id="heroRotatorCategory">Web App</span>
-                    <strong id="heroRotatorTitle">退院支援管理ツール</strong>
-                  </div>
+                <img
+                  id="heroRotatorImg"
+                  src="img/discharge-tool.png?v=20260706"
+                  alt="制作実績のプレビュー"
+                />
+                <div class="hero-browser-caption">
+                  <span id="heroRotatorCategory">Web App</span>
+                  <strong id="heroRotatorTitle">退院支援管理ツール</strong>
                 </div>
-                <div class="hero-mini-card hero-mini-card-plan">
-                  <div class="hero-plan-visual" aria-hidden="true">
-                    <i class="fa-solid fa-route"></i>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <div>
-                    <span>Planning</span>
-                    <strong>導線設計</strong>
-                  </div>
-                </div>
-                <div class="hero-mini-card hero-mini-card-corp">
-                  <img
-                    src="img/genel-top.png?v=20260705"
-                    alt="GeneL inc. コーポレートサイトの画面"
-                  />
-                  <div>
-                    <span>Corporate</span>
-                    <strong>採用導線</strong>
-                  </div>
-                </div>
-                <div class="hero-result-card">
-                  <span>MSW視点</span>
-                  <strong>現場から設計。</strong>
-                </div>
+              </div>
+              <div class="hero-phone-mock" aria-hidden="true">
+                <img
+                  id="heroRotatorImgPhone"
+                  src="img/discharge-tool.png?v=20260706"
+                  alt=""
+                />
               </div>
             </div>
           </div>
