@@ -6081,3 +6081,14 @@ body .hero-section > .hero-photo {
     display: none;
   }
 }
+
+/* ヒーロー：モックアップ廃止・写真/イラスト単体構成（2026-08-27） */
+.hero-main-grid-solo {
+  justify-content: flex-start;
+}
+.hero-main-grid-solo .hero-copy {
+  max-width: 620px;
+}
+.hero-photo img {
+  object-position: center 48%;
+}
