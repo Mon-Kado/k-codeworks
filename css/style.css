@@ -6600,8 +6600,10 @@ body #about.strength-section {
 
 /* セクション間の境目をなくす（2026-08-28）
    ヒーロー下端 → STRENGTH（クリーム）、STRENGTH下端 → PROFILE（濃紺）へ
-   それぞれ地続きに見えるよう、ヒーローの下地もクリーム寄りにする */
-@media (min-width: 768px) {
+   それぞれ地続きに見えるよう、ヒーローの下地もクリーム寄りにする
+   ※ 768〜1023px（iPad縦）はSPと同じ「テキスト上/イラスト下」構成で
+   #f7f3eb単色が正しいため、min-widthを1024pxにして除外する */
+@media (min-width: 1024px) {
   .hero-section {
     background: linear-gradient(
       180deg,
