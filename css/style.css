@@ -6573,23 +6573,25 @@ body #about.strength-section {
 /* セクション間の境目をなくす（2026-08-28）
    ヒーロー下端 → STRENGTH（クリーム）、STRENGTH下端 → PROFILE（濃紺）へ
    それぞれ地続きに見えるよう、ヒーローの下地もクリーム寄りにする */
-.hero-section {
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f7fbff 42%,
-    #f9f6ef 82%,
-    #f7f3eb 100%
-  ) !important;
-}
-.hero-section::before {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(247, 251, 255, 0.97) 44%,
-    rgba(249, 246, 239, 0.98) 82%,
-    rgba(247, 243, 235, 1) 100%
-  ) !important;
+@media (min-width: 768px) {
+  .hero-section {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7fbff 42%,
+      #f9f6ef 82%,
+      #f7f3eb 100%
+    ) !important;
+  }
+  .hero-section::before {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(247, 251, 255, 0.97) 44%,
+      rgba(249, 246, 239, 0.98) 82%,
+      rgba(247, 243, 235, 1) 100%
+    ) !important;
+  }
 }
 
 /* ヒーローの見出しをSTRENGTHと同じ明朝体に統一（2026-08-29） */
