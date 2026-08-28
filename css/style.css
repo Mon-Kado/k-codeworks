@@ -6002,17 +6002,19 @@ body .hero-section > .hero-photo {
   inset: 0;
   background:
     linear-gradient(
-      90deg,
-      rgba(247, 251, 255, 0.97) 0%,
-      rgba(247, 251, 255, 0.88) 28%,
-      rgba(247, 251, 255, 0.3) 58%,
-      rgba(247, 251, 255, 0) 78%
+      180deg,
+      rgba(247, 243, 235, 0) 52%,
+      rgba(247, 243, 235, 0.35) 70%,
+      rgba(247, 243, 235, 0.75) 85%,
+      rgba(247, 243, 235, 0.96) 94%,
+      rgba(247, 243, 235, 1) 100%
     ),
     linear-gradient(
-      180deg,
-      rgba(247, 243, 235, 0) 68%,
-      rgba(247, 243, 235, 0.6) 86%,
-      rgba(247, 243, 235, 1) 97%
+      90deg,
+      rgba(247, 251, 255, 0.94) 0%,
+      rgba(247, 251, 255, 0.82) 28%,
+      rgba(247, 251, 255, 0.26) 58%,
+      rgba(247, 251, 255, 0) 78%
     );
 }
 
@@ -6588,4 +6590,9 @@ body #about.strength-section {
     rgba(249, 246, 239, 0.98) 82%,
     rgba(247, 243, 235, 1) 100%
   ) !important;
+}
+
+/* ヒーローの見出しをSTRENGTHと同じ明朝体に統一（2026-08-29） */
+.hero-section .hero-display-copy {
+  font-family: "Noto Serif JP", serif;
 }
