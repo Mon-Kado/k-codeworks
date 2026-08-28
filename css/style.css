@@ -3951,13 +3951,7 @@ body {
 }
 
 #works {
-  background:
-    radial-gradient(
-      circle at 8% 0%,
-      rgba(201, 164, 102, 0.14),
-      transparent 22%
-    ),
-    linear-gradient(180deg, #f7f3eb 0%, #eef3fb 100%) !important;
+  background: #f7f3eb !important;
   color: #17295a;
 }
 
@@ -3967,6 +3961,9 @@ body {
 
 #works .section-title h2 {
   color: #17295a;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 #works .section-title p {
@@ -6888,43 +6885,5 @@ body #about.strength-section {
   }
   .works-divider {
     margin: 2.5rem 0 2rem;
-  }
-}
-
-/* WORKS上部の丘イラスト：PROFILEの村イラストからの流れを引き継ぐ
-   （2026-08-29） */
-.works-hero-village {
-  position: relative;
-  margin: 1.5rem 0 2.75rem;
-  line-height: 0;
-}
-.works-hero-village img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.works-hero-village::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      #f7f3eb 0%,
-      rgba(247, 243, 235, 0.5) 8%,
-      rgba(247, 243, 235, 0) 20%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(247, 243, 235, 0) 88%,
-      rgba(247, 243, 235, 0.6) 96%,
-      #f7f3eb 100%
-    );
-  pointer-events: none;
-}
-
-@media (max-width: 767px) {
-  .works-hero-village {
-    margin-bottom: 2rem;
   }
 }
