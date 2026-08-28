@@ -6635,3 +6635,64 @@ body #about.strength-section {
     );
   pointer-events: none;
 }
+
+/* PROFILE：SP専用レイアウト（2026-08-29）
+   1カラム縦積み・各ポイントに丸マーカーを付与 */
+@media (max-width: 767px) {
+  .profile-section {
+    padding-top: 3.5rem;
+  }
+  .profile-simple-grid {
+    display: block;
+    margin-top: 2.25rem;
+  }
+  .profile-simple-photo {
+    margin-bottom: 2rem;
+  }
+  .profile-simple-photo img {
+    border-radius: 16px;
+  }
+  .profile-simple-name {
+    font-size: 1.9rem;
+  }
+  .profile-simple-role {
+    margin-bottom: 1.5rem;
+  }
+  .profile-simple-lead {
+    margin-bottom: 0.5rem;
+    font-size: 0.94rem;
+  }
+  .profile-simple-point {
+    position: relative;
+    padding: 1.35rem 0 1.35rem 2.1rem;
+  }
+  .profile-simple-point::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.27rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(192, 154, 91, 0.18);
+  }
+  .profile-simple-point::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 1.71rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c09a5b;
+  }
+  .profile-simple-point h4 {
+    font-size: 1.02rem;
+  }
+  .profile-simple-point p {
+    font-size: 0.86rem;
+  }
+  .profile-village {
+    margin-top: 2.5rem;
+  }
+}
