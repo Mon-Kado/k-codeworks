@@ -6416,9 +6416,9 @@ body #about.strength-section {
     ),
     linear-gradient(
       180deg,
-      rgba(23, 41, 90, 0) 82%,
-      rgba(23, 41, 90, 0.55) 94%,
-      rgba(23, 41, 90, 1) 100%
+      rgba(247, 243, 235, 0) 78%,
+      rgba(247, 243, 235, 0.6) 92%,
+      rgba(247, 243, 235, 1) 100%
     );
   pointer-events: none;
 }
@@ -6489,9 +6489,9 @@ body #about.strength-section {
       ),
       linear-gradient(
         180deg,
-        rgba(23, 41, 90, 0) 82%,
-        rgba(23, 41, 90, 0.55) 94%,
-        rgba(23, 41, 90, 1) 100%
+        rgba(247, 243, 235, 0) 82%,
+        rgba(247, 243, 235, 0.55) 94%,
+        rgba(247, 243, 235, 1) 100%
       );
   }
 }
