@@ -6310,110 +6310,6 @@ body .hero-section > .hero-photo {
   }
 }
 
-/* 768〜1023px（iPad縦）：中央寄せ＋イラスト見切れをやめ、SPと同じ
-   「テキスト上／イラスト下」の左揃え1カラムに統一する */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero-section {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    justify-content: flex-start !important;
-    background: #f7f3eb !important;
-    padding-top: 132px !important;
-    padding-bottom: 0 !important;
-  }
-  .hero-section::before {
-    background: #f7f3eb !important;
-  }
-  .hero-section::after {
-    display: none !important;
-  }
-  .hero-section .hero-main-grid {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0 !important;
-  }
-  .hero-section .hero-copy {
-    width: 100% !important;
-    max-width: 640px;
-    padding-left: 0;
-    text-align: left !important;
-  }
-  .hero-section .hero-title-line,
-  .hero-section .hero-ja-line,
-  .hero-section .hero-lead {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  .hero-section .hero-actions,
-  .hero-section .hero-assurance {
-    justify-content: flex-start !important;
-    text-align: left !important;
-  }
-  .hero-section .hero-title-line {
-    justify-content: flex-start !important;
-    text-align: left !important;
-  }
-  .hero-section .hero-assurance {
-    align-items: flex-start !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  .hero-section .hero-visual-wrap {
-    display: none !important;
-  }
-
-  /* イラストは下部に敷き、上端をクリームへ、下端を白へ溶かす */
-  body .hero-section > .hero-photo {
-    position: static;
-    order: 2;
-    inset: auto;
-    width: 100%;
-    height: 420px;
-    margin-top: 2.5rem;
-  }
-  .hero-photo picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  body .hero-section > .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover !important;
-    object-position: center 86% !important;
-  }
-  .hero-photo::after {
-    content: "";
-    position: absolute;
-    top: auto !important;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 420px;
-    z-index: 2;
-    background:
-      linear-gradient(
-        180deg,
-        #f7f3eb 0%,
-        rgba(247, 243, 235, 0.7) 10%,
-        rgba(247, 243, 235, 0) 26%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(247, 243, 235, 0) 66%,
-        rgba(247, 243, 235, 0.62) 86%,
-        rgba(247, 243, 235, 1) 99%
-      );
-    pointer-events: none;
-  }
-
-  /* ヘッダーの横幅をコンテンツ幅に揃える */
-  #header:not(.scrolled) {
-    background: rgba(247, 243, 235, 0.92) !important;
-    box-shadow: none !important;
-  }
-}
-
 /* ============================================================
    STRENGTH：3項目を横並び＋下部に村のイラスト（2026-08-28）
    モックアップ画像・紺の帯・BEFORE/ROUTE/AFTERは廃止
@@ -6601,9 +6497,9 @@ body #about.strength-section {
 /* セクション間の境目をなくす（2026-08-28）
    ヒーロー下端 → STRENGTH（クリーム）、STRENGTH下端 → PROFILE（濃紺）へ
    それぞれ地続きに見えるよう、ヒーローの下地もクリーム寄りにする
-   ※ 768〜1023px（iPad縦）はSPと同じ「テキスト上/イラスト下」構成で
-   #f7f3eb単色が正しいため、min-widthを1024pxにして除外する */
-@media (min-width: 1024px) {
+   768px以上は全てPCと同じ横並びレイアウト（2026-08-29、iPad縦の
+   縦積み構成を廃止したため min-width は768pxに戻す） */
+@media (min-width: 768px) {
   .hero-section {
     background: linear-gradient(
       180deg,
