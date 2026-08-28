@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>STRENGTH village render test</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      iframe {
+        width: 1600px;
+        height: 1800px;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <output id="result" data-result="WAIT">WAIT</output>
+    <iframe id="page" title="KADOMARU top page"></iframe>
+    <script>
+      const result = document.querySelector("#result");
+      const frame = document.querySelector("#page");
+      const params = new URLSearchParams(location.search);
+      frame.src =
+        params.get("page") || new URL("../index.html", location.href).href;
+
+      frame.addEventListener("load", async () => {
+        try {
+          const doc = frame.contentDocument;
+          const image = doc.querySelector(".strength-village img");
+          image.loading = "eager";
+          image.scrollIntoView();
+          await image.decode();
+
+          const rect = image.getBoundingClientRect();
+          const style = frame.contentWindow.getComputedStyle(image);
+          const checks = {
+            expectedAsset:
+              image.naturalWidth === 1402 && image.naturalHeight === 1122,
+            keepsWideDesktopBand: rect.width / rect.height >= 2.5,
+            cropsWithoutDistortion: style.objectFit === "cover",
+          };
+          const passed = Object.values(checks).every(Boolean);
+          result.dataset.result = passed ? "PASS" : "FAIL";
+          result.textContent = JSON.stringify({
+            checks,
+            naturalSize: [image.naturalWidth, image.naturalHeight],
+            renderedSize: [Math.round(rect.width), Math.round(rect.height)],
+            objectFit: style.objectFit,
+          });
+        } catch (error) {
+          result.dataset.result = "ERROR";
+          result.textContent = String(error);
+        }
+      });
+    </script>
+  </body>
+</html>

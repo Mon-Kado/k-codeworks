@@ -6010,9 +6010,9 @@ body .hero-section > .hero-photo {
     ),
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0) 68%,
-      rgba(255, 255, 255, 0.6) 86%,
-      rgba(255, 255, 255, 1) 97%
+      rgba(247, 243, 235, 0) 68%,
+      rgba(247, 243, 235, 0.6) 86%,
+      rgba(247, 243, 235, 1) 97%
     );
 }
 
@@ -6108,9 +6108,9 @@ body .hero-section > .hero-photo {
       ),
       linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0) 62%,
-        rgba(255, 255, 255, 0.62) 85%,
-        rgba(255, 255, 255, 1) 99%
+        rgba(247, 243, 235, 0) 62%,
+        rgba(247, 243, 235, 0.62) 85%,
+        rgba(247, 243, 235, 1) 99%
       );
     pointer-events: none;
   }
@@ -6398,9 +6398,9 @@ body .hero-section > .hero-photo {
       ),
       linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0) 66%,
-        rgba(255, 255, 255, 0.62) 86%,
-        rgba(255, 255, 255, 1) 99%
+        rgba(247, 243, 235, 0) 66%,
+        rgba(247, 243, 235, 0.62) 86%,
+        rgba(247, 243, 235, 1) 99%
       );
     pointer-events: none;
   }
@@ -6492,8 +6492,10 @@ body #about.strength-section {
 }
 .strength-village img {
   width: 100%;
-  height: auto;
+  height: clamp(360px, 34.3vw, 560px);
   display: block;
+  object-fit: cover;
+  object-position: center 56%;
 }
 .strength-village::after {
   content: "";
@@ -6508,9 +6510,9 @@ body #about.strength-section {
     ),
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0) 78%,
-      rgba(255, 255, 255, 0.6) 92%,
-      rgba(255, 255, 255, 1) 100%
+      rgba(23, 41, 90, 0) 82%,
+      rgba(23, 41, 90, 0.55) 94%,
+      rgba(23, 41, 90, 1) 100%
     );
   pointer-events: none;
 }
@@ -6558,4 +6560,30 @@ body #about.strength-section {
   .strength-village {
     margin-top: 2.5rem;
   }
+  .strength-village img {
+    height: clamp(300px, 90vw, 430px);
+    object-position: center 58%;
+  }
+}
+
+/* セクション間の境目をなくす（2026-08-28）
+   ヒーロー下端 → STRENGTH（クリーム）、STRENGTH下端 → PROFILE（濃紺）へ
+   それぞれ地続きに見えるよう、ヒーローの下地もクリーム寄りにする */
+.hero-section {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f7fbff 42%,
+    #f9f6ef 82%,
+    #f7f3eb 100%
+  ) !important;
+}
+.hero-section::before {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(247, 251, 255, 0.97) 44%,
+    rgba(249, 246, 239, 0.98) 82%,
+    rgba(247, 243, 235, 1) 100%
+  ) !important;
 }
