@@ -6245,3 +6245,15 @@ body .hero-section > .hero-photo {
 .hero-photo img {
   object-position: center center;
 }
+
+/* --- SP：固定ヘッダーを約18%低くする --- */
+@media (max-width: 767px) {
+  #header .header-inner {
+    min-height: 0 !important;
+    height: 58px !important;
+  }
+  #header .header-logo,
+  #header .header-inner img {
+    height: 40px !important;
+  }
+}
