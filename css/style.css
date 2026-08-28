@@ -4833,7 +4833,9 @@ body {
   }
 }
 
-@media (max-width: 1023px) {
+/* 旧モックアップ付きヒーロー時代のレイアウト。768px以上は現行の
+   横並び構成（PC同様の左揃え）を使うため、SP専用に絞る（2026-08-29） */
+@media (max-width: 767px) {
   .hero-section {
     min-height: auto !important;
     padding-top: 8rem !important;
