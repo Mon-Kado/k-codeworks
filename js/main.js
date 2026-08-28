@@ -131,11 +131,19 @@ const worksData = {
       "転院調整を見える化するWebアプリを自主開発し、β版として公開中です。現場の手間を減らすため、空床情報と受け入れ条件を整理しました。※サービス名・URLはご相談時にお伝えします。",
     role: "企画・設計・開発（フルスタック）",
     techs: ["React", "Vite", "TypeScript", "Supabase", "Tailwind CSS"],
-    points: [
-      "現場課題から要件を整理",
-      "空床マップとカレンダーを実装",
-      "受け入れ条件を見える化",
-      "権限とデータ管理を設計",
+    highlights: [
+      {
+        title: "現場課題から要件を設計",
+        desc: "転院調整で本当に困っている場面を洗い出し、必要な機能に絞りました。",
+      },
+      {
+        title: "空床マップとカレンダーを実装",
+        desc: "地図上の空床確認とカレンダー管理を組み合わせ、直感的に使えるようにしました。",
+      },
+      {
+        title: "権限とデータ管理を設計",
+        desc: "病院ごとのアクセス権限とデータの持ち方を整理し、安全に運用できる形にしました。",
+      },
     ],
     status: "β版公開中（詳細はご相談時に）",
     url: "",
@@ -148,11 +156,19 @@ const worksData = {
       "Web接客ツールを用いた、ECサイトの売上改善施策の実装を業務委託で継続して行っています。レコメンド・フォーム改善・ポップアップ・クーポン等、多数の施策を実装してきました。守秘義務のためクライアント名・画面は非公開ですが、同種の仕掛けを本ページの「実装サンプル」で実際に試せます。",
     role: "施策実装（HTML/CSS/JS）・既存サイトのデザイン再現・検証",
     techs: ["HTML", "CSS", "JavaScript", "jQuery", "Web接客ツール（SaaS）"],
-    points: [
-      "商品ページへのレコメンド（閲覧履歴・ランキング）設置",
-      "入力フォーム改善（EFO）・ポップアップ・クーポン施策一式",
-      "既存サイトのDOM/CSSに干渉しない差し込み実装",
-      "都道府県別のお届け日数表示・カウントダウン等の動的UI",
+    highlights: [
+      {
+        title: "既存サイトに干渉しない実装",
+        desc: "既存のDOM/CSSを壊さない形で、施策を差し込み型で実装しました。",
+      },
+      {
+        title: "レコメンド・フォーム改善を実装",
+        desc: "閲覧履歴やランキングのレコメンド、EFO・ポップアップ・クーポンなど多数の施策を積み重ねました。",
+      },
+      {
+        title: "動的UIで購入の不安を軽減",
+        desc: "都道府県別のお届け日数表示やカウントダウンなど、購入の後押しになるUIを実装しました。",
+      },
     ],
     status: "継続受注中",
     url: "",
@@ -165,11 +181,19 @@ const worksData = {
       "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。",
     role: "課題対応：コーディング・レスポンシブ調整",
     techs: ["HTML", "CSS", "JavaScript", "FLOCSS", "BEM"],
-    points: [
-      "指定デザインの再現",
-      "レスポンシブ表示を調整",
-      "FLOCSS / BEMでCSS管理",
-      "スクロール演出を実装",
+    highlights: [
+      {
+        title: "指定デザインを忠実に再現",
+        desc: "配布されたデザインカンプの意図を汲み取り、正確にコーディングしました。",
+      },
+      {
+        title: "レスポンシブと演出を調整",
+        desc: "画面幅ごとの見え方とスクロール演出を細かく調整しました。",
+      },
+      {
+        title: "FLOCSS / BEMでCSSを管理",
+        desc: "後から見ても分かりやすいよう、命名規則を統一して実装しました。",
+      },
     ],
     status: "デイトラ課題",
     url: "https://onomichi-k-codeworks.com/",
@@ -182,11 +206,19 @@ const worksData = {
       "お金・仕事・暮らしをテーマにした個人メディア（累計400記事以上）。検索意図に合わせて、記事構成と内部導線を整理しています。",
     role: "企画・執筆・サイト運営・SEO対策",
     techs: ["WordPress", "Google Analytics", "Search Console", "Canva"],
-    points: [
-      "検索意図から構成を作成",
-      "読みやすい導線を設計",
-      "内部リンクを整理",
-      "専門知識を記事に反映",
+    highlights: [
+      {
+        title: "検索意図から構成を設計",
+        desc: "読者が知りたいことから逆算して、記事の構成と見出しを組み立てました。",
+      },
+      {
+        title: "内部リンクと導線を整理",
+        desc: "関連記事への導線を整理し、サイト全体で情報にたどり着きやすくしました。",
+      },
+      {
+        title: "現場知識を記事に反映",
+        desc: "実務で得た知識を記事に落とし込み、専門性のある内容にしました。",
+      },
     ],
     status: "運営中",
     url: "https://kadofuku.com",
@@ -199,11 +231,19 @@ const worksData = {
       "IT企業のコーポレートサイト。構成検討から参加し、採用ページのコーディングを担当しました。",
     role: "ワイヤーフレーム・デザイン参加・recruitページコーディング（チーム開発）",
     techs: ["HTML", "CSS", "JavaScript", "Figma"],
-    points: [
-      "ワイヤーフレームを作成",
-      "採用ページのUIを実装",
-      "チーム開発で品質管理",
-      "FVアニメーションを実装",
+    highlights: [
+      {
+        title: "ワイヤーフレームから参加",
+        desc: "構成検討の段階から加わり、情報設計を整理しました。",
+      },
+      {
+        title: "採用ページのUIを実装",
+        desc: "応募につながるよう、情報の見せ方と導線を意識して実装しました。",
+      },
+      {
+        title: "チーム開発で品質を担保",
+        desc: "複数人での開発体制の中、コードレビューを通じて品質を保ちました。",
+      },
     ],
     status: "公開中",
     url: "https://www.gene-l.co.jp/recruit",
@@ -216,11 +256,19 @@ const worksData = {
       "デイトラの課題として取り組んだ歯科医院向けWordPressサイトです。実案件ではなく、デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
     role: "課題対応：WordPress構築・コーディング・レスポンシブ調整",
     techs: ["WordPress", "PHP", "SCSS", "JavaScript", "Swiper"],
-    points: [
-      "トップページと下層ページを実装",
-      "診療案内と医院情報を整理",
-      "スマホ用ドロワーを実装",
-      "WordPressテーマとして構築",
+    highlights: [
+      {
+        title: "診療案内と医院情報を整理",
+        desc: "患者さんが知りたい情報に迷わずたどり着けるよう構成しました。",
+      },
+      {
+        title: "スマホ用ドロワーを実装",
+        desc: "限られた画面でも操作しやすいナビゲーションを実装しました。",
+      },
+      {
+        title: "WordPressテーマとして構築",
+        desc: "公開後に運用しやすいよう、独自テーマとして構築しました。",
+      },
     ],
     status: "デイトラ課題",
     url: "https://minami-clinic.k-codeworks.com/",
@@ -236,44 +284,50 @@ function openWorksModal(id) {
   const closeButton = modal.querySelector(".works-modal-close");
 
   body.innerHTML = `
-        <img src="${escapeHTML(data.image)}" alt="${escapeHTML(data.title)}" class="works-modal-image">
+        <div class="works-modal-shot">
+            <img src="${escapeHTML(data.image)}" alt="${escapeHTML(data.title)}">
+        </div>
         <div class="works-modal-info">
             <span class="works-modal-category">${escapeHTML(data.category)}</span>
             <h3 class="works-modal-title">${escapeHTML(data.title)}</h3>
             <p class="works-modal-desc">${escapeHTML(data.description)}</p>
-            
-            <div class="works-modal-section">
-                <h4><i class="fa-solid fa-user"></i> 制作種別 / 対応範囲</h4>
-                <p style="color: #475569; font-size: 14px;">${escapeHTML(data.role)}</p>
-            </div>
-            
-            <div class="works-modal-section">
-                <h4><i class="fa-solid fa-code"></i> 使用技術</h4>
-                <div class="works-modal-tags">
-                    ${data.techs.map((tech) => `<span class="works-modal-tag">${escapeHTML(tech)}</span>`).join("")}
+
+            <div class="works-modal-meta">
+                <div class="works-modal-meta-col">
+                    <h4>担当したこと</h4>
+                    <p>${escapeHTML(data.role)}</p>
+                </div>
+                <div class="works-modal-meta-col">
+                    <h4>使用技術</h4>
+                    <p>${data.techs.map((t) => escapeHTML(t)).join(" / ")}</p>
                 </div>
             </div>
-            
-            <div class="works-modal-section">
-                <h4><i class="fa-solid fa-lightbulb"></i> 工夫したポイント</h4>
-                <div class="works-modal-points">
-                    <ul>
-                        ${data.points.map((point) => `<li>${escapeHTML(point)}</li>`).join("")}
-                    </ul>
-                </div>
+
+            <span class="works-modal-highlights-label">制作で意識したこと</span>
+            <div class="works-modal-highlights-grid">
+                ${data.highlights
+                  .map(
+                    (h, i) => `
+                <div class="works-modal-highlight">
+                    <span class="works-modal-highlight-num">0${i + 1}</span>
+                    <div>
+                        <h5>${escapeHTML(h.title)}</h5>
+                        <p>${escapeHTML(h.desc)}</p>
+                    </div>
+                </div>`,
+                  )
+                  .join("")}
             </div>
 
             ${
               data.url
                 ? `
                 <a href="${escapeHTML(data.url)}" target="_blank" rel="noopener" class="works-modal-link">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> サイトを見る
+                    サイトを見る →
                 </a>
             `
                 : `
-                <span style="display: inline-block; background: #f1f5f9; color: #64748b; padding: 12px 24px; border-radius: 8px; font-size: 14px;">
-                    <i class="fa-solid fa-clock"></i> ${escapeHTML(data.status)}
-                </span>
+                <span class="works-modal-status">${escapeHTML(data.status)}</span>
             `
             }
         </div>
