@@ -6222,6 +6222,14 @@ body .hero-section > .hero-photo {
     background: rgba(247, 243, 235, 0.92) !important;
     box-shadow: none !important;
   }
+  /* ヘッダーの横幅をヒーローのテキスト／CTA幅（左右24px）に揃える */
+  #header {
+    width: calc(100% - 48px) !important;
+  }
+  #header > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
   .hero-phone-mock {
     display: none;
   }
