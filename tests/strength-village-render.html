@@ -33,13 +33,36 @@
           image.scrollIntoView();
           await image.decode();
 
+          const icons = [
+            ...doc.querySelectorAll(".strength-point-icon img"),
+          ];
+          icons.forEach((icon) => {
+            icon.loading = "eager";
+          });
+          icons[0]?.scrollIntoView();
+          await Promise.all(icons.map((icon) => icon.decode()));
+
           const rect = image.getBoundingClientRect();
-          const style = frame.contentWindow.getComputedStyle(image);
+          const naturalAspect = image.naturalWidth / image.naturalHeight;
+          const renderedAspect = rect.width / rect.height;
+          const iconRects = icons.map((icon) => icon.getBoundingClientRect());
           const checks = {
-            expectedAsset:
-              image.naturalWidth === 1402 && image.naturalHeight === 1122,
-            keepsWideDesktopBand: rect.width / rect.height >= 2.5,
-            cropsWithoutDistortion: style.objectFit === "cover",
+            fullPanoramaVisible:
+              naturalAspect >= 2.5 &&
+              Math.abs(naturalAspect - renderedAspect) < 0.08,
+            customIconsLoaded:
+              icons.length === 3 &&
+              icons.every(
+                (icon) =>
+                  icon.complete &&
+                  icon.naturalWidth === 1254 &&
+                  icon.naturalHeight === 1254,
+              ),
+            customIconsFit:
+              iconRects.length === 3 &&
+              iconRects.every(
+                (iconRect) => iconRect.width === 84 && iconRect.height === 84,
+              ),
           };
           const passed = Object.values(checks).every(Boolean);
           result.dataset.result = passed ? "PASS" : "FAIL";
@@ -47,7 +70,10 @@
             checks,
             naturalSize: [image.naturalWidth, image.naturalHeight],
             renderedSize: [Math.round(rect.width), Math.round(rect.height)],
-            objectFit: style.objectFit,
+            iconCount: icons.length,
+            iconSize: iconRects[0]
+              ? [Math.round(iconRects[0].width), Math.round(iconRects[0].height)]
+              : null,
           });
         } catch (error) {
           result.dataset.result = "ERROR";
