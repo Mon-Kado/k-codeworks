@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="css/tailwind-built.css?v=20260806" />
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260829m" />
+    <link rel="stylesheet" href="css/style.css?v=20260829n" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -328,222 +328,164 @@
         <div class="section-title reveal-up">
           <span>WORKS</span>
           <h2>制作・開発実績</h2>
-          <p class="mt-4 text-text-gray text-sm">見た目、導線、実装まで。</p>
+          <p class="mt-4 text-text-gray text-sm">
+            現場で必要なものを、Webのかたちに。
+          </p>
         </div>
 
-        <div class="works-case-lead reveal-up">
-          <div>
-            <span>Approach</span>
-            <h3>見た目と導線</h3>
-          </div>
-          <div class="works-case-flow">
-            <article>
-              <span>課題</span>
-              <p>強みが伝わりにくい。</p>
-            </article>
-            <article>
-              <span>設計</span>
-              <p>情報を絞り、順番を整える。</p>
-            </article>
-            <article>
-              <span>結果</span>
-              <p>相談まで迷わせない。</p>
-            </article>
-          </div>
-        </div>
-
-        <!-- カテゴリタブ -->
-        <div class="flex justify-center gap-3 mb-10 reveal-up flex-wrap">
-          <button
-            class="works-tab active px-5 py-2 rounded-full text-sm font-bold transition-all"
-            data-category="all"
-          >
-            All
-          </button>
-          <button
-            class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all"
-            data-category="webapp"
-          >
-            Web App
-          </button>
-          <button
-            class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all"
-            data-category="ec"
-          >
-            EC改善
-          </button>
-          <button
-            class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all"
-            data-category="lp"
-          >
-            LP
-          </button>
-          <button
-            class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all"
-            data-category="corporate"
-          >
-            Corporate
-          </button>
-          <button
-            class="works-tab px-5 py-2 rounded-full text-sm font-bold transition-all"
-            data-category="media"
-          >
-            Media
-          </button>
-        </div>
-
-        <!-- ギャラリーグリッド -->
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 works-bento-grid"
-          id="works-grid"
-        >
-          <!-- EC・サイト改善実装 (EC) -->
-          <div class="works-item" data-category="ec">
+        <!-- 代表3作品 -->
+        <div class="works-featured-grid reveal-up">
+          <article class="works-piece">
             <button
-              class="works-card group w-full text-left"
+              class="works-piece-shot"
               onclick="openWorksModal('ecCro')"
+              aria-label="ECサイト改善施策の実装の詳細を見る"
             >
-              <div class="works-thumb">
-                <img
-                  src="img/ec-cover.svg"
-                  loading="lazy"
-                  decoding="async"
-                  alt="ECサイト改善施策の実装イメージ"
-                />
-                <div
-                  class="absolute top-3 right-3 bg-accent-gold text-navy-main text-xs px-2 py-1 rounded font-bold z-10"
-                >
-                  継続受注中
-                </div>
-              </div>
-              <div class="works-caption">
-                <span class="works-category">EC改善 / 継続受注</span>
-                <h3 class="works-title">ECサイト改善施策の実装</h3>
-                <p class="works-summary">Web接客ツールで多数の施策を実装</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
+              <img
+                src="img/ec-cover.svg"
+                loading="lazy"
+                decoding="async"
+                alt="ECサイト改善施策の実装イメージ"
+              />
             </button>
-          </div>
+            <span class="works-piece-tag">実案件 / EC改善</span>
+            <h3 class="works-piece-title">ECサイト改善施策の実装</h3>
+            <p class="works-piece-desc">
+              複数の改善施策を組み合わせ、CVR向上を実現。
+            </p>
+            <button class="works-piece-link" onclick="openWorksModal('ecCro')">
+              詳しく見る →
+            </button>
+          </article>
 
-          <!-- GeneL コーポレートサイト (Corporate) -->
-          <div class="works-item" data-category="corporate">
+          <article class="works-piece">
             <button
-              class="works-card group w-full text-left"
-              onclick="openWorksModal('genel')"
+              class="works-piece-shot"
+              onclick="openWorksModal('dischargeTool')"
+              aria-label="退院支援管理ツールの詳細を見る"
             >
-              <div class="works-thumb">
-                <img
-                  src="img/genel-top.png?v=20260705"
-                  loading="lazy"
-                  decoding="async"
-                  alt="GeneL inc."
-                />
-              </div>
-              <div class="works-caption">
-                <span class="works-category">Corporate</span>
-                <h3 class="works-title">GeneL inc. コーポレートサイト</h3>
-                <p class="works-summary">採用導線の実装</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
+              <img
+                src="img/discharge-tool-mock.png?v=20260706"
+                loading="lazy"
+                decoding="async"
+                alt="退院支援管理ツール"
+              />
             </button>
-          </div>
-
-          <!-- 退院支援管理ツール (Web App) -->
-          <div class="works-item works-featured" data-category="webapp">
+            <span class="works-piece-tag">自主開発 / Web App</span>
+            <h3 class="works-piece-title">退院支援管理ツール（自主開発）</h3>
+            <p class="works-piece-desc">
+              医療現場の転院調整を効率化するWebアプリ。
+            </p>
             <button
-              class="works-card group w-full text-left"
+              class="works-piece-link"
               onclick="openWorksModal('dischargeTool')"
             >
-              <div class="works-thumb">
-                <img
-                  src="img/discharge-tool-mock.png?v=20260706"
-                  loading="lazy"
-                  decoding="async"
-                  alt="退院支援管理ツール"
-                />
-                <div
-                  class="absolute top-3 right-3 bg-teal-600 text-white text-xs px-2 py-1 rounded font-bold z-10"
-                >
-                  β版公開中
-                </div>
-              </div>
-              <div class="works-caption">
-                <span class="works-category">Web App</span>
-                <h3 class="works-title">退院支援管理ツール（自主開発）</h3>
-                <p class="works-summary">転院調整を見える化</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
+              詳しく見る →
             </button>
-          </div>
+          </article>
 
-          <!-- ブログメディア (Media) -->
-          <div class="works-item" data-category="media">
+          <article class="works-piece">
             <button
-              class="works-card group w-full text-left"
-              onclick="openWorksModal('blog')"
+              class="works-piece-shot"
+              onclick="openWorksModal('genel')"
+              aria-label="GeneL inc. コーポレートサイトの詳細を見る"
             >
-              <div class="works-thumb">
-                <img
-                  src="img/blog-media.png?v=20260705"
-                  loading="lazy"
-                  decoding="async"
-                  alt="ブログメディア"
-                />
-              </div>
-              <div class="works-caption">
-                <span class="works-category">Media</span>
-                <h3 class="works-title">個人運営メディア</h3>
-                <p class="works-summary">SEOメディア運営</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
+              <img
+                src="img/genel-top.png?v=20260705"
+                loading="lazy"
+                decoding="async"
+                alt="GeneL inc."
+              />
             </button>
-          </div>
+            <span class="works-piece-tag">実案件 / Corporate</span>
+            <h3 class="works-piece-title">GeneL inc. コーポレートサイト</h3>
+            <p class="works-piece-desc">
+              コーポレートブランディングを意識した企業サイト。
+            </p>
+            <button class="works-piece-link" onclick="openWorksModal('genel')">
+              詳しく見る →
+            </button>
+          </article>
+        </div>
 
-          <!-- SnapOnomichi LP (LP) -->
-          <div class="works-item is-study-work" data-category="lp">
+        <div class="works-divider" aria-hidden="true"></div>
+
+        <!-- その他の制作 -->
+        <div class="works-other-grid reveal-up">
+          <article class="works-piece works-piece-sub">
             <button
-              class="works-card group w-full text-left"
+              class="works-piece-shot"
+              onclick="openWorksModal('blog')"
+              aria-label="個人運営メディアの詳細を見る"
+            >
+              <img
+                src="img/blog-media.png?v=20260705"
+                loading="lazy"
+                decoding="async"
+                alt="ブログメディア"
+              />
+            </button>
+            <span class="works-piece-tag">自主運営 / Media</span>
+            <h3 class="works-piece-title">個人運営メディア</h3>
+            <p class="works-piece-desc">
+              暮らしや考え方を発信するオウンドメディア。
+            </p>
+            <button class="works-piece-link" onclick="openWorksModal('blog')">
+              詳しく見る →
+            </button>
+          </article>
+
+          <article class="works-piece works-piece-sub">
+            <button
+              class="works-piece-shot"
+              onclick="openWorksModal('onomichi')"
+              aria-label="デイトラ課題LPの詳細を見る"
+            >
+              <img
+                src="img/onomichi.png?v=20260705"
+                loading="lazy"
+                decoding="async"
+                alt="SnapOnomichi"
+              />
+            </button>
+            <span class="works-piece-tag">自主制作 / LP</span>
+            <h3 class="works-piece-title">
+              デイトラ課題LP（キャンペーンサイト）
+            </h3>
+            <p class="works-piece-desc">LP課題で制作したキャンペーンサイト。</p>
+            <button
+              class="works-piece-link"
               onclick="openWorksModal('onomichi')"
             >
-              <div class="works-thumb">
-                <img
-                  src="img/onomichi.png?v=20260705"
-                  loading="lazy"
-                  decoding="async"
-                  alt="SnapOnomichi"
-                />
-              </div>
-              <div class="works-caption">
-                <span class="works-category">LP / 課題制作</span>
-                <h3 class="works-title">デイトラ課題LP</h3>
-                <p class="works-summary">指定デザインを実装</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
+              詳しく見る →
             </button>
-          </div>
+          </article>
 
-          <!-- みなみ歯科クリニック (Corporate) -->
-          <div class="works-item is-study-work" data-category="corporate">
+          <article class="works-piece works-piece-sub">
             <button
-              class="works-card group w-full text-left"
+              class="works-piece-shot"
+              onclick="openWorksModal('minamiClinic')"
+              aria-label="歯科医院課題サイトの詳細を見る"
+            >
+              <img
+                src="img/minami-clinic.png?v=20260705"
+                loading="lazy"
+                decoding="async"
+                alt="みなみ歯科クリニック"
+              />
+            </button>
+            <span class="works-piece-tag">自主制作 / WordPress</span>
+            <h3 class="works-piece-title">歯科医院課題サイト</h3>
+            <p class="works-piece-desc">
+              WordPress課題で制作した歯科医院サイト。
+            </p>
+            <button
+              class="works-piece-link"
               onclick="openWorksModal('minamiClinic')"
             >
-              <div class="works-thumb">
-                <img
-                  src="img/minami-clinic.png?v=20260705"
-                  loading="lazy"
-                  decoding="async"
-                  alt="みなみ歯科クリニック"
-                />
-              </div>
-              <div class="works-caption">
-                <span class="works-category">WordPress / 課題制作</span>
-                <h3 class="works-title">デイトラ課題サイト</h3>
-                <p class="works-summary">歯科医院サイトを実装</p>
-                <span class="works-link">詳細を見る →</span>
-              </div>
+              詳しく見る →
             </button>
-          </div>
+          </article>
         </div>
       </div>
     </section>
