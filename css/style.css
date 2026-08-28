@@ -6526,3 +6526,112 @@ body #about.strength-section {
 .hero-section .hero-display-copy {
   font-family: "Noto Serif JP", serif;
 }
+
+/* ============================================================
+   PROFILE：シンプルな2カラム構成＋下部に村のイラスト（2026-08-29）
+   識別カード・実績カウントアップ数字は廃止（PCのみ実装、SP未対応）
+   ============================================================ */
+#profile.profile-section {
+  position: relative;
+  padding: 5.5rem 0 0;
+  background: #f7f3eb !important;
+  overflow: hidden;
+}
+.profile-section .section-title h2 {
+  color: #17295a;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.profile-simple-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 4.5rem;
+  align-items: start;
+  margin-top: 3.5rem;
+}
+.profile-simple-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(23, 41, 90, 0.16);
+}
+.profile-simple-name {
+  font-family: "Noto Serif JP", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #17295a;
+  margin: 0 0 0.6rem;
+}
+.profile-simple-role {
+  color: #c09a5b;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  margin: 0 0 2rem;
+}
+.profile-simple-lead {
+  color: #17295a;
+  line-height: 2;
+  font-size: 1rem;
+  margin: 0 0 2.5rem;
+}
+.profile-simple-points {
+  display: flex;
+  flex-direction: column;
+}
+.profile-simple-point {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(192, 154, 91, 0.35);
+}
+.profile-simple-point:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.profile-simple-point h4 {
+  margin: 0 0 0.6rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #17295a;
+}
+.profile-simple-point p {
+  margin: 0;
+  color: #4a5468;
+  font-size: 0.92rem;
+  line-height: 1.9;
+}
+
+/* 下部の村イラスト：上端をクリームへ、下端をWORKSの濃紺へ溶かす */
+.profile-village {
+  position: relative;
+  margin-top: 3.5rem;
+  line-height: 0;
+}
+.profile-village img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+.profile-village::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      #f7f3eb 0%,
+      rgba(247, 243, 235, 0.55) 12%,
+      rgba(247, 243, 235, 0) 30%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(247, 243, 235, 0) 78%,
+      rgba(247, 243, 235, 0.6) 92%,
+      rgba(247, 243, 235, 1) 100%
+    );
+  pointer-events: none;
+}

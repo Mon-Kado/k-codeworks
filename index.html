@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="css/tailwind-built.css?v=20260806" />
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260829g" />
+    <link rel="stylesheet" href="css/style.css?v=20260829i" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -333,159 +333,64 @@
     </section>
 
     <!-- プロフィール -->
-    <section
-      id="profile"
-      data-bg="PROFILE"
-      class="py-20 bg-navy-main overflow-hidden relative"
-    >
-      <!-- 背景装飾 -->
-      <div
-        class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
-      ></div>
-      <div
-        class="absolute bottom-0 left-0 w-72 h-72 bg-accent-gold/15 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
-      ></div>
-
+    <section id="profile" data-bg="PROFILE" class="profile-section">
       <div class="max-w-6xl mx-auto px-4 relative z-10">
         <div class="section-title reveal-up">
           <span>PROFILE</span>
-          <h2 class="!text-white">制作者について</h2>
+          <h2>制作者について</h2>
         </div>
 
-        <div class="flex flex-col lg:flex-row gap-12 items-center">
-          <!-- 左：写真エリア -->
-          <div class="w-full lg:w-2/5 reveal-left">
-            <div class="profile-identity-card">
-              <div class="profile-photo-mask">
-                <img
-                  src="img/profile-msw-crop.png"
-                  alt="顔を写さない医療現場のプロフィール写真"
-                />
-                <span>MSW / Web Creator</span>
-              </div>
-              <div class="profile-identity-logo">
-                <img
-                  src="img/kadomaru-codeworks_logo_white.png"
-                  alt="KADOMARU Codeworks"
-                />
-              </div>
-              <p class="profile-identity-label">
-                Medical Social Worker / Web Creator
-              </p>
-              <h3>MSW × Web</h3>
-              <div class="profile-identity-list">
-                <div>
-                  <span>01</span>
-                  <p>医療福祉の導線設計</p>
-                </div>
-                <div>
-                  <span>02</span>
-                  <p>短く伝わる原稿整理</p>
-                </div>
-                <div>
-                  <span>03</span>
-                  <p>更新・改善まで相談可</p>
-                </div>
-              </div>
-              <div class="profile-identity-badge">
-                <i class="fa-solid fa-heart-pulse mr-1"></i>
-                現役MSW
-              </div>
-            </div>
+        <div class="profile-simple-grid">
+          <!-- 左：写真 -->
+          <div class="profile-simple-photo reveal-left">
+            <img
+              src="img/profile-msw-crop.png"
+              alt="顔を写さない医療現場のプロフィール写真"
+            />
           </div>
 
-          <!-- 右：テキストエリア -->
-          <div class="w-full lg:w-3/5 reveal-right">
-            <!-- 名前・肩書き -->
-            <div class="mb-8">
-              <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">
-                もん
-              </h3>
-              <p class="text-white/70 flex items-center gap-2">
-                <span class="inline-block w-8 h-px bg-accent-gold"></span>
-                KADOMARU Codeworks 代表
-              </p>
-            </div>
+          <!-- 右：テキスト -->
+          <div class="profile-simple-text reveal-right">
+            <h3 class="profile-simple-name">もん</h3>
+            <p class="profile-simple-role">KADOMARU Codeworks 代表</p>
+            <p class="profile-simple-lead">
+              総合病院で医療ソーシャルワーカーとして勤務しながら、<br />
+              Web制作・運用を行う兼業クリエイターです。
+            </p>
 
-            <!-- 経歴ストーリー -->
-            <div class="space-y-6 mb-10">
-              <div class="flex gap-4 items-start">
-                <div
-                  class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                >
-                  <i class="fa-solid fa-hospital text-white text-sm"></i>
-                </div>
-                <p class="text-white/80 leading-relaxed">
-                  総合病院で
-                  <strong class="text-white"
-                    >医療ソーシャルワーカーとして勤務</strong
-                  >
-                  。現場の不安や迷いを、Web設計に活かしています。
+            <div class="profile-simple-points">
+              <div class="profile-simple-point">
+                <h4>現場で培った経験を、Webの力で活かします。</h4>
+                <p>
+                  医療・福祉の現場で得た気づきや課題解決の視点を、<br />
+                  Webの仕組みや伝え方に落とし込みます。
                 </p>
               </div>
-              <div class="flex gap-4 items-start">
-                <div
-                  class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                >
-                  <i class="fa-solid fa-laptop-code text-white text-sm"></i>
-                </div>
-                <p class="text-white/80 leading-relaxed">
-                  LP、サイト、業務アプリまで。
-                  <strong class="text-white">見た目と使いやすさ</strong>
-                  を両立します。
+              <div class="profile-simple-point">
+                <h4>デザインと使いやすさを、両立します。</h4>
+                <p>
+                  見た目の心地よさだけでなく、目的に届く構成と導線設計を大切にします。
                 </p>
               </div>
-              <div class="flex gap-4 items-start">
-                <div
-                  class="w-8 h-8 bg-accent-gold/30 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                >
-                  <i class="fa-solid fa-handshake text-accent-gold text-sm"></i>
-                </div>
-                <p class="text-white/80 leading-relaxed">
-                  依頼前の不安を減らし、
-                  <strong class="text-white">相談しやすい導線</strong>
-                  へ整えます。
+              <div class="profile-simple-point">
+                <h4>相談しやすく、わかりやすい流れをつくります。</h4>
+                <p>
+                  はじめての方でも安心してご相談いただけるよう、<br />
+                  やさしいコミュニケーションと丁寧な設計を心がけています。
                 </p>
-              </div>
-            </div>
-
-            <!-- 実績数字（カウントアップ） -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div class="profile-stat-card">
-                <div class="profile-stat-icon">
-                  <i class="fa-solid fa-briefcase-medical"></i>
-                </div>
-                <p class="text-3xl font-bold text-navy-main">
-                  <span class="count-up text-accent-gold" data-target="8"
-                    >8</span
-                  ><span class="text-lg">年目</span>
-                </p>
-                <p class="text-xs text-text-gray mt-1">MSW経験</p>
-              </div>
-              <div class="profile-stat-card">
-                <div class="profile-stat-icon">
-                  <i class="fa-solid fa-folder-open"></i>
-                </div>
-                <p class="profile-stat-word">継続中</p>
-                <p class="text-xs text-text-gray mt-1">EC改善の施策実装</p>
-              </div>
-              <div class="profile-stat-card">
-                <div class="profile-stat-icon">
-                  <i class="fa-solid fa-building"></i>
-                </div>
-                <p class="profile-stat-word">β版</p>
-                <p class="text-xs text-text-gray mt-1">自社ツール公開中</p>
-              </div>
-              <div class="profile-stat-card">
-                <div class="profile-stat-icon">
-                  <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <p class="profile-stat-word">運営中</p>
-                <p class="text-xs text-text-gray mt-1">個人メディア</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="profile-village" aria-hidden="true">
+        <img
+          src="img/profile-village.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </section>
 
