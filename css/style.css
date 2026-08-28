@@ -6411,3 +6411,151 @@ body .hero-section > .hero-photo {
     box-shadow: none !important;
   }
 }
+
+/* ============================================================
+   STRENGTH：3項目を横並び＋下部に村のイラスト（2026-08-28）
+   モックアップ画像・紺の帯・BEFORE/ROUTE/AFTERは廃止
+   ============================================================ */
+body #about.strength-section {
+  position: relative;
+  padding: 5.5rem 0 0;
+  background: #f7f3eb !important;
+  overflow: hidden;
+}
+.strength-section .section-title h2 {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.strength-sub {
+  margin-top: 1.5rem;
+  color: #17295a;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.strength-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  max-width: 900px;
+  margin: 3.5rem auto 0;
+  padding: 0;
+}
+.strength-points > li {
+  position: relative;
+  padding: 0 1.75rem;
+  text-align: center;
+}
+.strength-points > li + li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12%;
+  bottom: 12%;
+  width: 1px;
+  background: rgba(192, 154, 91, 0.45);
+}
+.strength-point-icon {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1.5rem;
+  border-radius: 999px;
+  background: rgba(232, 224, 208, 0.72);
+  color: #17295a;
+  font-size: 1.85rem;
+}
+.strength-points h3 {
+  margin: 0 0 0.85rem;
+  color: #17295a;
+  font-size: 1.16rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+.strength-points p {
+  margin: 0;
+  color: #4a5468;
+  font-size: 0.9rem;
+  line-height: 1.95;
+}
+
+/* 下部の村イラスト：上端をクリームへ、下端を白へ溶かす */
+.strength-village {
+  position: relative;
+  margin-top: 3.25rem;
+  line-height: 0;
+}
+.strength-village img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.strength-village::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      #f7f3eb 0%,
+      rgba(247, 243, 235, 0.6) 14%,
+      rgba(247, 243, 235, 0) 34%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 78%,
+      rgba(255, 255, 255, 0.6) 92%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .strength-section {
+    padding-top: 3.5rem;
+  }
+  .strength-sub {
+    margin-top: 1.15rem;
+    font-size: 0.98rem;
+    line-height: 1.95;
+  }
+  .strength-points {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    margin-top: 2.5rem;
+  }
+  .strength-points > li {
+    padding: 0;
+  }
+  .strength-points > li + li::before {
+    left: 50%;
+    top: -1.15rem;
+    bottom: auto;
+    width: 40px;
+    height: 1px;
+    transform: translateX(-50%);
+  }
+  .strength-point-icon {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 1.15rem;
+    font-size: 1.5rem;
+  }
+  .strength-points h3 {
+    font-size: 1.08rem;
+  }
+  .strength-points p {
+    font-size: 0.86rem;
+  }
+  .strength-points p br {
+    display: none;
+  }
+  .strength-village {
+    margin-top: 2.5rem;
+  }
+}
