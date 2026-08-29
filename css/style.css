@@ -4395,10 +4395,9 @@ body {
 
 #contact #contact-form {
   padding: clamp(1.25rem, 2.3vw, 2rem);
-  border: 1px solid rgba(201, 164, 102, 0.22);
-  border-radius: 28px;
-  background: rgba(255, 250, 241, 0.9);
-  box-shadow: 0 24px 60px rgba(10, 58, 120, 0.08);
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 #contact #contact-form input,
