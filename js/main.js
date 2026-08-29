@@ -273,6 +273,31 @@ const worksData = {
     status: "デイトラ課題",
     url: "https://minami-clinic.k-codeworks.com/",
   },
+  furikomiBannin: {
+    category: "自主開発 / Shopify App",
+    title: "フリコミ番人（Shopify向けアプリ）",
+    image: "img/furikomi-cover.svg",
+    description:
+      "銀行振込の未入金を可視化するShopify向けアプリを個人開発し、App Storeで公開中です。督促メールの自動送信と期限超過時の自動キャンセルで、ストア運営者の未入金対応の手間を減らします。",
+    role: "企画・設計・開発（フルスタック）・審査対応",
+    techs: ["Remix", "TypeScript", "PostgreSQL", "Shopify API", "Fly.io"],
+    highlights: [
+      {
+        title: "未入金を一目で見える化",
+        desc: "銀行振込の未入金注文をダッシュボードに集約し、対応漏れを防ぎます。",
+      },
+      {
+        title: "督促メールを自動送信",
+        desc: "入金期限に応じて、敬語のリマインドメールを自動で送信します。",
+      },
+      {
+        title: "期限超過は自動キャンセル",
+        desc: "入金期限を過ぎた注文は自動でキャンセルし、在庫を素早く解放します。",
+      },
+    ],
+    status: "App Store公開中",
+    url: "",
+  },
 };
 
 function openWorksModal(id) {
