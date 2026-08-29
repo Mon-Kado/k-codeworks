@@ -7231,8 +7231,8 @@ body #service {
 
 /* ============================================================
    CONTACT：サイドバーを簡素化（2026-08-30）
-   稼働状況カード・お急ぎの場合カードを廃止し、よくある質問と
-   水彩背景だけのシンプルな構成にする
+   稼働状況カード・お急ぎの場合カードを廃止し、よくある質問だけの
+   シンプルな構成にする
    ============================================================ */
 .contact-faq {
   padding-top: 0.5rem;
@@ -7264,23 +7264,8 @@ body #service {
   line-height: 1.8;
 }
 
-.contact-village {
-  margin-top: 2.25rem;
-  border-radius: 20px;
-  overflow: hidden;
-  line-height: 0;
-}
-.contact-village img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 @media (max-width: 767px) {
   .contact-faq {
     margin-top: 2.5rem;
-  }
-  .contact-village {
-    margin-top: 1.75rem;
   }
 }
