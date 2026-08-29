@@ -172,6 +172,7 @@ const worksData = {
     ],
     status: "継続受注中",
     url: "",
+    demoAnchor: "#demo",
   },
   onomichi: {
     category: "LP / 課題制作",
@@ -360,6 +361,15 @@ function openWorksModal(id) {
                     : `
                     <span class="works-modal-status">${escapeHTML(data.status)}</span>
                 `
+                }
+                ${
+                  data.demoAnchor
+                    ? `
+                    <a href="${escapeHTML(data.demoAnchor)}" class="works-modal-link works-modal-demo-link" onclick="closeWorksModal()">
+                        実装サンプルで試す →
+                    </a>
+                `
+                    : ""
                 }
             </div>
         </div>

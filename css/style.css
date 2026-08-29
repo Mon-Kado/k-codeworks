@@ -766,6 +766,10 @@ textarea:focus-visible {
 }
 
 .works-modal-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
   padding-bottom: 8px;
 }
 
