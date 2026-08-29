@@ -288,20 +288,25 @@ function openWorksModal(id) {
             <img src="${escapeHTML(data.image)}" alt="${escapeHTML(data.title)}">
         </div>
         <div class="works-modal-info">
-            <span class="works-modal-category">${escapeHTML(data.category)}</span>
-            <h3 class="works-modal-title">${escapeHTML(data.title)}</h3>
-            <p class="works-modal-desc">${escapeHTML(data.description)}</p>
-
-            <div class="works-modal-meta">
-                <div class="works-modal-meta-col">
-                    <h4>担当したこと</h4>
-                    <p>${escapeHTML(data.role)}</p>
+            <div class="works-modal-header-grid">
+                <div class="works-modal-header-main">
+                    <span class="works-modal-category">${escapeHTML(data.category)}</span>
+                    <h3 class="works-modal-title">${escapeHTML(data.title)}</h3>
+                    <p class="works-modal-desc">${escapeHTML(data.description)}</p>
                 </div>
-                <div class="works-modal-meta-col">
-                    <h4>使用技術</h4>
-                    <p>${data.techs.map((t) => escapeHTML(t)).join(" / ")}</p>
+                <div class="works-modal-meta">
+                    <div class="works-modal-meta-col">
+                        <h4>担当したこと</h4>
+                        <p>${escapeHTML(data.role)}</p>
+                    </div>
+                    <div class="works-modal-meta-col">
+                        <h4>使用技術</h4>
+                        <p>${data.techs.map((t) => escapeHTML(t)).join(" / ")}</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="works-modal-divider"></div>
 
             <span class="works-modal-highlights-label">制作で意識したこと</span>
             <div class="works-modal-highlights-grid">
@@ -319,18 +324,21 @@ function openWorksModal(id) {
                   .join("")}
             </div>
 
-            ${
-              data.url
-                ? `
-                <a href="${escapeHTML(data.url)}" target="_blank" rel="noopener" class="works-modal-link">
-                    サイトを見る →
-                </a>
-            `
-                : `
-                <span class="works-modal-status">${escapeHTML(data.status)}</span>
-            `
-            }
+            <div class="works-modal-cta">
+                ${
+                  data.url
+                    ? `
+                    <a href="${escapeHTML(data.url)}" target="_blank" rel="noopener" class="works-modal-link">
+                        サイトを見る →
+                    </a>
+                `
+                    : `
+                    <span class="works-modal-status">${escapeHTML(data.status)}</span>
+                `
+                }
+            </div>
         </div>
+        <div class="works-modal-village" aria-hidden="true"></div>
     `;
 
   body.scrollTop = 0;
