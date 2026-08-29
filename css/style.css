@@ -2409,23 +2409,17 @@ header.scrolled .header-logo {
 
 /* Contact Section - Light Theme (Pale Gold) */
 #contact {
-  background: #fffbeb;
+  background: #f7f3eb;
 }
 
 #contact .section-title h2 {
-  color: #0a3a78;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 600;
+  color: #17295a;
 }
 
 #contact .section-title p {
   color: #475569;
-}
-
-/* こんな方へ タグ */
-#contact .contact-tag {
-  background: white;
-  color: #062952;
-  border: 1px solid rgba(10, 58, 120, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* プライバシーポリシー */
@@ -7233,5 +7227,61 @@ body #service {
   }
   .price-plan:first-child {
     padding-top: 0;
+  }
+}
+
+/* ============================================================
+   CONTACT：サイドバーを簡素化（2026-08-30）
+   稼働状況カード・お急ぎの場合カードを廃止し、よくある質問と
+   水彩背景だけのシンプルな構成にする
+   ============================================================ */
+.contact-faq {
+  padding-top: 0.5rem;
+}
+.contact-faq-title {
+  font-family: "Noto Serif JP", serif;
+  color: #17295a;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+.contact-faq-item {
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba(192, 154, 91, 0.3);
+}
+.contact-faq-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.contact-faq-q {
+  color: #17295a;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 0.4rem;
+}
+.contact-faq-a {
+  color: #5a6b85;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.contact-village {
+  margin-top: 2.25rem;
+  border-radius: 20px;
+  overflow: hidden;
+  line-height: 0;
+}
+.contact-village img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .contact-faq {
+    margin-top: 2.5rem;
+  }
+  .contact-village {
+    margin-top: 1.75rem;
   }
 }

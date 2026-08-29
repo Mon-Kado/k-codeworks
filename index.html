@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="css/tailwind-built.css?v=20260806" />
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260830e" />
+    <link rel="stylesheet" href="css/style.css?v=20260830f" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -934,40 +934,6 @@
           </p>
         </div>
 
-        <!-- こんな方へ -->
-        <div class="flex flex-wrap justify-center gap-3 mb-10 fade-up">
-          <span
-            class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10"
-          >
-            <i class="fa-solid fa-check text-accent-gold"></i>
-            HPを新しく作りたい
-          </span>
-          <span
-            class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10"
-          >
-            <i class="fa-solid fa-check text-accent-gold"></i>
-            サイトをリニューアルしたい
-          </span>
-          <span
-            class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10"
-          >
-            <i class="fa-solid fa-check text-accent-gold"></i>
-            採用ページを強化したい
-          </span>
-          <span
-            class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10"
-          >
-            <i class="fa-solid fa-check text-accent-gold"></i>
-            伝わるサイトにしたい
-          </span>
-          <span
-            class="contact-tag inline-flex items-center gap-2 bg-white text-navy-dark text-sm px-4 py-2 rounded-full shadow-sm border border-navy-main/10"
-          >
-            <i class="fa-solid fa-check text-accent-gold"></i>
-            ECの売上・CVRを改善したい
-          </span>
-        </div>
-
         <div class="flex flex-col lg:flex-row gap-8 fade-up">
           <!-- フォーム -->
           <div class="w-full lg:w-2/3">
@@ -1206,98 +1172,42 @@
           </div>
 
           <!-- サイドバー -->
-          <div class="w-full lg:w-1/3 space-y-6">
-            <!-- 稼働状況 -->
-            <div
-              class="bg-navy-main text-white rounded-xl p-6 border border-white/10"
-            >
-              <h3 class="font-bold mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-calendar-check text-accent-gold"></i>
-                現在の稼働状況
-              </h3>
-              <div class="flex items-center gap-3 mb-4">
-                <span class="status-badge status-available">
-                  <span class="status-dot"></span>
-                  受付中
-                </span>
-                <span class="text-sm text-white/70" id="current-month"></span>
+          <div class="w-full lg:w-1/3">
+            <div class="contact-faq">
+              <h3 class="contact-faq-title">よくある質問</h3>
+              <div class="contact-faq-item">
+                <p class="contact-faq-q">制作期間はどのくらいですか？</p>
+                <p class="contact-faq-a">
+                  LPで2〜4週間、5ページ前後のサイトで1〜2ヶ月が目安です。
+                </p>
               </div>
-              <div class="space-y-2 text-sm">
-                <div class="flex justify-between items-center">
-                  <span class="text-white/70">新規相談</span>
-                  <span class="font-bold text-accent-gold">受付中</span>
-                </div>
-                <div class="w-full bg-white/20 rounded-full h-2 mt-2">
-                  <div
-                    class="bg-accent-gold h-2 rounded-full"
-                    style="width: 70%"
-                  ></div>
-                </div>
+              <div class="contact-faq-item">
+                <p class="contact-faq-q">途中での仕様変更は可能ですか？</p>
+                <p class="contact-faq-a">
+                  可能です。影響範囲を確認して、必要ならお見積りを出し直します。
+                </p>
               </div>
-              <p
-                class="text-xs text-white/60 mt-4 border-t border-white/10 pt-4"
-              >
-                <i class="fa-solid fa-circle-info mr-1"></i>
-                内容確認後、対応可否と概算を返信します。
-              </p>
-            </div>
-
-            <!-- よくある質問 -->
-            <div
-              class="sidebar-card bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
-            >
-              <h3 class="font-bold text-navy-dark mb-4 flex items-center gap-2">
-                <i class="fa-regular fa-circle-question text-accent-gold"></i>
-                よくある質問
-              </h3>
-              <div class="space-y-4 text-sm">
-                <div>
-                  <p class="question-text font-bold text-navy-dark">
-                    Q: 制作期間はどのくらいですか？
-                  </p>
-                  <p class="text-text-gray">
-                    A: LPで2〜4週間、5ページ前後のサイトで1〜2ヶ月が目安です。
-                  </p>
-                </div>
-                <div>
-                  <p class="question-text font-bold text-navy-dark">
-                    Q: 途中での仕様変更は可能ですか？
-                  </p>
-                  <p class="text-text-gray">
-                    A:
-                    可能です。影響範囲を確認して、必要ならお見積りを出し直します。
-                  </p>
-                </div>
-                <div>
-                  <p class="question-text font-bold text-navy-dark">
-                    Q: 保守運用は？
-                  </p>
-                  <p class="text-text-gray">
-                    A:
-                    対応できます。月額契約ではなく、必要な時だけのスポット対応も可能です。
-                  </p>
-                </div>
+              <div class="contact-faq-item">
+                <p class="contact-faq-q">保守運用は？</p>
+                <p class="contact-faq-a">
+                  対応できます。月額契約ではなく、必要な時だけのスポット対応も可能です。
+                </p>
+              </div>
+              <div class="contact-faq-item">
+                <p class="contact-faq-q">お急ぎの場合は？</p>
+                <p class="contact-faq-a">
+                  件名に「至急」とご記入ください。通常1〜2営業日でご返信します。
+                </p>
               </div>
             </div>
 
-            <!-- お急ぎの場合 -->
-            <div
-              class="sidebar-card bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
-            >
-              <h3 class="font-bold text-navy-dark mb-3">お急ぎの場合</h3>
-              <p class="text-sm text-text-gray mb-4">
-                件名に「至急」と入れてください。
-              </p>
-              <div class="space-y-2 text-sm">
-                <p class="flex items-center gap-2 text-text-gray">
-                  <i class="fa-regular fa-envelope text-accent-gold"></i>
-                  通常1〜2営業日でご返信
-                </p>
-                <p class="flex items-center gap-2 text-text-gray">
-                  <i class="fa-regular fa-comment text-accent-gold"></i>
-                  Chat対応も可能
-                </p>
-              </div>
+            <div class="contact-village" aria-hidden="true">
+              <img
+                src="img/workflow-village.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -1483,6 +1393,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js?v=20260829j"></script>
+    <script src="js/main.js?v=20260830a"></script>
   </body>
 </html>

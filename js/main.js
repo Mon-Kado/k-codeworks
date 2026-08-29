@@ -89,15 +89,6 @@ const runSplashSequence = () => {
 document.addEventListener("DOMContentLoaded", () => {
   runSplashSequence();
 
-  // 稼働状況の「今月」を動的に表示
-  const currentMonthEl = document.getElementById("current-month");
-  if (currentMonthEl) {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;
-    currentMonthEl.textContent = `${year}年${month}月`;
-  }
-
   // 納期例が古く見えないよう、閲覧月の翌月末を起点にする
   const deadlineInput = document.getElementById("deadline");
   if (deadlineInput) {
