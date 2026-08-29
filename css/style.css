@@ -4155,112 +4155,206 @@ body {
   background: #ffffff !important;
 }
 
-.workflow-redesign {
-  display: grid;
-  grid-template-columns: 0.85fr 1.45fr;
-  gap: 1.25rem;
-  align-items: start;
+/* ============================================================
+   WORKFLOW：紙面のような静かな工程表（2026-08-30）
+   カード・丸アイコン・SaaSステップUIを廃止し、明朝＋ゴールド罫線で
+   工程を1列に並べる。水彩の丘は右下にのみ、装飾として敷く
+   ============================================================ */
+.workflow-section {
+  position: relative;
+  overflow: hidden;
+  background: #f7f3eb;
+  padding: 80px 5vw 70px;
 }
 
-.workflow-message-card {
-  position: sticky;
-  top: 120px;
-  padding: 2.2rem;
-  border-radius: 32px;
-  background: #17295a;
-  color: white;
-  box-shadow: 0 28px 70px rgba(23, 41, 90, 0.18);
+.workflow-village {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 38%;
+  max-width: 640px;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 24%,
+    #000 48%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 24%,
+    #000 48%
+  );
 }
-
-.workflow-message-card span,
-.workflow-phase-label,
-.price-philosophy span {
+.workflow-village img {
+  width: 100%;
+  height: auto;
   display: block;
-  color: #c9a466;
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 0.55rem;
 }
 
-.workflow-message-card h3 {
-  font-size: clamp(1.45rem, 2.4vw, 2.25rem);
-  font-weight: 900;
-  line-height: 1.55;
-  letter-spacing: -0.04em;
-  margin-bottom: 1rem;
+.workflow-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
 }
 
-.workflow-message-card p {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.95rem;
-  line-height: 2;
+#workflow .section-title span {
+  color: #c09a5b;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  font-weight: 600;
 }
-
-.workflow-timeline {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.workflow-phase {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.1rem;
-  padding: 1.35rem;
-  border: 1px solid rgba(10, 58, 120, 0.1);
-  border-radius: 26px;
-  background: #ffffff;
-  box-shadow: 0 16px 42px rgba(10, 58, 120, 0.06);
-}
-
-.workflow-phase-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  background: #eef3fb;
+#workflow .section-title h2 {
+  font-family: "Noto Serif JP", serif;
   color: #17295a;
-  font-weight: 900;
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-top: 20px;
 }
-
-.workflow-phase h3 {
+#workflow .section-title h2::after {
+  width: 50px;
+  height: 2px;
+}
+#workflow .section-title p {
   color: #17295a;
-  font-size: 1.18rem;
-  font-weight: 900;
-  margin-bottom: 0.3rem;
+  font-size: 15px;
 }
 
-.workflow-phase p:last-child {
-  color: #566176;
-  font-size: 0.9rem;
-  line-height: 1.85;
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 3.5rem auto 0;
+  max-width: 1120px;
+}
+
+.workflow-step {
+  position: relative;
+  text-align: center;
+  padding: 0 1.4rem;
+}
+.workflow-step:first-child {
+  padding-left: 0;
+}
+.workflow-step:last-child {
+  padding-right: 0;
+}
+.workflow-step + .workflow-step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70px;
+  background: rgba(192, 154, 91, 0.45);
+}
+
+.workflow-step-num {
+  display: block;
+  font-family: "Noto Serif JP", serif;
+  color: #c09a5b;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.workflow-step h3 {
+  color: #17295a;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.workflow-step p {
+  color: #4e5a70;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .workflow-note {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.workflow-note div {
-  display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 999px;
-  background: #eef3fb;
-  color: #566176;
-  font-size: 0.9rem;
+  justify-content: center;
+  gap: 0.5rem 0.9rem;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(192, 154, 91, 0.35);
+  border-bottom: 1px solid rgba(192, 154, 91, 0.35);
+  font-size: 15px;
+}
+.workflow-note-label {
+  color: #c09a5b;
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+.workflow-note-item {
+  color: #17295a;
+}
+.workflow-note-item strong {
+  font-weight: 700;
+}
+.workflow-note-sep {
+  color: rgba(192, 154, 91, 0.6);
 }
 
-.workflow-note strong {
-  color: #17295a;
-  font-size: 1.05rem;
+@media (max-width: 767px) {
+  .workflow-section {
+    padding: 60px 24px 50px;
+  }
+  .workflow-village {
+    width: 55%;
+    right: -8%;
+  }
+  .workflow-steps {
+    grid-template-columns: 1fr;
+    margin-top: 2.25rem;
+  }
+  .workflow-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 14px;
+    align-items: start;
+    text-align: left;
+    padding: 1.1rem 0;
+  }
+  .workflow-step:first-child {
+    padding-top: 0;
+  }
+  .workflow-step + .workflow-step {
+    border-top: 1px solid rgba(192, 154, 91, 0.3);
+  }
+  .workflow-step + .workflow-step::before {
+    content: none;
+  }
+  .workflow-step-num {
+    grid-row: 1 / 3;
+    margin-bottom: 0;
+    font-size: 20px;
+  }
+  .workflow-step h3 {
+    grid-column: 2;
+    font-size: 16px;
+    margin-bottom: 0.3rem;
+  }
+  .workflow-step p {
+    grid-column: 2;
+    font-size: 13px;
+  }
+  .workflow-step p br {
+    display: none;
+  }
+  .workflow-note {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 14px;
+  }
+  .workflow-note-sep {
+    display: none;
+  }
 }
 
 .price-philosophy {

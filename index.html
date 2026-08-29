@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="css/tailwind-built.css?v=20260806" />
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260830b" />
+    <link rel="stylesheet" href="css/style.css?v=20260830c" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -791,82 +791,59 @@
     </section>
 
     <!-- ワークフロー -->
-    <section
-      id="workflow"
-      data-bg="FLOW"
-      class="py-20 bg-white overflow-hidden"
-    >
-      <div class="max-w-6xl mx-auto px-4">
+    <section id="workflow" data-bg="FLOW" class="workflow-section">
+      <div class="workflow-village" aria-hidden="true">
+        <img
+          src="img/workflow-village.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="max-w-6xl mx-auto px-4 workflow-content">
         <div class="section-title reveal-up">
           <span>WORKFLOW</span>
-          <h2>作る前に、決める</h2>
-          <p class="text-sm text-text-gray mt-4">
-            誰に、何を、どの順番で伝えるか。
-          </p>
+          <h2>作る前に、決める。</h2>
+          <p class="text-sm mt-4">誰に、何を、どの順番で伝えるか。</p>
         </div>
 
-        <div class="workflow-redesign">
-          <div class="workflow-message-card">
-            <span>Approach</span>
-            <h3>テンプレで作らない。まず、整理する。</h3>
-            <p>目的、対象者、導線を決めてから作る。</p>
-          </div>
-
-          <div class="workflow-timeline">
-            <article class="workflow-phase">
-              <span class="workflow-phase-number">01</span>
-              <div>
-                <p class="workflow-phase-label">Fit Check</p>
-                <h3>無料相談</h3>
-                <p>目的・予算・課題を確認。</p>
-              </div>
-            </article>
-            <article class="workflow-phase">
-              <span class="workflow-phase-number">02</span>
-              <div>
-                <p class="workflow-phase-label">Direction</p>
-                <h3>構成整理</h3>
-                <p>強みと導線を固定。</p>
-              </div>
-            </article>
-            <article class="workflow-phase">
-              <span class="workflow-phase-number">03</span>
-              <div>
-                <p class="workflow-phase-label">Design</p>
-                <h3>デザイン</h3>
-                <p>原稿、余白、写真を整理。</p>
-              </div>
-            </article>
-            <article class="workflow-phase">
-              <span class="workflow-phase-number">04</span>
-              <div>
-                <p class="workflow-phase-label">Build</p>
-                <h3>実装</h3>
-                <p>スマホで読みやすく。</p>
-              </div>
-            </article>
-            <article class="workflow-phase">
-              <span class="workflow-phase-number">05</span>
-              <div>
-                <p class="workflow-phase-label">Launch</p>
-                <h3>公開</h3>
-                <p>フォーム確認、更新案内。</p>
-              </div>
-            </article>
-          </div>
+        <div class="workflow-steps reveal-up">
+          <article class="workflow-step">
+            <span class="workflow-step-num">01</span>
+            <h3>無料相談</h3>
+            <p>目的・予算・<br />困っていることを伺います。</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-step-num">02</span>
+            <h3>構成整理</h3>
+            <p>必要な情報を整理し、<br />ページの順番を決めます。</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-step-num">03</span>
+            <h3>デザイン</h3>
+            <p>写真・文章・余白を整え、<br />見せ方を決めます。</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-step-num">04</span>
+            <h3>実装</h3>
+            <p>スマートフォンまで<br />読みやすく仕上げます。</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-step-num">05</span>
+            <h3>公開</h3>
+            <p>確認後に公開。<br />更新方法までお伝えします。</p>
+          </article>
         </div>
 
         <div class="workflow-note reveal-up">
-          <div>
-            <i class="fa-solid fa-clock text-accent-gold"></i>
-            <span>LP・採用ページ：</span>
-            <strong>2〜4週間</strong>
-          </div>
-          <div>
-            <i class="fa-solid fa-clock text-accent-gold"></i>
-            <span>5ページ前後のサイト：</span>
-            <strong>1〜2ヶ月</strong>
-          </div>
+          <span class="workflow-note-label">制作期間の目安</span>
+          <span class="workflow-note-item">
+            LP・採用ページ　<strong>2〜4週間</strong>
+          </span>
+          <span class="workflow-note-sep">／</span>
+          <span class="workflow-note-item">
+            5ページ前後のサイト　<strong>1〜2ヶ月</strong>
+          </span>
         </div>
       </div>
     </section>
