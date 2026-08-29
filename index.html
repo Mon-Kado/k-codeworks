@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="css/tailwind-built.css?v=20260806" />
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=20260829y" />
+    <link rel="stylesheet" href="css/style.css?v=20260829z" />
   </head>
   <body>
     <!-- ヘッダー -->
@@ -81,12 +81,6 @@
               class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm"
             >
               制作実績
-            </a>
-            <a
-              href="#demo"
-              class="text-text-dark hover:text-navy-main font-medium transition-colors text-sm"
-            >
-              実装デモ
             </a>
             <a
               href="#workflow"
@@ -141,18 +135,13 @@
               <span class="mobile-nav-text">制作実績</span>
               <span class="mobile-nav-label">WORKS</span>
             </a>
-            <a href="#demo" class="mobile-nav-link" style="--delay: 0.2s">
+            <a href="#workflow" class="mobile-nav-link" style="--delay: 0.2s">
               <span class="mobile-nav-number">03</span>
-              <span class="mobile-nav-text">実装デモ</span>
-              <span class="mobile-nav-label">DEMO</span>
-            </a>
-            <a href="#workflow" class="mobile-nav-link" style="--delay: 0.25s">
-              <span class="mobile-nav-number">04</span>
               <span class="mobile-nav-text">制作の流れ</span>
               <span class="mobile-nav-label">WORKFLOW</span>
             </a>
-            <a href="#service" class="mobile-nav-link" style="--delay: 0.3s">
-              <span class="mobile-nav-number">05</span>
+            <a href="#service" class="mobile-nav-link" style="--delay: 0.25s">
+              <span class="mobile-nav-number">04</span>
               <span class="mobile-nav-text">料金プラン</span>
               <span class="mobile-nav-label">PRICING</span>
             </a>
@@ -540,196 +529,198 @@
     </div>
 
     <!-- 実装デモ -->
-    <section id="demo" class="py-20 bg-white">
+    <section id="demo" class="py-20 bg-white demo-section-hidden">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="section-title reveal-up">
-          <span>DEMO</span>
-          <h2>触って試せる実装サンプル</h2>
-          <p class="mt-4 text-text-gray text-sm">
-            ECの現場でよく作る仕掛けを、このページ用に書き下ろしました。実際に動かせます。
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
-          <!-- デモ1: 都道府県別お届け日数 -->
-          <div class="demo-card">
-            <div class="demo-card-head">
-              <i class="fa-solid fa-truck-fast"></i>
-              <h3>お届け日数の自動表示</h3>
-            </div>
-            <p class="demo-desc">
-              都道府県を選ぶと、お届け目安と送料が切り替わります。
-            </p>
-            <label class="demo-label" for="demo-pref">お住まいの都道府県</label>
-            <select id="demo-pref" class="demo-select">
-              <option value="">選択してください</option>
-            </select>
-            <div id="demo-shipping-result" class="demo-result" hidden>
-              <p class="demo-result-main">
-                <i class="fa-regular fa-clock"></i>
-                お届け目安：<strong id="demo-shipping-days"></strong>
-              </p>
-              <p class="demo-result-sub">
-                送料：<span id="demo-shipping-fee"></span>（税込）
-              </p>
-            </div>
-          </div>
-
-          <!-- デモ2: クーポンコピー＋カウントダウン -->
-          <div class="demo-card">
-            <div class="demo-card-head">
-              <i class="fa-solid fa-ticket"></i>
-              <h3>クーポン＋締切カウントダウン</h3>
-            </div>
-            <p class="demo-desc">
-              ワンタップでコードをコピー。締切までの残り時間を表示します。
-            </p>
-            <div class="demo-coupon">
-              <code id="demo-coupon-code">KADO2026</code>
-              <button type="button" id="demo-copy-btn" class="demo-copy-btn">
-                <i class="fa-regular fa-copy"></i>
-                コピー
-              </button>
-            </div>
-            <p class="demo-countdown-label">本日締切まで</p>
-            <p id="demo-countdown" class="demo-countdown">--:--:--</p>
-          </div>
-
-          <!-- デモ3: FAQアコーディオン -->
-          <div class="demo-card">
-            <div class="demo-card-head">
-              <i class="fa-solid fa-circle-question"></i>
-              <h3>FAQアコーディオン</h3>
-            </div>
-            <p class="demo-desc">
-              クリックで開閉。よくある質問の整理に使う定番UIです。
-            </p>
-            <div class="demo-faq">
-              <details>
-                <summary>既存サイトに後から追加できますか？</summary>
-                <p>
-                  できます。いまのデザインやレイアウトを崩さずに、必要な部分だけ追加・改修します。
+        <div id="demo-embed-home">
+          <div id="demo-embed-content">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-up">
+              <!-- デモ1: 都道府県別お届け日数 -->
+              <div class="demo-card">
+                <div class="demo-card-head">
+                  <i class="fa-solid fa-truck-fast"></i>
+                  <h3>お届け日数の自動表示</h3>
+                </div>
+                <p class="demo-desc">
+                  都道府県を選ぶと、お届け目安と送料が切り替わります。
                 </p>
-              </details>
-              <details>
-                <summary>スマホ表示にも対応していますか？</summary>
-                <p>
-                  対応しています。PC・スマホそれぞれで表示を確認してから納品します。
-                </p>
-              </details>
-              <details>
-                <summary>デザインはサイトに合わせられますか？</summary>
-                <p>
-                  合わせられます。既存のフォント・色・余白に馴染む形で作ります。
-                </p>
-              </details>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 reveal-up">
-          <!-- デモ4: レビューカルーセル -->
-          <div class="demo-card md:col-span-2">
-            <div class="demo-card-head">
-              <i class="fa-solid fa-star"></i>
-              <h3>レビューカルーセル</h3>
-            </div>
-            <p class="demo-desc">
-              お客様の声を自動で流す横スクロールUI。矢印は端で薄くなり誤操作を防ぎます。
-            </p>
-            <div class="demo-carousel-wrap">
-              <button
-                type="button"
-                class="demo-carousel-btn"
-                data-dir="-1"
-                aria-label="前のレビューへ"
-              >
-                <i class="fa-solid fa-chevron-left"></i>
-              </button>
-              <div class="demo-carousel" id="demo-carousel">
-                <div class="demo-review">
-                  <p class="demo-review-stars">★★★★★</p>
-                  <p class="demo-review-text">
-                    問い合わせから公開までがスムーズで、説明も分かりやすかったです。
+                <label class="demo-label" for="demo-pref"
+                  >お住まいの都道府県</label
+                >
+                <select id="demo-pref" class="demo-select">
+                  <option value="">選択してください</option>
+                </select>
+                <div id="demo-shipping-result" class="demo-result" hidden>
+                  <p class="demo-result-main">
+                    <i class="fa-regular fa-clock"></i>
+                    お届け目安：<strong id="demo-shipping-days"></strong>
                   </p>
-                  <p class="demo-review-name">A様（サンプル）</p>
-                </div>
-                <div class="demo-review">
-                  <p class="demo-review-stars">★★★★★</p>
-                  <p class="demo-review-text">
-                    こちらの要望を汲み取って、先回りの提案までしてもらえました。
+                  <p class="demo-result-sub">
+                    送料：<span id="demo-shipping-fee"></span>（税込）
                   </p>
-                  <p class="demo-review-name">B様（サンプル）</p>
-                </div>
-                <div class="demo-review">
-                  <p class="demo-review-stars">★★★★☆</p>
-                  <p class="demo-review-text">
-                    スマホでの見え方まで丁寧に確認してくれて安心できました。
-                  </p>
-                  <p class="demo-review-name">C様（サンプル）</p>
-                </div>
-                <div class="demo-review">
-                  <p class="demo-review-stars">★★★★★</p>
-                  <p class="demo-review-text">
-                    公開後の修正にも素早く対応いただき、助かっています。
-                  </p>
-                  <p class="demo-review-name">D様（サンプル）</p>
-                </div>
-                <div class="demo-review">
-                  <p class="demo-review-stars">★★★★★</p>
-                  <p class="demo-review-text">
-                    専門用語を使わない説明で、社内の稟議も通しやすかったです。
-                  </p>
-                  <p class="demo-review-name">E様（サンプル）</p>
                 </div>
               </div>
-              <button
-                type="button"
-                class="demo-carousel-btn"
-                data-dir="1"
-                aria-label="次のレビューへ"
-              >
-                <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
 
-          <!-- デモ5: 郵便番号→住所自動入力（EFO） -->
-          <div class="demo-card">
-            <div class="demo-card-head">
-              <i class="fa-solid fa-pen-to-square"></i>
-              <h3>住所の自動入力（EFO）</h3>
+              <!-- デモ2: クーポンコピー＋カウントダウン -->
+              <div class="demo-card">
+                <div class="demo-card-head">
+                  <i class="fa-solid fa-ticket"></i>
+                  <h3>クーポン＋締切カウントダウン</h3>
+                </div>
+                <p class="demo-desc">
+                  ワンタップでコードをコピー。締切までの残り時間を表示します。
+                </p>
+                <div class="demo-coupon">
+                  <code id="demo-coupon-code">KADO2026</code>
+                  <button
+                    type="button"
+                    id="demo-copy-btn"
+                    class="demo-copy-btn"
+                  >
+                    <i class="fa-regular fa-copy"></i>
+                    コピー
+                  </button>
+                </div>
+                <p class="demo-countdown-label">本日締切まで</p>
+                <p id="demo-countdown" class="demo-countdown">--:--:--</p>
+              </div>
+
+              <!-- デモ3: FAQアコーディオン -->
+              <div class="demo-card">
+                <div class="demo-card-head">
+                  <i class="fa-solid fa-circle-question"></i>
+                  <h3>FAQアコーディオン</h3>
+                </div>
+                <p class="demo-desc">
+                  クリックで開閉。よくある質問の整理に使う定番UIです。
+                </p>
+                <div class="demo-faq">
+                  <details>
+                    <summary>既存サイトに後から追加できますか？</summary>
+                    <p>
+                      できます。いまのデザインやレイアウトを崩さずに、必要な部分だけ追加・改修します。
+                    </p>
+                  </details>
+                  <details>
+                    <summary>スマホ表示にも対応していますか？</summary>
+                    <p>
+                      対応しています。PC・スマホそれぞれで表示を確認してから納品します。
+                    </p>
+                  </details>
+                  <details>
+                    <summary>デザインはサイトに合わせられますか？</summary>
+                    <p>
+                      合わせられます。既存のフォント・色・余白に馴染む形で作ります。
+                    </p>
+                  </details>
+                </div>
+              </div>
             </div>
-            <p class="demo-desc">
-              郵便番号を入れると住所が自動で埋まります。フォームの離脱を減らす定番改善です。
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 reveal-up">
+              <!-- デモ4: レビューカルーセル -->
+              <div class="demo-card md:col-span-2">
+                <div class="demo-card-head">
+                  <i class="fa-solid fa-star"></i>
+                  <h3>レビューカルーセル</h3>
+                </div>
+                <p class="demo-desc">
+                  お客様の声を自動で流す横スクロールUI。矢印は端で薄くなり誤操作を防ぎます。
+                </p>
+                <div class="demo-carousel-wrap">
+                  <button
+                    type="button"
+                    class="demo-carousel-btn"
+                    data-dir="-1"
+                    aria-label="前のレビューへ"
+                  >
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </button>
+                  <div class="demo-carousel" id="demo-carousel">
+                    <div class="demo-review">
+                      <p class="demo-review-stars">★★★★★</p>
+                      <p class="demo-review-text">
+                        問い合わせから公開までがスムーズで、説明も分かりやすかったです。
+                      </p>
+                      <p class="demo-review-name">A様（サンプル）</p>
+                    </div>
+                    <div class="demo-review">
+                      <p class="demo-review-stars">★★★★★</p>
+                      <p class="demo-review-text">
+                        こちらの要望を汲み取って、先回りの提案までしてもらえました。
+                      </p>
+                      <p class="demo-review-name">B様（サンプル）</p>
+                    </div>
+                    <div class="demo-review">
+                      <p class="demo-review-stars">★★★★☆</p>
+                      <p class="demo-review-text">
+                        スマホでの見え方まで丁寧に確認してくれて安心できました。
+                      </p>
+                      <p class="demo-review-name">C様（サンプル）</p>
+                    </div>
+                    <div class="demo-review">
+                      <p class="demo-review-stars">★★★★★</p>
+                      <p class="demo-review-text">
+                        公開後の修正にも素早く対応いただき、助かっています。
+                      </p>
+                      <p class="demo-review-name">D様（サンプル）</p>
+                    </div>
+                    <div class="demo-review">
+                      <p class="demo-review-stars">★★★★★</p>
+                      <p class="demo-review-text">
+                        専門用語を使わない説明で、社内の稟議も通しやすかったです。
+                      </p>
+                      <p class="demo-review-name">E様（サンプル）</p>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="demo-carousel-btn"
+                    data-dir="1"
+                    aria-label="次のレビューへ"
+                  >
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- デモ5: 郵便番号→住所自動入力（EFO） -->
+              <div class="demo-card">
+                <div class="demo-card-head">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                  <h3>住所の自動入力（EFO）</h3>
+                </div>
+                <p class="demo-desc">
+                  郵便番号を入れると住所が自動で埋まります。フォームの離脱を減らす定番改善です。
+                </p>
+                <label class="demo-label" for="demo-zip"
+                  >郵便番号（ハイフンなし7桁）</label
+                >
+                <input
+                  type="text"
+                  id="demo-zip"
+                  class="demo-select"
+                  inputmode="numeric"
+                  maxlength="7"
+                  placeholder="例：1000001"
+                />
+                <p id="demo-zip-status" class="demo-zip-status" hidden></p>
+                <label class="demo-label mt-3" for="demo-address"
+                  >住所（自動入力）</label
+                >
+                <input
+                  type="text"
+                  id="demo-address"
+                  class="demo-select"
+                  placeholder="郵便番号から自動で入ります"
+                />
+              </div>
+            </div>
+
+            <p class="text-center text-xs text-text-gray mt-8 reveal-up">
+              ※ すべて本ページ用の自作デモです。データはサンプルです。
             </p>
-            <label class="demo-label" for="demo-zip"
-              >郵便番号（ハイフンなし7桁）</label
-            >
-            <input
-              type="text"
-              id="demo-zip"
-              class="demo-select"
-              inputmode="numeric"
-              maxlength="7"
-              placeholder="例：1000001"
-            />
-            <p id="demo-zip-status" class="demo-zip-status" hidden></p>
-            <label class="demo-label mt-3" for="demo-address"
-              >住所（自動入力）</label
-            >
-            <input
-              type="text"
-              id="demo-address"
-              class="demo-select"
-              placeholder="郵便番号から自動で入ります"
-            />
           </div>
         </div>
-
-        <p class="text-center text-xs text-text-gray mt-8 reveal-up">
-          ※ すべて本ページ用の自作デモです。データはサンプルです。
-        </p>
       </div>
     </section>
 
@@ -1621,11 +1612,6 @@
                 >
               </li>
               <li>
-                <a href="#demo" class="hover:text-white transition-colors"
-                  >実装デモ</a
-                >
-              </li>
-              <li>
                 <a href="#workflow" class="hover:text-white transition-colors"
                   >制作の流れ</a
                 >
@@ -1665,6 +1651,6 @@
     </footer>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js?v=20260829i"></script>
+    <script src="js/main.js?v=20260829j"></script>
   </body>
 </html>

@@ -172,7 +172,7 @@ const worksData = {
     ],
     status: "継続受注中",
     url: "",
-    demoAnchor: "#demo",
+    embedDemo: true,
   },
   onomichi: {
     category: "LP / 課題制作",
@@ -350,6 +350,16 @@ function openWorksModal(id) {
                   .join("")}
             </div>
 
+            ${
+              data.embedDemo
+                ? `
+                <div class="works-modal-divider"></div>
+                <span class="works-modal-highlights-label">実際に触れる実装サンプル</span>
+                <div class="works-modal-demo-slot" id="works-modal-demo-slot"></div>
+            `
+                : ""
+            }
+
             <div class="works-modal-cta">
                 ${
                   data.url
@@ -362,19 +372,18 @@ function openWorksModal(id) {
                     <span class="works-modal-status">${escapeHTML(data.status)}</span>
                 `
                 }
-                ${
-                  data.demoAnchor
-                    ? `
-                    <a href="${escapeHTML(data.demoAnchor)}" class="works-modal-link works-modal-demo-link" onclick="closeWorksModal()">
-                        実装サンプルで試す →
-                    </a>
-                `
-                    : ""
-                }
             </div>
         </div>
         <div class="works-modal-village" aria-hidden="true"></div>
     `;
+
+  if (data.embedDemo) {
+    const slot = document.getElementById("works-modal-demo-slot");
+    const demoContent = document.getElementById("demo-embed-content");
+    if (slot && demoContent) {
+      slot.appendChild(demoContent);
+    }
+  }
 
   body.scrollTop = 0;
   modal.classList.add("active");
@@ -388,6 +397,13 @@ function closeWorksModal() {
   modal.classList.remove("active");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+
+  // 実装デモを埋め込んでいた場合、元の場所に戻す
+  const demoHome = document.getElementById("demo-embed-home");
+  const demoContent = document.getElementById("demo-embed-content");
+  if (demoHome && demoContent && demoContent.parentElement !== demoHome) {
+    demoHome.appendChild(demoContent);
+  }
 }
 
 // モーダル外クリックで閉じる

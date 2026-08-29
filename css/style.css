@@ -7017,3 +7017,19 @@ body #about.strength-section {
     margin: 2.5rem 0 2rem;
   }
 }
+
+/* DEMOセクション：メイン表示からは非表示にし、
+   ECサイト改善モーダル内に埋め込んで表示する（2026-08-29） */
+.demo-section-hidden {
+  display: none;
+}
+
+.works-modal-demo-slot {
+  margin: 0 0 28px;
+}
+.works-modal-demo-slot #demo-embed-content {
+  display: block;
+}
+.works-modal-demo-slot .demo-card {
+  background: #fff;
+}
