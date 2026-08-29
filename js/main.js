@@ -176,9 +176,9 @@ const worksData = {
   onomichi: {
     category: "LP / 課題制作",
     title: "デイトラ課題LP「SnapOnomichi」",
-    image: "img/onomichi.png?v=20260705",
+    image: "img/onomichi.png?v=20260829",
     description:
-      "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。",
+      "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。ベーシック認証がかかっているため、閲覧時はユーザー名 onomichi / パスワード demo を入力してください。",
     role: "課題対応：コーディング・レスポンシブ調整",
     techs: ["HTML", "CSS", "JavaScript", "FLOCSS", "BEM"],
     highlights: [
@@ -201,7 +201,7 @@ const worksData = {
   blog: {
     category: "Media",
     title: "個人運営ブログメディア",
-    image: "img/blog-media.png?v=20260705",
+    image: "img/blog-media.png?v=20260829",
     description:
       "お金・仕事・暮らしをテーマにした個人メディア（累計400記事以上）。検索意図に合わせて、記事構成と内部導線を整理しています。",
     role: "企画・執筆・サイト運営・SEO対策",
@@ -226,7 +226,7 @@ const worksData = {
   genel: {
     category: "Corporate",
     title: "GeneL inc. コーポレートサイト",
-    image: "img/genel-top.png?v=20260705",
+    image: "img/genel-top.png?v=20260829",
     description:
       "IT企業のコーポレートサイト。構成検討から参加し、採用ページのコーディングを担当しました。",
     role: "ワイヤーフレーム・デザイン参加・recruitページコーディング（チーム開発）",
@@ -251,7 +251,7 @@ const worksData = {
   minamiClinic: {
     category: "WordPress / 課題制作",
     title: "デイトラ課題サイト「みなみ歯科クリニック」",
-    image: "img/minami-clinic.png?v=20260705",
+    image: "img/minami-clinic.png?v=20260829",
     description:
       "デイトラの課題として取り組んだ歯科医院向けWordPressサイトです。実案件ではなく、デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
     role: "課題対応：WordPress構築・コーディング・レスポンシブ調整",
