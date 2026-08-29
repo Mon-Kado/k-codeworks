@@ -126,7 +126,7 @@ const worksData = {
   dischargeTool: {
     category: "Web App",
     title: "退院支援管理ツール（自主開発）",
-    image: "img/discharge-tool-cover.svg",
+    image: "img/discharge-tool-cover.svg?v=20260829",
     description:
       "転院調整を見える化するWebアプリを自主開発し、β版として公開中です。現場の手間を減らすため、空床情報と受け入れ条件を整理しました。※サービス名・URLはご相談時にお伝えします。",
     role: "企画・設計・開発（フルスタック）",
