@@ -333,6 +333,7 @@ function openWorksModal(id) {
         </div>
     `;
 
+  body.scrollTop = 0;
   modal.classList.add("active");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
