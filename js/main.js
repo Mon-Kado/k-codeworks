@@ -170,7 +170,7 @@ const worksData = {
     title: "デイトラ課題LP「SnapOnomichi」",
     image: "img/onomichi.png?v=20260829b",
     description:
-      "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。ベーシック認証がかかっているため、閲覧時はユーザー名 onomichi / パスワード demo を入力してください。",
+      "デイトラの課題として取り組んだLPです。実案件ではなく、指定デザインをもとにレスポンシブ対応と動きの実装を行いました。",
     role: "課題対応：コーディング・レスポンシブ調整",
     techs: ["HTML", "CSS", "JavaScript", "FLOCSS", "BEM"],
     highlights: [
@@ -189,6 +189,7 @@ const worksData = {
     ],
     status: "デイトラ課題",
     url: "https://onomichi-k-codeworks.com/",
+    basicAuth: { user: "onomichi", pass: "demo" },
   },
   blog: {
     category: "Media",
