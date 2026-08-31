@@ -7079,7 +7079,7 @@ body #about.strength-section {
   border-radius: 14px;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  box-shadow: 0 18px 40px rgba(23, 41, 90, 0.12);
+  box-shadow: 0 14px 32px rgba(120, 105, 80, 0.09);
   margin-bottom: 1.25rem;
   transition:
     transform 0.35s ease,
@@ -7094,7 +7094,7 @@ body #about.strength-section {
   transition: transform 0.5s ease;
 }
 .works-piece-shot:hover {
-  box-shadow: 0 24px 54px rgba(23, 41, 90, 0.18);
+  box-shadow: 0 20px 44px rgba(120, 105, 80, 0.14);
 }
 .works-piece-shot:hover img {
   transform: scale(1.03);
@@ -7136,7 +7136,7 @@ body #about.strength-section {
 
 /* その他の制作：ひとまわり控えめに */
 .works-piece-sub .works-piece-shot {
-  box-shadow: 0 12px 28px rgba(23, 41, 90, 0.1);
+  box-shadow: 0 10px 24px rgba(120, 105, 80, 0.08);
   margin-bottom: 1rem;
 }
 .works-piece-sub .works-piece-title {
