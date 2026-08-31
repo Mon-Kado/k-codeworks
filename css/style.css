@@ -793,6 +793,42 @@ textarea:focus-visible {
   border-color: #17295a;
 }
 
+/* Basic認証がかかっているサイトの閲覧情報（リンクの隣に置く） */
+.works-modal-auth {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(192, 154, 91, 0.4);
+  border-radius: 6px;
+  background: rgba(192, 154, 91, 0.06);
+  line-height: 1.5;
+}
+
+.works-modal-auth-label {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #7b6a4f;
+}
+
+.works-modal-auth-cred {
+  font-size: 13px;
+  color: #17295a;
+  font-feature-settings: "tnum";
+}
+
+.works-modal-auth-cred b {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 767px) {
+  .works-modal-auth {
+    width: 100%;
+  }
+}
+
 .works-modal-status {
   display: inline-block;
   color: #5a6b85;

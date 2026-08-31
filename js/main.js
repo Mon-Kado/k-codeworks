@@ -245,7 +245,7 @@ const worksData = {
     title: "デイトラ課題サイト「みなみ歯科クリニック」",
     image: "img/minami-clinic.png?v=20260829b",
     description:
-      "デイトラの課題として取り組んだ歯科医院向けWordPressサイトです。実案件ではなく、デモ環境のため、閲覧時はユーザー名 demo / パスワード demo を入力してください。",
+      "デイトラの課題として取り組んだ歯科医院向けWordPressサイトです。実案件ではなく、学習用に制作したものです。",
     role: "課題対応：WordPress構築・コーディング・レスポンシブ調整",
     techs: ["WordPress", "PHP", "SCSS", "JavaScript", "Swiper"],
     highlights: [
@@ -264,6 +264,7 @@ const worksData = {
     ],
     status: "デイトラ課題",
     url: "https://minami-clinic.k-codeworks.com/",
+    basicAuth: { user: "demo", pass: "demo" },
   },
   furikomiBannin: {
     category: "自主開発 / Shopify App",
@@ -358,6 +359,16 @@ function openWorksModal(id) {
                     <a href="${escapeHTML(data.url)}" target="_blank" rel="noopener" class="works-modal-link">
                         サイトを見る →
                     </a>
+                    ${
+                      data.basicAuth
+                        ? `
+                    <p class="works-modal-auth">
+                        <span class="works-modal-auth-label">閲覧にはIDとパスワードが必要です</span>
+                        <span class="works-modal-auth-cred">ID <b>${escapeHTML(data.basicAuth.user)}</b> ／ PASS <b>${escapeHTML(data.basicAuth.pass)}</b></span>
+                    </p>
+                `
+                        : ""
+                    }
                 `
                     : `
                     <span class="works-modal-status">${escapeHTML(data.status)}</span>
