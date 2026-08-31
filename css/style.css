@@ -635,7 +635,7 @@ textarea:focus-visible {
 
 .works-modal-shot {
   padding: 44px 44px 0;
-  background: linear-gradient(180deg, #f1ece0 0%, #f7f3eb 100%);
+  background: transparent;
 }
 
 .works-modal-shot img {
