@@ -654,7 +654,7 @@ textarea:focus-visible {
 
 .works-modal-header-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.7fr 1fr;
   gap: 48px;
 }
 
@@ -670,17 +670,26 @@ textarea:focus-visible {
 
 .works-modal-title {
   font-family: "Noto Serif JP", serif;
-  font-size: 40px;
+  font-size: clamp(28px, 2.6vw, 40px);
   font-weight: 700;
   color: #17295a;
-  line-height: 1.4;
+  line-height: 1.45;
   margin-bottom: 18px;
+  /* 「（自主開／発）」のように括弧や語の途中で割れるのを防ぐ */
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+  text-wrap: balance;
 }
 
 .works-modal-desc {
   color: #4e5a70;
   line-height: 1.85;
   font-size: 16px;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 .works-modal-meta {
@@ -702,6 +711,10 @@ textarea:focus-visible {
   color: #17295a;
   font-size: 14px;
   line-height: 1.8;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+  text-wrap: pretty;
 }
 
 .works-modal-divider {
