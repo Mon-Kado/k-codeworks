@@ -2408,6 +2408,7 @@ header.scrolled .header-logo {
 }
 
 /* Contact Section - Light Theme (Pale Gold) */
+/* 旧定義（不活性）。最終値は末尾 Section Atmosphere Layer の body #contact */
 #contact {
   background: #f7f3eb;
 }
@@ -3435,6 +3436,7 @@ header.scrolled .header-logo {
   box-shadow: 0 28px 74px rgba(10, 58, 120, 0.2);
 }
 
+/* 旧定義（不活性）。最終値は末尾 Section Atmosphere Layer の body #contact */
 #contact {
   background:
     radial-gradient(
@@ -4158,28 +4160,30 @@ body {
   position: relative;
   overflow: hidden;
   background: #f7f3eb;
-  padding: 42px 5vw 46px;
+  padding: 5rem 5vw;
 }
 
+/* 右下アンカーの楕円マスクで全周を溶かし、地紋として敷く */
 .workflow-village {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 38%;
-  max-width: 640px;
+  right: -3%;
+  bottom: -2%;
+  width: 52%;
+  max-width: 860px;
   z-index: 0;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.5) 24%,
-    #000 48%
+  opacity: 0.5;
+  -webkit-mask-image: radial-gradient(
+    ellipse 82% 85% at 76% 80%,
+    #000 42%,
+    rgba(0, 0, 0, 0.5) 65%,
+    transparent 90%
   );
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.5) 24%,
-    #000 48%
+  mask-image: radial-gradient(
+    ellipse 82% 85% at 76% 80%,
+    #000 42%,
+    rgba(0, 0, 0, 0.5) 65%,
+    transparent 90%
   );
 }
 .workflow-village img {
@@ -4296,11 +4300,11 @@ body {
 
 @media (max-width: 767px) {
   .workflow-section {
-    padding: 60px 24px 50px;
+    padding: 5rem 24px;
   }
   .workflow-village {
-    width: 55%;
-    right: -8%;
+    width: 78%;
+    right: -14%;
   }
   .workflow-steps {
     grid-template-columns: 1fr;
@@ -6843,8 +6847,8 @@ body #about.strength-section {
     ),
     linear-gradient(
       180deg,
-      rgba(247, 243, 235, 0) 78%,
-      rgba(247, 243, 235, 0.6) 92%,
+      rgba(247, 243, 235, 0) 84%,
+      rgba(247, 243, 235, 0.5) 94%,
       rgba(247, 243, 235, 1) 100%
     );
   pointer-events: none;
@@ -7268,4 +7272,100 @@ body #service {
   .contact-faq {
     margin-top: 2.5rem;
   }
+}
+
+/* ============================================================
+   Section Atmosphere Layer（2026-08-31）
+   セクション背景の最終勝者。これより上の #profile / #works /
+   #service / #contact の background 定義はすべて不活性。
+   設計原則：各セクションは上端・下端とも --sec-cream に戻り、
+   中腹だけ --sec-lift へふくらむ。隣接する境界は常に同じ色で
+   接続されるため境目が消え、セクション内部だけが呼吸する。
+   ============================================================ */
+:root {
+  --sec-cream: #f7f3eb;
+  --sec-lift: #fbf8f1;
+  --sec-gold-mist: rgba(201, 164, 102, 0.12);
+  --sec-green-mist: rgba(126, 145, 110, 0.08);
+}
+
+body #profile.profile-section {
+  background: linear-gradient(
+    180deg,
+    var(--sec-cream) 0%,
+    var(--sec-lift) 38%,
+    var(--sec-cream) 82%
+  ) !important;
+}
+
+/* 緑ミスト＝profile末尾の村イラストの余韻を色で受ける。
+   上端は透明のまま（境界はcream同士で接続）、少し下ってから薄く出て消える */
+body #works {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(126, 145, 110, 0) 0,
+      var(--sec-green-mist) 110px,
+      rgba(126, 145, 110, 0) 340px
+    ),
+    linear-gradient(
+      180deg,
+      var(--sec-cream) 0%,
+      var(--sec-lift) 45%,
+      var(--sec-cream) 100%
+    ) !important;
+}
+
+body #workflow.workflow-section {
+  background: linear-gradient(
+    180deg,
+    var(--sec-cream) 0%,
+    var(--sec-lift) 40%,
+    var(--sec-cream) 100%
+  ) !important;
+}
+
+/* 下端左(x=12%)の金の予兆。CONTACT上端の金と一つの光に見せる */
+body #service {
+  background:
+    radial-gradient(
+      ellipse 100% 55% at 12% 100%,
+      var(--sec-gold-mist),
+      rgba(201, 164, 102, 0.05) 45%,
+      transparent 75%
+    ),
+    linear-gradient(
+      180deg,
+      var(--sec-cream) 0%,
+      var(--sec-lift) 40%,
+      var(--sec-cream) 100%
+    ) !important;
+}
+
+/* radialを楕円化＋中間停止色で減衰を緩める。下端はフッター濃紺への接地 */
+body #contact {
+  background:
+    radial-gradient(
+      ellipse 100% 60% at 12% 0%,
+      var(--sec-gold-mist),
+      rgba(201, 164, 102, 0.05) 45%,
+      transparent 75%
+    ),
+    linear-gradient(
+      180deg,
+      var(--sec-cream) 0%,
+      var(--sec-cream) 85%,
+      #f2ede1 100%
+    ) !important;
+}
+
+/* --- <main> 追加で有効化された main>section ルール(5195-5217)へのガード --- */
+/* 村イラストの下端接地を維持（clampのpadding-bottomを打ち返す） */
+#profile.profile-section {
+  padding-bottom: 0 !important;
+}
+/* 5200 の main>section>* による position:relative 強制を打ち返す */
+#workflow .workflow-village {
+  position: absolute;
+  z-index: 0;
 }
